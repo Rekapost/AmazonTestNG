@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestSuite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="ChromeTest(failed)" verbose="0">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="test.ProductTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="testCartSuccessMessage"/>
+          <include name="setup"/>
+          <include name="attachScreenshot"/>
+        </methods>
+      </class> <!-- test.ProductTest -->
+      <class name="test.CartTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="attachScreenshot"/>
+          <include name="testCartItems"/>
+        </methods>
+      </class> <!-- test.CartTest -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->
