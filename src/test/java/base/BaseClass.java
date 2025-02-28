@@ -1,27 +1,29 @@
 package base;
 import java.io.File;
 import java.io.IOException;
-
+import java.net.MalformedURLException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseClass {
-protected WebDriver driver;   
-//public static WebDriver driver;
-public static final Logger logger = LoggerFactory.getLogger(BaseClass.class);
+protected WebDriver driver; 
+protected static final Logger logger = LogManager.getLogger(BaseClass.class);
 
 @BeforeMethod
-public void setup(){
+public void setup(ITestResult result){
     if (driver == null) { 
-    driver = DriverManager.getDriver();
+    try {
+        driver = DriverManager.getDriver();
+    } catch (MalformedURLException e) {       
+    }
     }
 }
 
@@ -49,7 +51,9 @@ public void attachScreenshot(ITestResult result) {
         try {
             TakesScreenshot screenshot = (TakesScreenshot) driver;
             File sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
-            File destinationFile = new File("./target/reports/Screenshots/" + testName + ".png");
+            String screenshotPath = System.getProperty("user.dir") + "/Screenshots/" + testName + ".png";
+            //File destinationFile = new File("./target/reports/Screenshots/" + testName + ".png");
+            File destinationFile = new File(screenshotPath);   
             FileUtils.copyFile(sourceFile, destinationFile);
             logger.info("Screenshot captured for test: " + testName);
         } catch (IOException e) {

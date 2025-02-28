@@ -1,14 +1,17 @@
 package test;
 import org.testng.annotations.Test;
-
+import utilities.Loggerload;
 import base.BaseClass;
 import pageObjects.ProductPage;
 
+//@Listeners({AllureTestNg.class, chainTestListener.class, Reporting.class}) 
 public class ProductTest extends BaseClass{
     private ProductPage productPage;
     
     @Test(priority = 3, dependsOnMethods = "test.SearchTest.verifyProductInSearchResult")
     public void testAddToCart() {
+        utilities.chainTestListener.log("Product Test: Test Add To Cart");
+        Loggerload.info("Product Test: Test Add To Cart ");
         System.out.println("Product Test: Test Add To Cart");
         if (driver == null) {
             System.out.println("Driver is NULL in ProductTest! Cannot proceed.");
@@ -35,7 +38,9 @@ public class ProductTest extends BaseClass{
         } catch (Exception e) {  // Generic catch for other exceptions
         System.out.println("Unexpected error: " + e.getMessage());
         }
-        System.out.println("Moving to cart page");
+        utilities.chainTestListener.log("Product Test: Moving to cart page");
+        Loggerload.info("Product Test: Moving to cart page ");
+        System.out.println("Product Test: Moving to cart page");
         productPage.moveToCartWindow();
     }
 }

@@ -1,0 +1,25 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="com.aventstack" level="OFF"/>
+    <Logger name="com.aventstack.chaintest" level="OFF"/>
+    <logger name="c.a.chaintest.http.HttpRetryHandler" level="OFF" />
+    <logger name="c.a.c.http.ChainTestApiClient" level="OFF" />
+    <logger name="com.amazonaws.chaintest.http" level="OFF" />
+    <logger name="com.amazonaws.c.http" level="OFF" />
+
+
+</configuration>

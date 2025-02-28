@@ -56,7 +56,7 @@ public class SearchPage {
 
     public void searchForProduct(String product){
         System.out.println("Sending input: ");
-     searchField.sendKeys(product);          //Mobiles
+        searchField.sendKeys(product);          //Mobiles
         submitSearch();
     }
 
