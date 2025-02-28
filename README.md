@@ -355,3 +355,115 @@ To restart the container:
 ```sh
 docker start maven-chrome
 ```
+
+## Running Grafana-k6  
+## 📈 Performance Testing
+- **K6 Load/Stress Test:** Scripts in `performanceTesting` folder.
+- **Grafana:** Monitor results visually.
+Follow these steps to run a performance test:
+1.	Run a test.
+2.	Add virtual users.
+3.	Increase the test duration.
+4.	Ramp the number of requests up and down as the test runs.
+```sh
+npm init
+```
+Package.json gets created 
+
+### 1. Run a Basic Test
+```sh
+k6 run stress-test.js
+```
+![alt text](image-10.png)
+![alt text](image-11.png)
+
+```sh
+k6 run load-test.js
+```
+![alt text](image-12.png)
+
+### 2. Run a Test with Virtual Users (VUs)  
+To simulate 10 virtual users for 30 seconds:
+```sh
+k6 run --vus 10 --duration 30s script.js
+```
+To see output in string format 
+```sh
+k6 run --out json=results.json stress-test.js
+jq . results.json
+```
+
+## 17.  Static Code Analysis using Sonar Qube
+winget install unzip
+### Step 1: Install Prerequisites
+Ensure you have the following installed:
+✅ Java 11 or later (JDK)
+✅ Maven (Download from Apache Maven)
+✅ SonarQube Community Edition
+
+### Step 2: Download and Extract SonarQube
+Download SonarQube from: 🔗 SonarQube Downloads
+Extract the ZIP file to C:\SonarQube
+Rename the extracted folder to sonarqube
+### Step 3: Configure SonarQube
+Open the C:\SonarQube\sonarqube\conf\sonar.properties file in Notepad.
+Modify the following lines to use localhost:
+- sonar.web.host=127.0.0.1
+- sonar.web.port=9000
+- sonar.search.javaAdditionalOpts=-Dnode.store.allow_mmap=false
+Save and close the file.
+### Step 4: Start SonarQube
+#### Step 1:Open Command Prompt (Run as Administrator)
+Navigate to the SonarQube bin folder:
+``` sh
+cd C:\SonarQube\sonarqube\bin\windows-x86-64
+```
+Start SonarQube:
+```sh
+StartSonar.bat
+```
+Wait for SonarQube to start and open http://localhost:9000 in your browser.
+Default Username: admin
+Default Password: admin
+#### Step 1: Add the SonarQube Plugin to Your pom.xml
+#### Step 2: Generate a Sonar Token
+Go to http://localhost:9000
+Click on Your Profile (Top Right) → My Account → Security
+Generate a new token (e.g., sonar-token)
+#### Step 3: Run SonarQube Analysis
+Open Command Prompt in your Maven project folder and run:
+
+```sh
+mvn clean verify sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=<YOUR_TOKEN>
+```
+or
+```sh
+mvn clean verify sonar:sonar -D"sonar.host.url=http://localhost:9000" -D"sonar.login=<YOUR_TOKEN>"
+```
+![alt text](image-15.png)
+
+``` powershell
+mvn clean verify sonar:sonar --% -Dsonar.host.url=http://localhost:9000 -Dsonar.login=<YOUR_TOKEN>
+```
+
+3️⃣ View Analysis in SonarQube
+Open http://localhost:9000 in your browser.
+You will see your project's code quality, security vulnerabilities, and test coverage.
+🚀 SonarQube is now integrated with your Maven project!
+
+## 18 GithubActions
+Alowing the automation of workflows triggered by events such as push or pull requests.
+### How GitHub Actions Works Internally
+1️⃣ Trigger Events (e.g., push, pull_request, schedule).
+2️⃣ YAML Workflow Execution (inside .github/workflows/).
+3️⃣ Runs on a Hosted Runner (Ubuntu, macOS, or Windows).
+4️⃣ Executes Jobs in Parallel or Sequentially (using Docker containers or VMs).
+5️⃣ Generates Logs, Artifacts, & Reports (TestNG reports, build logs, etc.).
+6️⃣ Integrates with GitHub API & Third-Party Services (AWS, Slack, SonarQube).
+   
+![alt text](image-13.png)
+![alt text](image-14.png)
+
+## 🧑‍💻 Author
+**Rekapost**  
+GitHub: [https://github.com/Rekapost/AmazonTestNG]

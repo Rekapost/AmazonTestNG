@@ -18,7 +18,7 @@ pipeline {
             }
         }
 
-/*        stage('Static Code Analysis') {
+        stage('Static Code Analysis') {
            environment {
                 SONAR_URL = "http://localhost:9000"
             }
@@ -29,7 +29,7 @@ pipeline {
                     }
                 }
             }
-*/
+
                 stage('Check Docker Version') {
                     steps {
                         script {
@@ -44,8 +44,9 @@ pipeline {
                     //k6 run --out json=stress-results.json stress-test.js
                     //docker run --rm -v $(pwd):/mnt loadimpact/k6 run --out json=/mnt/stress-results.json /mnt/stress-test.js                                          
                     // sh '/usr/bin/docker run --rm -v $(pwd):/mnt loadimpact/k6 run --out json=/mnt/stress-results.json /mnt/stress-test.js' 
+                    def loadTestScript = "${WORKSPACE}/performanceTesting/stress-test.js"
                     bat '''
-                        docker run --rm -v %cd%:/mnt loadimpact/k6 run --out json=/mnt/load-results.json /mnt/load-test.js
+                        docker run --rm -v %cd%:/mnt loadimpact/k6 run --out json=/mnt/load-results.json /mnt/performanceTesting/stress-test.js
                     '''
                 }
             }
@@ -56,8 +57,9 @@ pipeline {
                 script {
                     // Run the k6 load test using Docker or installed k6
                     //sh 'docker run --rm -v $(pwd):/mnt loadimpact/k6 run --out json=/mnt/load-results.json /mnt/load-test.js'
+                   def loadTestScript = "${WORKSPACE}/performanceTesting/load-test.js"
                    bat '''
-                        docker run --rm -v %cd%:/mnt loadimpact/k6 run --out json=/mnt/load-results.json /mnt/load-test.js
+                        docker run --rm -v %cd%:/mnt loadimpact/k6 run --out json=/mnt/load-results.json /mnt/performanceTesting/load-test.js
                       ''' 
                 }
             }
