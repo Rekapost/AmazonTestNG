@@ -361,3 +361,15 @@
 [INFO ] 2025-02-28 15:48:43.988 [main] BaseClass - Screenshot captured for test: testCartSuccessMessage
 [INFO ] 2025-02-28 15:48:43.998 [main] Loggerload - Cart Test:Test Cart Items 
 [INFO ] 2025-02-28 15:48:45.948 [main] BaseClass - Screenshot captured for test: testCartItems
+[INFO ] 2025-02-28 16:54:54.007 [main] DriverManager - Log4j 1.x Logger initialized.
+[INFO ] 2025-02-28 16:54:54.013 [main] DriverManager - Logger initialized and logging preferences set.
+[INFO ] 2025-02-28 16:55:05.406 [main] Loggerload - Search Test: Open Home Page: 
+[INFO ] 2025-02-28 16:55:07.476 [main] BaseClass - Screenshot captured for test: openHomePage
+[INFO ] 2025-02-28 16:55:07.486 [main] Loggerload - Search Test: Test Amazon Search
+[INFO ] 2025-02-28 16:55:28.877 [main] BaseClass - Screenshot captured for test: testAmazonSearch
+[INFO ] 2025-02-28 16:55:28.895 [main] Loggerload - Product Test: Test Add To Cart 
+[INFO ] 2025-02-28 16:55:50.138 [main] BaseClass - Screenshot captured for test: testAddToCart
+[INFO ] 2025-02-28 16:56:10.316 [main] Loggerload - Product Test: Moving to cart page 
+[INFO ] 2025-02-28 16:56:12.059 [main] BaseClass - Screenshot captured for test: testCartSuccessMessage
+[INFO ] 2025-02-28 16:56:12.065 [main] Loggerload - Cart Test:Test Cart Items 
+[INFO ] 2025-02-28 16:56:33.003 [main] BaseClass - Screenshot captured for test: testCartItems

@@ -445,6 +445,7 @@ mvn clean verify sonar:sonar -D"sonar.host.url=http://localhost:9000" -D"sonar.l
 ``` powershell
 mvn clean verify sonar:sonar --% -Dsonar.host.url=http://localhost:9000 -Dsonar.login=<YOUR_TOKEN>
 ```
+![alt text](image-1.png)
 
 3️⃣ View Analysis in SonarQube
 Open http://localhost:9000 in your browser.
