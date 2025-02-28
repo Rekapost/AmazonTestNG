@@ -44,6 +44,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
+      - name: Cache SonarQube Packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+
+      - name: Run SonarQube Analysis
+        run: mvn sonar:sonar -Dsonar.projectKey=amazon-testng -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
       - name: Build with Maven
         run: mvn clean install
 
