@@ -17,7 +17,7 @@ This is a robust **TestNG Framework** designed for end-to-end automation testing
 - **Allure Report** - Test Execution Report
 - **Extent Report** - HTML Test Report
 - **ChainTest Report** - ChainTest Execution Report
-
+- **WebHook** -Webhook trigger Jenkins
 ## 📂 Folder Structure
 ```
 TestNG_Framework/
