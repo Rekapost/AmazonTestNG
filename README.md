@@ -133,7 +133,7 @@ Before starting your service, ensure the port (e.g., `8081`) is free and not bei
 - **ChainTest Report:** Generated after test execution.
 - `/target/chaintest/Index.html`
 - `/target/chaintest/Email.html`
-![alt text](image-28.png)
+![alt text](image-37.png)
 
 ## 3. Setting Up Selenium Grid with Docker
 Set up a Selenium Grid with a Hub and a Chrome Node using Docker and Selenium. 
