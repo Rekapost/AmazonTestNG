@@ -395,7 +395,7 @@ jq . results.json
 ```
 
 ## 17.  Static Code Analysis using Sonar Qube
-winget install unzip
+SonarQube locally (localhost:9000), you need to expose it publicly.
 ### Step 1: Install Prerequisites
 Ensure you have the following installed:
 ✅ Java 11 or later (JDK)
@@ -453,6 +453,31 @@ Open http://localhost:9000 in your browser.
 You will see your project's code quality, security vulnerabilities, and test coverage.
 🚀 SonarQube is now integrated with your Maven project!
 
+Expose Local SonarQube to Public URL
+self-hosted SonarQube (localhost:9000) and make it publicly available, use ngrok:
+Step 1: Install & Start ngrok
+ngrok http 9000
+It will generate a public URL like:
+https://abcd1234.ngrok.io
+🔹 Step 2: Configure SonarQube with Public URL
+Update your Jenkinsfile or GitHub Actions workflow:
+mvn sonar:sonar \
+  -Dsonar.projectKey=amazon-testng \
+  -Dsonar.host.url=https://abcd1234.ngrok.io \
+  -Dsonar.login=your-sonar-token
+✅ Now SonarQube is public, and external tools (Jenkins/GitHub Actions) can reach it! 
+
+
+SonarCloud (https://sonarcloud.io)
+Step 1: Connect GitHub to SonarCloud
+Go to SonarCloud.
+Click "Get Started" → Log in with GitHub.
+Select your GitHub repository and allow access.
+ Step 2: Enable Automatic Analysis
+In SonarCloud, go to your Project Settings.
+Click on Administration → Analysis Method.
+Enable Automatic Analysis.
+✅ This will automatically analyze your code on every push! 
 Find Your SonarCloud Organization Key
 Go to SonarCloud.
 Click on your project.
@@ -482,6 +507,18 @@ Alowing the automation of workflows triggered by events such as push or pull req
    
 ![alt text](image-13.png)
 ![alt text](image-14.png)
+
+To run Sonarqube in Github Actions
+- name: Cache SonarQube Packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+
+      - name: Run SonarQube Analysis
+        #run: mvn sonar:sonar -Dsonar.projectKey=AmazonTestNG -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        run: mvn sonar:sonar -Dsonar.projectKey=AmazonTestNG -Dsonar.organization=${{ secrets.SONAR_ORG }} -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
 ## WebHook
 https://dashboard.ngrok.com/get-started/setup/windows
