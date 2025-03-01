@@ -47,8 +47,8 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-      - name: Run TestNG tests
-        run: mvn test
+  #    - name: Run TestNG tests
+    #    run: mvn test
   
   # 🔹 SonarQube Analysis Step
       #- name: Run SonarQube Analysis
