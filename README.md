@@ -335,27 +335,14 @@ docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 ## 14. Running Tests in Jenkins Pipeline
 - Configure **Jenkinsfile** in your Jenkins setup.
+![alt text](image-4.png)
 
-## 15. Creating and Pushing Docker Image
-```sh
-docker build -t reka83/maven-chrome -f Dockerfile-maven-chrome .
-docker push reka83/maven-chrome
-```
-
-To start the container:
-```sh
-docker run -d --name maven-chrome reka83/maven-chrome
-```
 
 To check running containers:
 ```sh
 docker ps -a
 ```
 
-To restart the container:
-```sh
-docker start maven-chrome
-```
 
 ## Running Grafana-k6  
 ## 📈 Performance Testing
