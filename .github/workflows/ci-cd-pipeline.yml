@@ -1,9 +1,10 @@
 name: Amazon TestNG CI/CD Pipeline
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:      # Only runs manually
+#  push:
+#   branches:
+#      - master
 #  pull_request:
 #    branches:
 #      - master
@@ -53,7 +54,6 @@ jobs:
   # 🔹 SonarQube Analysis Step
       #- name: Run SonarQube Analysis
       #  run: mvn sonar:sonar -Dsonar.projectKey=AmazonTestNG -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-
 
 
 

@@ -1,4 +1,9 @@
 pipeline {
+
+    triggers {
+        // githubPush()  # Comment or remove this line
+    }
+    
     agent any 
 
     stages {

@@ -133,7 +133,7 @@ Before starting your service, ensure the port (e.g., `8081`) is free and not bei
 - **ChainTest Report:** Generated after test execution.
 - `/target/chaintest/Index.html`
 - `/target/chaintest/Email.html`
-![alt text](image.png)
+![alt text](image-28.png)
 
 ## 3. Setting Up Selenium Grid with Docker
 Set up a Selenium Grid with a Hub and a Chrome Node using Docker and Selenium. 
@@ -217,13 +217,13 @@ curl http://localhost:5555/wd/hub/status
 ```
 Open url : http://localhost:5555/
 ```
-![alt text](image-2.png)
+![alt text](image-29.png)
 
 #### 3f. Run Your Maven Test
 ```sh
 mvn clean test -Dselenium.grid.url=http://localhost:5555/wd/hub
 ```
-![alt text](image-3.png)
+![alt text](image-30.png)
 
 This runs your tests using Maven and specifies the URL of your Selenium Grid (Hub) as a system property (selenium.grid.url). It connects to the Hub via http://localhost:5555/wd/hub to request WebDriver sessions.
 
@@ -238,15 +238,15 @@ Navigate to the folder containing `allure-results` and run:
 ```sh
 allure serve allure-results
 ```
-![alt text](image-4.png)
-![alt text](image-5.png)
+![alt text](image-31.png)
+![alt text](image-32.png)
 
 ## 6. Extent Report Location
 - **Extent Report:** Available in the `reports` folder after execution.
 ```sh
 /test-output/Test-Report-********.html
 ```
-![alt text](image-6.png)
+![alt text](image-33.png)
 
 ## 7. Running your TestNG tests inside a Docker container.
 
@@ -263,7 +263,7 @@ This will start the container and execute the CMD defined in your Dockerfile.
 ```sh
 docker run --name amazon-testng-container amazon-testng-framework
 ```
-![alt text](image-7.png)
+![alt text](image-34.png)
 
 ### 7d. Run in Interactive Mode
 This gives you a terminal inside the container if you need to debug or run commands manually.
@@ -310,7 +310,7 @@ capabilities.setCapability("LT:Options", new HashMap<String, Object>() {{
 }});
 WebDriver driver = new RemoteWebDriver(new URL("https://hub.lambdatest.com/wd/hub"), capabilities);
 ```
-![alt text](image-9.png)
+![alt text](image-35.png)
 
 ## 13. Running Jenkins in Docker
 containerized Jenkins environment, you can run Jenkins itself inside Docker.
@@ -335,8 +335,11 @@ docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 ## 14. Running Tests in Jenkins Pipeline
 - Configure **Jenkinsfile** in your Jenkins setup.
+![alt text](image-9.png)
 ![alt text](image-4.png)
 
+![alt text](image-6.png)
+![alt text](image-7.png)
 
 To check running containers:
 ```sh
@@ -492,7 +495,6 @@ Alowing the automation of workflows triggered by events such as push or pull req
 5️⃣ Generates Logs, Artifacts, & Reports (TestNG reports, build logs, etc.).
 6️⃣ Integrates with GitHub API & Third-Party Services (AWS, Slack, SonarQube).
    
-![alt text](image-13.png)
 ![alt text](image-14.png)
 
 To run Sonarqube in Github Actions
@@ -506,9 +508,25 @@ To run Sonarqube in Github Actions
       - name: Run SonarQube Analysis
         #run: mvn sonar:sonar -Dsonar.projectKey=AmazonTestNG -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         run: mvn sonar:sonar -Dsonar.projectKey=AmazonTestNG -Dsonar.organization=${{ secrets.SONAR_ORG }} -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+![alt text](image-24.png)
+
+  # 🔹 SonarQube Analysis Step
+      #- name: Run SonarQube Analysis
+      #  run: mvn sonar:sonar -Dsonar.projectKey=AmazonTestNG -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
+(1) For SonarCloud 🌐
+Set GitHub Secrets:
+SONAR_HOST_URL = https://sonarcloud.io
+SONAR_TOKEN = SONAR_CLOUD_TOKEN
+(2) For Local SonarQube 🖥️
+Set GitHub Secrets:
+SONAR_HOST_URL = http://localhost:9000
+SONAR_TOKEN = sonarqube
 
 ## WebHook
+
 https://dashboard.ngrok.com/get-started/setup/windows
+![alt text](image-23.png)
 Download for windows (64-bit)
 Run the following command to add your authtoken to the default ngrok.yml configuration file.
 ngrok config add-authtoken 2jyDn7lU5bu54xz39SgQISg1vk1_5vTCnvPJvY5g7cx8PDhHX
@@ -517,10 +535,9 @@ Ephemeral Domain
 Put your app online at an ephemeral domain forwarding to your upstream service. For example, if it is listening on port http://localhost:8080, run:
 ngrok http http://localhost:8081   or ngrok http 8080
 Copy the public URL (e.g., https://random-id.ngrok.io).
-![alt text](image-3.png) 
 ![alt text](image-5.png) 
 Update Jenkins URL
-
+![alt text](image-16.png)
 Go to Jenkins → Manage Jenkins → Configure System.
 Change Jenkins URL to https://random-id.ngrok.io.
 Step 2: Configure GitHub Webhook
@@ -532,7 +549,7 @@ Add a New Webhook
 
 Click "Add webhook".
 Payload URL:
-
+![alt text](image-25.png)
 https://your-public-jenkins-url/github-webhook/
 Example: https://random-id.ngrok.io/github-webhook/
 Content type: application/json
@@ -547,11 +564,16 @@ Search for and install GitHub Integration Plugin.
 Restart Jenkins.
 Set Up Jenkins Job to Trigger on Webhook
 Open Your Jenkins Job
-
+![alt text](image-17.png)
+![alt text](image-18.png)
+![alt text](image-19.png)
+![alt text](image-20.png)
+![alt text](image-21.png)
+![alt text](image-22.png)
 Click on your Jenkins pipeline/job.
 Go to Configure.
 Enable Webhook Triggering
-
+![alt text](image-8.png)
 Scroll to Build Triggers.
 Select GitHub hook trigger for GITScm polling.
 Save.
