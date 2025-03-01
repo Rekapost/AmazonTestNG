@@ -453,6 +453,23 @@ Open http://localhost:9000 in your browser.
 You will see your project's code quality, security vulnerabilities, and test coverage.
 🚀 SonarQube is now integrated with your Maven project!
 
+Find Your SonarCloud Organization Key
+Go to SonarCloud.
+Click on your project.
+Navigate to Administration → Organization settings.
+Copy the organization key.
+
+Go to GitHub Repository → Settings → Secrets and Variables → Actions.
+Click New Repository Secret.
+Name: SONAR_ORG
+Value: Your SonarCloud organization key.
+- name: Run SonarQube Analysis
+  run: mvn sonar:sonar -Dsonar.projectKey=amazon-testng -Dsonar.organization=${{ secrets.SONAR_ORG }} -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
+https://sonarcloud.io/projects
+![alt text](image-2.png)
+
+
 ## 18 GithubActions
 Alowing the automation of workflows triggered by events such as push or pull requests.
 ### How GitHub Actions Works Internally
@@ -467,7 +484,15 @@ Alowing the automation of workflows triggered by events such as push or pull req
 ![alt text](image-14.png)
 
 ## WebHook
-
+https://dashboard.ngrok.com/get-started/setup/windows
+Download for windows (64-bit)
+Run the following command to add your authtoken to the default ngrok.yml configuration file.
+ngrok config add-authtoken 2jyDn7lU5bu54xz39SgQISg1vk1_5vTCnvPJvY5g7cx8PDhHX
+Deploy your app online
+Ephemeral Domain
+Put your app online at an ephemeral domain forwarding to your upstream service. For example, if it is listening on port http://localhost:8080, run:
+ngrok http http://localhost:8080
+![alt text](image-3.png)  
 
 ## 🧑‍💻 Author
 **Rekapost**  
