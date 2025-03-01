@@ -19,16 +19,19 @@ pipeline {
         }
 
         stage('Static Code Analysis') {
-           environment {
-                SONAR_URL = "http://localhost:9000"
+            environment {
+                SONAR_URL = "https://sonarcloud.io"
+                SONAR_PROJECT_KEY = "AmazonTestNG"  // Replace with your actual SonarCloud project key
+                SONAR_ORG = "rekasonar"  // Replace with your SonarCloud organization key
             }
-               steps {
-                    withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
-                        echo "SonarQube URL: ${SONAR_URL}"
-                        bat "mvn clean verify sonar:sonar -Dsonar.host.url=${SONAR_URL} -Dsonar.login=$SONAR_AUTH_TOKEN"
-                    }
+            steps {
+                withCredentials([string(credentialsId: 'SONAR_CLOUD_TOKEN', variable: 'SONAR_AUTH_TOKEN')]) {
+                    echo "Running SonarCloud Analysis for project: ${SONAR_PROJECT_KEY}"
+                    bat "mvn clean verify sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=${SONAR_URL} -Dsonar.login=$SONAR_AUTH_TOKEN"
                 }
             }
+        }
+
 
                 stage('Check Docker Version') {
                     steps {
@@ -95,4 +98,17 @@ pipeline {
         }
     }
 }
+*/
+
+/*stage('Static Code Analysis') {
+           environment {
+               SONAR_URL = "http://localhost:9000"
+            }
+               steps {
+                    withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
+                        echo "SonarQube URL: ${SONAR_URL}"
+                        bat "mvn clean verify sonar:sonar -Dsonar.host.url=${SONAR_URL} -Dsonar.login=$SONAR_AUTH_TOKEN"
+                    }
+                }
+            }
 */

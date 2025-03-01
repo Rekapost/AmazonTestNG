@@ -515,8 +515,65 @@ ngrok config add-authtoken 2jyDn7lU5bu54xz39SgQISg1vk1_5vTCnvPJvY5g7cx8PDhHX
 Deploy your app online
 Ephemeral Domain
 Put your app online at an ephemeral domain forwarding to your upstream service. For example, if it is listening on port http://localhost:8080, run:
-ngrok http http://localhost:8080
-![alt text](image-3.png)  
+ngrok http http://localhost:8081   or ngrok http 8080
+Copy the public URL (e.g., https://random-id.ngrok.io).
+![alt text](image-3.png) 
+![alt text](image-5.png) 
+Update Jenkins URL
+
+Go to Jenkins → Manage Jenkins → Configure System.
+Change Jenkins URL to https://random-id.ngrok.io.
+Step 2: Configure GitHub Webhook
+Go to Your GitHub Repository
+
+Open your repo in GitHub.
+Click Settings → Webhooks.
+Add a New Webhook
+
+Click "Add webhook".
+Payload URL:
+
+https://your-public-jenkins-url/github-webhook/
+Example: https://random-id.ngrok.io/github-webhook/
+Content type: application/json
+Secret: (Optional, leave empty or set a secret)
+Trigger: Select Just the push event
+SSL Verification: Leave enabled (unless using Ngrok for local testing).
+Click "Add Webhook".
+✅ Step 3: Configure Jenkins to Receive Webhooks
+Install GitHub Plugin
+Go to Manage Jenkins → Manage Plugins → Available Plugins.
+Search for and install GitHub Integration Plugin.
+Restart Jenkins.
+Set Up Jenkins Job to Trigger on Webhook
+Open Your Jenkins Job
+
+Click on your Jenkins pipeline/job.
+Go to Configure.
+Enable Webhook Triggering
+
+Scroll to Build Triggers.
+Select GitHub hook trigger for GITScm polling.
+Save.
+✅ Step 4: Test the Webhook
+Go to GitHub Webhook Settings → Click Edit.
+Click "Redeliver" to test.
+Check Jenkins → Build should trigger automatically.
+Correct Jenkins GitHub Server Configuration
+Go to Jenkins → Manage Jenkins → Configure System.
+
+Find the "GitHub" section and update the following settings:
+
+Name:
+GitHub
+API URL:
+
+https://api.github.com
+Published Jenkins URL:
+
+https://your-ngrok-url.ngrok-free.app/
+(Use your actual Ngrok public URL, not localhost!)
+Click Save.
 
 ## 🧑‍💻 Author
 **Rekapost**  
