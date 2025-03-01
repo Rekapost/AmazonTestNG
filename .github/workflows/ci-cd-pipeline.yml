@@ -49,6 +49,10 @@ jobs:
 
       - name: Run TestNG tests
         run: mvn test
+  
+  # 🔹 SonarQube Analysis Step
+      #- name: Run SonarQube Analysis
+      #  run: mvn sonar:sonar -Dsonar.projectKey=AmazonTestNG -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
 
 

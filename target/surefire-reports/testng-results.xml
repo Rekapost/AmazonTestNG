@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="3" failed="2" skipped="1">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-28T16:54:53 CST" name="TestSuite" finished-at="2025-02-28T16:56:33 CST" duration-ms="99910">
+  <suite started-at="2025-02-28T21:38:21 CST" name="TestSuite" finished-at="2025-02-28T21:39:38 CST" duration-ms="76949">
     <groups>
     </groups>
-    <test started-at="2025-02-28T16:54:53 CST" name="ChromeTest" finished-at="2025-02-28T16:56:33 CST" duration-ms="99910">
+    <test started-at="2025-02-28T21:38:21 CST" name="ChromeTest" finished-at="2025-02-28T21:39:38 CST" duration-ms="76949">
       <class name="test.ProductTest">
-        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T16:55:28 CST" name="setup" finished-at="2025-02-28T16:55:28 CST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:38:47 CST" name="setup" finished-at="2025-02-28T21:38:47 CST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,99 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testAddToCart()[pri:3, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T16:55:28 CST" name="testAddToCart" finished-at="2025-02-28T16:55:49 CST" depends-on-methods="test.SearchTest.verifyProductInSearchResult" duration-ms="20456" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='add-to-cart-button' and @type='submit']"}
-  (Session info: chrome=133.0.6943.142)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [40451470dd8b91e1f3c8627bdaa607c5, findElement {value=//input[@id='add-to-cart-button' and @type='submit'], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.142 (f217c2438a8..., userDataDir: C:\Program Files (x86)\scop...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9225}, goog:loggingPrefs: {browser: ALL}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: Windows XP, proxy: Proxy(), se:bidiEnabled: false, se:cdp: wss://cdp-us.lambdatest.com..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 40451470dd8b91e1f3c8627bdaa607c5]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='add-to-cart-button' and @type='submit']"}
-  (Session info: chrome=133.0.6943.142)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [40451470dd8b91e1f3c8627bdaa607c5, findElement {value=//input[@id='add-to-cart-button' and @type='submit'], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.142 (f217c2438a8..., userDataDir: C:\Program Files (x86)\scop...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9225}, goog:loggingPrefs: {browser: ALL}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: Windows XP, proxy: Proxy(), se:bidiEnabled: false, se:cdp: wss://cdp-us.lambdatest.com..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 40451470dd8b91e1f3c8627bdaa607c5
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:53)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy34.click(Unknown Source)
-at pageObjects.ProductPage.addToCart(ProductPage.java:53)
-at test.ProductTest.testAddToCart(ProductTest.java:25)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="testAddToCart()[pri:3, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:38:47 CST" name="testAddToCart" finished-at="2025-02-28T21:38:48 CST" depends-on-methods="test.SearchTest.verifyProductInSearchResult" duration-ms="756" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddToCart -->
-        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T16:55:49 CST" name="attachScreenshot" finished-at="2025-02-28T16:55:50 CST" duration-ms="784" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:38:48 CST" name="attachScreenshot" finished-at="2025-02-28T21:38:50 CST" duration-ms="1887" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testAddToCart status=FAILURE method=ProductTest.testAddToCart()[pri:3, instance:test.ProductTest@317e9c3c] output={null}]]]>
+                <![CDATA[[TestResult name=testAddToCart status=SUCCESS method=ProductTest.testAddToCart()[pri:3, instance:test.ProductTest@317e9c3c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- attachScreenshot -->
-        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T16:55:50 CST" name="setup" finished-at="2025-02-28T16:55:50 CST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:38:50 CST" name="setup" finished-at="2025-02-28T21:38:50 CST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -121,11 +44,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testCartSuccessMessage()[pri:4, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T16:55:50 CST" name="testCartSuccessMessage" finished-at="2025-02-28T16:56:11 CST" duration-ms="21134" status="PASS">
+        <test-method signature="testCartSuccessMessage()[pri:4, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:38:50 CST" name="testCartSuccessMessage" finished-at="2025-02-28T21:39:34 CST" duration-ms="44332" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCartSuccessMessage -->
-        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T16:56:11 CST" name="attachScreenshot" finished-at="2025-02-28T16:56:12 CST" duration-ms="775" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:39:34 CST" name="attachScreenshot" finished-at="2025-02-28T21:39:36 CST" duration-ms="1602" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -138,7 +61,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
         </test-method> <!-- attachScreenshot -->
       </class> <!-- test.ProductTest -->
       <class name="test.CartTest">
-        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.CartTest@18da4dd]" started-at="2025-02-28T16:56:12 CST" name="setup" finished-at="2025-02-28T16:56:12 CST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.CartTest@18da4dd]" started-at="2025-02-28T21:39:36 CST" name="setup" finished-at="2025-02-28T21:39:36 CST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -149,11 +72,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testCartItems()[pri:5, instance:test.CartTest@18da4dd]" started-at="2025-02-28T16:56:12 CST" name="testCartItems" finished-at="2025-02-28T16:56:32 CST" depends-on-methods="test.ProductTest.testCartSuccessMessage" duration-ms="20138" status="PASS">
+        <test-method signature="testCartItems()[pri:5, instance:test.CartTest@18da4dd]" started-at="2025-02-28T21:39:36 CST" name="testCartItems" finished-at="2025-02-28T21:39:36 CST" depends-on-methods="test.ProductTest.testCartSuccessMessage" duration-ms="268" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCartItems -->
-        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.CartTest@18da4dd]" started-at="2025-02-28T16:56:32 CST" name="attachScreenshot" finished-at="2025-02-28T16:56:33 CST" duration-ms="800" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.CartTest@18da4dd]" started-at="2025-02-28T21:39:36 CST" name="attachScreenshot" finished-at="2025-02-28T21:39:37 CST" duration-ms="1374" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -166,7 +89,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
         </test-method> <!-- attachScreenshot -->
       </class> <!-- test.CartTest -->
       <class name="test.SearchTest">
-        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T16:54:53 CST" name="setup" finished-at="2025-02-28T16:55:05 CST" duration-ms="11346" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:21 CST" name="setup" finished-at="2025-02-28T21:38:30 CST" duration-ms="8533" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -177,11 +100,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="openHomePage()[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T16:55:05 CST" name="openHomePage" finished-at="2025-02-28T16:55:06 CST" duration-ms="1275" status="PASS">
+        <test-method signature="openHomePage()[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:30 CST" name="openHomePage" finished-at="2025-02-28T21:38:31 CST" duration-ms="1350" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openHomePage -->
-        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T16:55:06 CST" name="attachScreenshot" finished-at="2025-02-28T16:55:07 CST" duration-ms="791" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:31 CST" name="attachScreenshot" finished-at="2025-02-28T21:38:35 CST" duration-ms="4067" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -192,7 +115,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- attachScreenshot -->
-        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T16:55:07 CST" name="setup" finished-at="2025-02-28T16:55:07 CST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:35 CST" name="setup" finished-at="2025-02-28T21:38:35 CST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -203,138 +126,48 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testAmazonSearch()[pri:1, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T16:55:07 CST" name="testAmazonSearch" finished-at="2025-02-28T16:55:27 CST" depends-on-methods="test.SearchTest.openHomePage" duration-ms="20216" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='twotabsearchtextbox']"}
-  (Session info: chrome=133.0.6943.142)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [40451470dd8b91e1f3c8627bdaa607c5, findElement {value=//input[@id='twotabsearchtextbox'], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.142 (f217c2438a8..., userDataDir: C:\Program Files (x86)\scop...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9225}, goog:loggingPrefs: {browser: ALL}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: Windows XP, proxy: Proxy(), se:bidiEnabled: false, se:cdp: wss://cdp-us.lambdatest.com..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 40451470dd8b91e1f3c8627bdaa607c5]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='twotabsearchtextbox']"}
-  (Session info: chrome=133.0.6943.142)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [40451470dd8b91e1f3c8627bdaa607c5, findElement {value=//input[@id='twotabsearchtextbox'], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.142 (f217c2438a8..., userDataDir: C:\Program Files (x86)\scop...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9225}, goog:loggingPrefs: {browser: ALL}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: Windows XP, proxy: Proxy(), se:bidiEnabled: false, se:cdp: wss://cdp-us.lambdatest.com..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 40451470dd8b91e1f3c8627bdaa607c5
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:53)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy34.sendKeys(Unknown Source)
-at pageObjects.SearchPage.searchForProduct(SearchPage.java:59)
-at pageObjects.SearchPage.searchProductAndOpenResultPage(SearchPage.java:64)
-at test.SearchTest.testAmazonSearch(SearchTest.java:32)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="testAmazonSearch()[pri:1, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:35 CST" name="testAmazonSearch" finished-at="2025-02-28T21:38:41 CST" depends-on-methods="test.SearchTest.openHomePage" duration-ms="5141" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAmazonSearch -->
-        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T16:55:27 CST" name="attachScreenshot" finished-at="2025-02-28T16:55:28 CST" duration-ms="1163" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:41 CST" name="attachScreenshot" finished-at="2025-02-28T21:38:42 CST" duration-ms="1936" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testAmazonSearch status=FAILURE method=SearchTest.testAmazonSearch()[pri:1, instance:test.SearchTest@476ee5b3] output={null}]]]>
+                <![CDATA[[TestResult name=testAmazonSearch status=SUCCESS method=SearchTest.testAmazonSearch()[pri:1, instance:test.SearchTest@476ee5b3] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- attachScreenshot -->
-        <test-method signature="verifyProductInSearchResult()[pri:2, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T16:55:28 CST" name="verifyProductInSearchResult" finished-at="2025-02-28T16:55:28 CST" depends-on-methods="test.SearchTest.testAmazonSearch" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method test.SearchTest.verifyProductInSearchResult() on instance test.SearchTest@476ee5b3 depends on not successfully finished methods 
-[test.SearchTest.testAmazonSearch() on instance test.SearchTest@476ee5b3]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method test.SearchTest.verifyProductInSearchResult() on instance test.SearchTest@476ee5b3 depends on not successfully finished methods 
-[test.SearchTest.testAmazonSearch() on instance test.SearchTest@476ee5b3]
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:42 CST" name="setup" finished-at="2025-02-28T21:38:42 CST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=SearchTest.verifyProductInSearchResult()[pri:2, instance:test.SearchTest@476ee5b3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyProductInSearchResult()[pri:2, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:42 CST" name="verifyProductInSearchResult" finished-at="2025-02-28T21:38:45 CST" depends-on-methods="test.SearchTest.testAmazonSearch" duration-ms="2959" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyProductInSearchResult -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T16:56:33 CST" name="tearDown" finished-at="2025-02-28T16:56:33 CST" duration-ms="724" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:45 CST" name="attachScreenshot" finished-at="2025-02-28T21:38:47 CST" duration-ms="1608" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyProductInSearchResult status=SUCCESS method=SearchTest.verifyProductInSearchResult()[pri:2, instance:test.SearchTest@476ee5b3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- attachScreenshot -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:39:37 CST" name="tearDown" finished-at="2025-02-28T21:39:38 CST" duration-ms="774" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

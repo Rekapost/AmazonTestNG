@@ -19,9 +19,9 @@
         <span class="ms-3 fs-6">amazon-automation-testng</span>
       </div>
       <div>
-        <span class="badge badge-outline text-lg"><i class="bi bi-hourglass me-1"></i> 1m 42s</span>
-        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1"></i> Started 2025-02-28 04:54:51 PM</span>
-        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1"></i> Ended 2025-02-28 04:56:34 PM</span>
+        <span class="badge badge-outline text-lg"><i class="bi bi-hourglass me-1"></i> 1m 20s</span>
+        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1"></i> Started 2025-02-28 09:38:19 PM</span>
+        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1"></i> Ended 2025-02-28 09:39:40 PM</span>
       </div>
       <div>
           <button role="button" id="sys-info" class="btn btn-outline-primary smaller" title="View System Info">
@@ -48,8 +48,8 @@
                 </div>
               </div>
               <div class="card-footer small">
-                <span id="sp1">0</span> Passed,
-                <span id="sf1">1</span> Failed,
+                <span id="sp1">1</span> Passed,
+                <span id="sf1">0</span> Failed,
                 <span id="ss1">0</span> Skipped
               </div>
             </div>
@@ -65,8 +65,8 @@
                 </div>
               </div>
               <div class="card-footer small">
-                <span id="sp2">1</span> Passed,
-                <span id="sf2">2</span> Failed,
+                <span id="sp2">3</span> Passed,
+                <span id="sf2">0</span> Failed,
                 <span id="ss2">0</span> Skipped
               </div>
             </div>
@@ -82,8 +82,8 @@
                   </div>
                 </div>
                 <div class="card-footer small">
-                  <span id="sp3">3</span> Passed,
-                  <span id="sf3">3</span> Failed,
+                  <span id="sp3">6</span> Passed,
+                  <span id="sf3">0</span> Failed,
                   <span id="ss3">0</span> Skipped
                 </div>
               </div>
@@ -112,30 +112,30 @@
         </div>
       </div>
     </div>
-      <div class="test-container failed">
+      <div class="test-container passed">
         <div class="container">
           <div class="row">
             <div class="col-4">
-              <h6 class="mb-3 testname failed">TestSuite</h6>
+              <h6 class="mb-3 testname passed">TestSuite</h6>
               <div class="small">
-                <span class="badge badge-outline"><i class="bi bi-hourglass me-1"></i> 1m 40s</span>
+                <span class="badge badge-outline"><i class="bi bi-hourglass me-1"></i> 1m 18s</span>
                 <span class="badge text-bg-info"><i class="bi bi-clock me-1"></i>
-                  2025-02-28 04:54:53 PM</span>
+                  2025-02-28 09:38:21 PM</span>
                 <span class="badge text-bg-warning"><i class="bi bi-clock me-1"></i>
-                  2025-02-28 04:56:34 PM</span>
+                  2025-02-28 09:39:39 PM</span>
               </div>
               
             </div>
             <div class="col-8">
-                <div class="card mb-1 result failed">
+                <div class="card mb-1 result passed">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                       <div>
-                            <i class="bi bi-exclamation-octagon-fill text-danger"></i>
+                          <i class="bi bi-check-circle-fill text-success"></i>
                         <span class="ms-2">test.SearchTest</span>
                       </div>
                       <div>
-                        <span class="badge text-dark bg-light">34s</span>
+                        <span class="badge text-dark bg-light">25s</span>
                       </div>
                     </div>
                     
@@ -157,214 +157,68 @@ Search Test: Open Home Page:
           </pre>
         </div>
     </div>
-    <div class="leaf failed">
+    <div class="leaf passed">
       <div class="d-flex justify-content-between mt-3">
         <div>
-            <i class="bi bi-exclamation-octagon-fill text-danger"></i>
+            <i class="bi bi-check-circle-fill text-success"></i>
           <span class="ms-2">testAmazonSearch</span>
         </div>
         <div>
-          <span class="badge text-dark bg-light">20s</span>
+          <span class="badge text-dark bg-light">5s</span>
         </div>
       </div>
       
-        <pre class="py-2 mt-2 mb-4">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='twotabsearchtextbox']"}
-  (Session info: chrome=133.0.6943.142)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [40451470dd8b91e1f3c8627bdaa607c5, findElement {value=//input[@id='twotabsearchtextbox'], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.142 (f217c2438a8..., userDataDir: C:\Program Files (x86)\scop...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9225}, goog:loggingPrefs: {browser: ALL}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: Windows XP, proxy: Proxy(), se:bidiEnabled: false, se:cdp: wss://cdp-us.lambdatest.com..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 40451470dd8b91e1f3c8627bdaa607c5
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:53)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy34.sendKeys(Unknown Source)
-	at pageObjects.SearchPage.searchForProduct(SearchPage.java:59)
-	at pageObjects.SearchPage.searchProductAndOpenResultPage(SearchPage.java:64)
-	at test.SearchTest.testAmazonSearch(SearchTest.java:32)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-</pre>
         <div class="mt-3">
           <pre class="pb-0">
 Search Test: Test Amazon Search
           </pre>
         </div>
     </div>
-    <div class="leaf failed">
+    <div class="leaf passed">
       <div class="d-flex justify-content-between mt-3">
         <div>
-            <i class="bi bi-exclamation-octagon-fill text-danger"></i>
+            <i class="bi bi-check-circle-fill text-success"></i>
           <span class="ms-2">verifyProductInSearchResult</span>
         </div>
         <div>
-          <span class="badge text-dark bg-light">0ms</span>
+          <span class="badge text-dark bg-light">2s</span>
         </div>
       </div>
       
-        <pre class="py-2 mt-2 mb-4">java.lang.Throwable: Method test.SearchTest.verifyProductInSearchResult() on instance test.SearchTest@476ee5b3 depends on not successfully finished methods 
-[test.SearchTest.testAmazonSearch() on instance test.SearchTest@476ee5b3]
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-</pre>
+        <div class="mt-3">
+          <pre class="pb-0">
+Search Test: Moving to product window
+          </pre>
+        </div>
     </div>
   </div>
 
                   </div>
                 </div>
-                <div class="card mb-1 result failed">
+                <div class="card mb-1 result passed">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                       <div>
-                            <i class="bi bi-exclamation-octagon-fill text-danger"></i>
+                          <i class="bi bi-check-circle-fill text-success"></i>
                         <span class="ms-2">test.ProductTest</span>
                       </div>
                       <div>
-                        <span class="badge text-dark bg-light">43s</span>
+                        <span class="badge text-dark bg-light">48s</span>
                       </div>
                     </div>
                     
   <div class="mt-3 border-top">
-    <div class="leaf failed">
+    <div class="leaf passed">
       <div class="d-flex justify-content-between mt-3">
         <div>
-            <i class="bi bi-exclamation-octagon-fill text-danger"></i>
+            <i class="bi bi-check-circle-fill text-success"></i>
           <span class="ms-2">testAddToCart</span>
         </div>
         <div>
-          <span class="badge text-dark bg-light">20s</span>
+          <span class="badge text-dark bg-light">748ms</span>
         </div>
       </div>
       
-        <pre class="py-2 mt-2 mb-4">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='add-to-cart-button' and @type='submit']"}
-  (Session info: chrome=133.0.6943.142)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [40451470dd8b91e1f3c8627bdaa607c5, findElement {value=//input[@id='add-to-cart-button' and @type='submit'], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.142 (f217c2438a8..., userDataDir: C:\Program Files (x86)\scop...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9225}, goog:loggingPrefs: {browser: ALL}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: Windows XP, proxy: Proxy(), se:bidiEnabled: false, se:cdp: wss://cdp-us.lambdatest.com..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 40451470dd8b91e1f3c8627bdaa607c5
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:53)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy34.click(Unknown Source)
-	at pageObjects.ProductPage.addToCart(ProductPage.java:53)
-	at test.ProductTest.testAddToCart(ProductTest.java:25)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-</pre>
         <div class="mt-3">
           <pre class="pb-0">
 Product Test: Test Add To Cart
@@ -378,7 +232,7 @@ Product Test: Test Add To Cart
           <span class="ms-2">testCartSuccessMessage</span>
         </div>
         <div>
-          <span class="badge text-dark bg-light">21s</span>
+          <span class="badge text-dark bg-light">44s</span>
         </div>
       </div>
       
@@ -400,7 +254,7 @@ Product Test: Moving to cart page
                         <span class="ms-2">test.CartTest</span>
                       </div>
                       <div>
-                        <span class="badge text-dark bg-light">20s</span>
+                        <span class="badge text-dark bg-light">1s</span>
                       </div>
                     </div>
                     
@@ -412,7 +266,7 @@ Product Test: Moving to cart page
           <span class="ms-2">testCartItems</span>
         </div>
         <div>
-          <span class="badge text-dark bg-light">20s</span>
+          <span class="badge text-dark bg-light">255ms</span>
         </div>
       </div>
       
@@ -434,22 +288,22 @@ Cart Test:Test Cart Items
   </div>
 
   <script>
-    const stats1Annotation = {'total': 1, 'passed': 0};
+    const stats1Annotation = {'total': 1, 'passed': 1};
     const stats1 = [
-      { result: 'Passed', count: 0, bg: 'rgb(140, 197, 83)' },
-      { result: 'Failed', count: 1, bg: 'rgb(233,80,113)' },
+      { result: 'Passed', count: 1, bg: 'rgb(140, 197, 83)' },
+      { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
       { result: 'Skipped', count: 0, bg: 'rgb(221, 91, 96)' }
     ];
-      const stats2Annotation = {'total': 3, 'passed': 1};
+      const stats2Annotation = {'total': 3, 'passed': 3};
       const stats2 = [
-        { result: 'Passed', count: 1, bg: 'rgb(140, 197, 83)' },
-        { result: 'Failed', count: 2, bg: 'rgb(233,80,113)' },
+        { result: 'Passed', count: 3, bg: 'rgb(140, 197, 83)' },
+        { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
         { result: 'Skipped', count: 0, bg: 'rgb(221, 91, 96)' }
       ];
-      const stats3Annotation = {'total': 6, 'passed': 3};
+      const stats3Annotation = {'total': 6, 'passed': 6};
       const stats3 = [
-        { result: 'Passed', count: 3, bg: 'rgb(140, 197, 83)' },
-        { result: 'Failed', count: 3, bg: 'rgb(233,80,113)' },
+        { result: 'Passed', count: 6, bg: 'rgb(140, 197, 83)' },
+        { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
         { result: 'Skipped', count: 0, bg: 'rgb(221, 91, 96)' }
       ];
      
@@ -530,10 +384,6 @@ Cart Test:Test Cart Items
           <table class="table">
             <tbody>
                 <tr>
-                  <td>s</td>
-                  <td>Toggle skipped tests</td>
-                </tr>
-                <tr>
                   <td>p</td>
                   <td>Toggle passed tests</td>
                 </tr>
@@ -548,6 +398,10 @@ Cart Test:Test Cart Items
                 <tr>
                   <td>L</td>
                   <td>Toggle theme (light/dark)</td>
+                </tr>
+                <tr>
+                  <td>s</td>
+                  <td>Toggle skipped tests</td>
                 </tr>
             </tbody>
           </table>

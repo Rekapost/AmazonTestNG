@@ -9,69 +9,15 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">TestSuite</th></tr>
-<tr><td><a href="#t0">ChromeTest</a></td><td class="num">3</td><td class="num attn">1</td><td class="num">0</td><td class="num attn">2</td><td class="num">99,910</td><td></td><td></td></tr>
+<tr><td><a href="#t0">ChromeTest</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">76,949</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">test.ProductTest</td><td><a href="#m0">testAddToCart</a></td><td rowspan="1">1740783328891</td><td rowspan="1">20456</td></tr><tr class="failedodd"><td rowspan="1">test.SearchTest</td><td><a href="#m1">testAmazonSearch</a></td><td rowspan="1">1740783307483</td><td rowspan="1">20216</td></tr><tr><th colspan="4">ChromeTest &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">test.SearchTest</td><td><a href="#m2">verifyProductInSearchResult</a></td><td rowspan="1">1740783328882</td><td rowspan="1">0</td></tr><tr><th colspan="4">ChromeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">test.CartTest</td><td><a href="#m3">testCartItems</a></td><td rowspan="1">1740783372063</td><td rowspan="1">20138</td></tr><tr class="passedodd"><td rowspan="1">test.ProductTest</td><td><a href="#m4">testCartSuccessMessage</a></td><td rowspan="1">1740783350148</td><td rowspan="1">21134</td></tr><tr class="passedeven"><td rowspan="1">test.SearchTest</td><td><a href="#m5">openHomePage</a></td><td rowspan="1">1740783305385</td><td rowspan="1">1275</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">test.CartTest</td><td><a href="#m0">testCartItems</a></td><td rowspan="1">1740800376148</td><td rowspan="1">268</td></tr><tr class="passedodd"><td rowspan="2">test.ProductTest</td><td><a href="#m1">testAddToCart</a></td><td rowspan="1">1740800327549</td><td rowspan="1">756</td></tr><tr class="passedodd"><td><a href="#m2">testCartSuccessMessage</a></td><td rowspan="1">1740800330199</td><td rowspan="1">44332</td></tr><tr class="passedeven"><td rowspan="3">test.SearchTest</td><td><a href="#m3">openHomePage</a></td><td rowspan="1">1740800310420</td><td rowspan="1">1350</td></tr><tr class="passedeven"><td><a href="#m4">testAmazonSearch</a></td><td rowspan="1">1740800315886</td><td rowspan="1">5141</td></tr><tr class="passedeven"><td><a href="#m5">verifyProductInSearchResult</a></td><td rowspan="1">1740800322974</td><td rowspan="1">2959</td></tr></tbody>
 </table>
-<h2>ChromeTest</h2><h3 id="m0">test.ProductTest#testAddToCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;add-to-cart-button&apos; and @type=&apos;submit&apos;]&quot;}
-  (Session info: chrome=133.0.6943.142)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [40451470dd8b91e1f3c8627bdaa607c5, findElement {value=//input[@id=&apos;add-to-cart-button&apos; and @type=&apos;submit&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.142 (f217c2438a8..., userDataDir: C:\Program Files (x86)\scop...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9225}, goog:loggingPrefs: {browser: ALL}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: Windows XP, proxy: Proxy(), se:bidiEnabled: false, se:cdp: wss://cdp-us.lambdatest.com..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 40451470dd8b91e1f3c8627bdaa607c5
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:53)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy34.click(Unknown Source)
-	at pageObjects.ProductPage.addToCart(ProductPage.java:53)
-	at test.ProductTest.testAddToCart(ProductTest.java:25)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">test.SearchTest#testAmazonSearch</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;twotabsearchtextbox&apos;]&quot;}
-  (Session info: chrome=133.0.6943.142)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [40451470dd8b91e1f3c8627bdaa607c5, findElement {value=//input[@id=&apos;twotabsearchtextbox&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.142 (f217c2438a8..., userDataDir: C:\Program Files (x86)\scop...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9225}, goog:loggingPrefs: {browser: ALL}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: Windows XP, proxy: Proxy(), se:bidiEnabled: false, se:cdp: wss://cdp-us.lambdatest.com..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 40451470dd8b91e1f3c8627bdaa607c5
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:53)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy34.sendKeys(Unknown Source)
-	at pageObjects.SearchPage.searchForProduct(SearchPage.java:59)
-	at pageObjects.SearchPage.searchProductAndOpenResultPage(SearchPage.java:64)
-	at test.SearchTest.testAmazonSearch(SearchTest.java:32)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">test.SearchTest#verifyProductInSearchResult</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method test.SearchTest.verifyProductInSearchResult() on instance test.SearchTest@476ee5b3 depends on not successfully finished methods 
-[test.SearchTest.testAmazonSearch() on instance test.SearchTest@476ee5b3]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">test.CartTest#testCartItems</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">test.ProductTest#testCartSuccessMessage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">test.SearchTest#openHomePage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ChromeTest</h2><h3 id="m0">test.CartTest#testCartItems</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">test.ProductTest#testAddToCart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">test.ProductTest#testCartSuccessMessage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">test.SearchTest#openHomePage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">test.SearchTest#testAmazonSearch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">test.SearchTest#verifyProductInSearchResult</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
