@@ -110,7 +110,7 @@ Navigate to the Docker folder and run:
 docker-compose -f docker-compose-h2.yml up
 ```
 Chaintest report available at: [http://localhost:8081/]
-![alt text](image-1.png)
+![alt text](image-36.png)
 
 ### Verify Port Availability
 Before starting your service, ensure the port (e.g., `8081`) is free and not being used by another application. If the service fails to start, it could be because another application is already using the port.
