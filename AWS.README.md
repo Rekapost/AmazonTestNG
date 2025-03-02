@@ -52,15 +52,15 @@ reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ npm start
 > node index.js
 Amazon TestNG Framework Started on http://localhost:4000
 ```
-![alt text](image-26.png)
+![alt text](images/image-26.png)
 Application is running in local host
 
 ## Deploy the app on AWS EC2 
 1.	Create IAM User
-![alt text](image-27.png)
+![alt text](images/image-27.png)
 2.	Login to IAM user 
 Create EC2 instance
-![alt text](image-42.png)
+![alt text](images/image-42.png)
 
 ### To copy pem file :
 cp /mnt/c/Users/nreka/Downloads/your-key.pem /mnt/c/Users/nreka/vscodedevops/amazon/
@@ -138,6 +138,7 @@ PORT=4000
 STATIC_DIR="./client"
 PUBLISHABLE_KEY=""
 SECRET_KEY=""
+
 ```
 Stripe is a payment gateway which is used to take payments that is available globally 
 ex: paypal  
@@ -187,14 +188,14 @@ Rules updated
 Rules updated (v6)
 netstat -tulnp | grep 4000
 ```
+http://<your-ec2-public-ip>:4000
 
 Now open the public ip address to see the application running
 *** http://3.239.20.149:4000/ ***
 ```
 ubuntu@ip-172-31-0-139:~$ curl http://localhost:4000
 ```
-![alt text](image-44.png)
+![alt text](images/image-44.png)
 
 Amazon TestNG Framework is Running!
-![alt text](image-43.png)
-
+![alt text](images/image-43.png)
