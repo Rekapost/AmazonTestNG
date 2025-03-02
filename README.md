@@ -443,13 +443,12 @@ mvn clean verify sonar:sonar -D"sonar.host.url=http://localhost:9000" -D"sonar.l
 ``` 
 mvn clean verify sonar:sonar --% -Dsonar.host.url=http://localhost:9000 -Dsonar.login=<YOUR_TOKEN>
 ```
-![alt text](image-1.png)
 
 *** View Analysis in SonarQube ***
 - Open http://localhost:9000 in your browser.
 You will see your project's code quality, security vulnerabilities, and test coverage.
 🚀 SonarQube is now integrated with your Maven project!
-![alt text](image-21.png)
+![alt text](image-1.png)
 
 ## Expose Local SonarQube to Public URL
 self-hosted SonarQube (localhost:9000) and make it publicly available, use ngrok:
@@ -527,6 +526,7 @@ Alowing the automation of workflows triggered by events such as push or pull req
 ```
 
 ![alt text](image-24.png)
+![alt text](image-21.png)
 
   # 🔹 SonarQube Analysis Step
       #- name: Run SonarQube Analysis
@@ -597,7 +597,7 @@ Example: https://random-id.ngrok.io/github-webhook/
 ![alt text](image-17.png)
 ![alt text](image-39.png)
 ![alt text](image-19.png)
-![alt text](image-20.png)
+![alt text](image-40.png)
 ![alt text](image-22.png)
 
 - Click on your Jenkins pipeline/job.
