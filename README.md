@@ -285,18 +285,25 @@ To avoid errors like "container already exists," remove the old container:
 ```sh
 docker rm amazon-testng-container
 ```
+To check running containers:
+```sh
+docker ps -a
+```
 
 ## 11. Lambda Test
 LambdaTest is a cloud-based testing platform that allows you to perform cross-browser testing of your web applications. It provides a wide range of real browsers, operating systems, and devices, so you can ensure your web app works perfectly across different environments without needing to maintain a physical device lab.
 11a. Set Up LambdaTest Capabilities: When running Selenium tests on LambdaTest, you’ll configure your desired capabilities to specify the browser, OS, and version.
 
 Instead of hardcoding credentials, store them in environment variables:
+```
 setx LT_USERNAME "your_lambda_test_username"
 setx LT_ACCESS_KEY "your_lambda_test_access_key"
+```
 Before running tests, check if the environment variables are correctly set:
+```
 echo %LT_USERNAME%
 echo %LT_ACCESS_KEY%
-
+```
 ```java
 DesiredCapabilities capabilities = new DesiredCapabilities();
 capabilities.setCapability("browserName", "Chrome");
@@ -332,6 +339,8 @@ docker run -d --name jenkins -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock
 ```sh
 docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
+### To Run Jenkins as a standalone Java application.
+java -jar jenkins.war --httpPort=8081
 
 ## 14. Running Tests in Jenkins Pipeline
 - Configure **Jenkinsfile** in your Jenkins setup.
@@ -340,11 +349,6 @@ docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 ![alt text](image-6.png)
 ![alt text](image-7.png)
-
-To check running containers:
-```sh
-docker ps -a
-```
 
 
 ## Running Grafana-k6  
@@ -361,7 +365,7 @@ npm init
 ```
 Package.json gets created 
 
-### 1. Run a Basic Test
+### 1. Run a Performance Test
 ```sh
 k6 run stress-test.js
 ```
@@ -393,9 +397,10 @@ Ensure you have the following installed:
 ✅ SonarQube Community Edition
 
 ### Step 2: Download and Extract SonarQube
-Download SonarQube from: 🔗 SonarQube Downloads
-Extract the ZIP file to C:\SonarQube
-Rename the extracted folder to sonarqube
+- Download SonarQube from: 🔗 SonarQube Downloads
+- Extract the ZIP file to C:\SonarQube
+- Rename the extracted folder to sonarqube
+
 ### Step 3: Configure SonarQube
 Open the C:\SonarQube\sonarqube\conf\sonar.properties file in Notepad.
 Modify the following lines to use localhost:
@@ -403,6 +408,7 @@ Modify the following lines to use localhost:
 - sonar.web.port=9000
 - sonar.search.javaAdditionalOpts=-Dnode.store.allow_mmap=false
 Save and close the file.
+
 ### Step 4: Start SonarQube
 #### Step 1:Open Command Prompt (Run as Administrator)
 Navigate to the SonarQube bin folder:
@@ -414,13 +420,13 @@ Start SonarQube:
 StartSonar.bat
 ```
 Wait for SonarQube to start and open http://localhost:9000 in your browser.
-Default Username: admin
-Default Password: admin
+- Default Username: admin
+- Default Password: admin
 #### Step 1: Add the SonarQube Plugin to Your pom.xml
 #### Step 2: Generate a Sonar Token
-Go to http://localhost:9000
-Click on Your Profile (Top Right) → My Account → Security
-Generate a new token (e.g., sonar-token)
+- Go to http://localhost:9000
+- Click on Your Profile (Top Right) → My Account → Security
+- Generate a new token (e.g., sonar-token)
 #### Step 3: Run SonarQube Analysis
 Open Command Prompt in your Maven project folder and run:
 
@@ -433,71 +439,81 @@ mvn clean verify sonar:sonar -D"sonar.host.url=http://localhost:9000" -D"sonar.l
 ```
 ![alt text](image-15.png)
 
-``` powershell
+- To run in powershell
+``` 
 mvn clean verify sonar:sonar --% -Dsonar.host.url=http://localhost:9000 -Dsonar.login=<YOUR_TOKEN>
 ```
 ![alt text](image-1.png)
 
-3️⃣ View Analysis in SonarQube
-Open http://localhost:9000 in your browser.
+*** View Analysis in SonarQube ***
+- Open http://localhost:9000 in your browser.
 You will see your project's code quality, security vulnerabilities, and test coverage.
 🚀 SonarQube is now integrated with your Maven project!
+![alt text](image-21.png)
 
-Expose Local SonarQube to Public URL
+## Expose Local SonarQube to Public URL
 self-hosted SonarQube (localhost:9000) and make it publicly available, use ngrok:
-Step 1: Install & Start ngrok
+### Step 1: Install & Start ngrok
 ngrok http 9000
 It will generate a public URL like:
 https://abcd1234.ngrok.io
-🔹 Step 2: Configure SonarQube with Public URL
+### Step 2: Configure SonarQube with Public URL
 Update your Jenkinsfile or GitHub Actions workflow:
+```
 mvn sonar:sonar \
   -Dsonar.projectKey=amazon-testng \
   -Dsonar.host.url=https://abcd1234.ngrok.io \
   -Dsonar.login=your-sonar-token
+```
 ✅ Now SonarQube is public, and external tools (Jenkins/GitHub Actions) can reach it! 
 
-
+## Sonar Cloud
 SonarCloud (https://sonarcloud.io)
-Step 1: Connect GitHub to SonarCloud
-Go to SonarCloud.
-Click "Get Started" → Log in with GitHub.
-Select your GitHub repository and allow access.
- Step 2: Enable Automatic Analysis
-In SonarCloud, go to your Project Settings.
-Click on Administration → Analysis Method.
-Enable Automatic Analysis.
-✅ This will automatically analyze your code on every push! 
-Find Your SonarCloud Organization Key
-Go to SonarCloud.
-Click on your project.
-Navigate to Administration → Organization settings.
-Copy the organization key.
+### Step 1: Connect GitHub to SonarCloud
+- Go to SonarCloud.
+- Click "Get Started" → Log in with GitHub.
+- Select your GitHub repository and allow access.
+### Step 2: Enable Automatic Analysis
+- In SonarCloud, go to your Project Settings.
+- Click on Administration → Analysis Method.
+- Enable Automatic Analysis.
+- This will automatically analyze your code on every push! 
+- Find Your SonarCloud Organization Key
+- Go to SonarCloud.
+- Click on your project.
+- Navigate to Administration → Organization settings.
+- Copy the organization key.
 
-Go to GitHub Repository → Settings → Secrets and Variables → Actions.
-Click New Repository Secret.
-Name: SONAR_ORG
-Value: Your SonarCloud organization key.
+### Github settings 
+- Go to GitHub Repository → Settings → Secrets and Variables → Actions.
+- Click New Repository Secret.
+- Name: SONAR_ORG
+- Value: Your SonarCloud organization key.
+
+### Github actions Code
 - name: Run SonarQube Analysis
   run: mvn sonar:sonar -Dsonar.projectKey=amazon-testng -Dsonar.organization=${{ secrets.SONAR_ORG }} -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
 https://sonarcloud.io/projects
+
 ![alt text](image-2.png)
 
 
 ## 18 GithubActions
 Alowing the automation of workflows triggered by events such as push or pull requests.
+
 ### How GitHub Actions Works Internally
-1️⃣ Trigger Events (e.g., push, pull_request, schedule).
-2️⃣ YAML Workflow Execution (inside .github/workflows/).
-3️⃣ Runs on a Hosted Runner (Ubuntu, macOS, or Windows).
-4️⃣ Executes Jobs in Parallel or Sequentially (using Docker containers or VMs).
-5️⃣ Generates Logs, Artifacts, & Reports (TestNG reports, build logs, etc.).
-6️⃣ Integrates with GitHub API & Third-Party Services (AWS, Slack, SonarQube).
+- 1️⃣ Trigger Events (e.g., push, pull_request, schedule).
+- 2️⃣ YAML Workflow Execution (inside .github/workflows/).
+- 3️⃣ Runs on a Hosted Runner (Ubuntu, macOS, or Windows).
+- 4️⃣ Executes Jobs in Parallel or Sequentially (using Docker containers or VMs).
+- 5️⃣ Generates Logs, Artifacts, & Reports (TestNG reports, build logs, etc.).
+- 6️⃣ Integrates with GitHub API & Third-Party Services (AWS, Slack, SonarQube).
    
 ![alt text](image-14.png)
 
-To run Sonarqube in Github Actions
+### To run Sonarqube in Github Actions
+```
 - name: Cache SonarQube Packages
         uses: actions/cache@v3
         with:
@@ -508,94 +524,106 @@ To run Sonarqube in Github Actions
       - name: Run SonarQube Analysis
         #run: mvn sonar:sonar -Dsonar.projectKey=AmazonTestNG -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         run: mvn sonar:sonar -Dsonar.projectKey=AmazonTestNG -Dsonar.organization=${{ secrets.SONAR_ORG }} -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+```
+
 ![alt text](image-24.png)
 
   # 🔹 SonarQube Analysis Step
       #- name: Run SonarQube Analysis
       #  run: mvn sonar:sonar -Dsonar.projectKey=AmazonTestNG -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
-(1) For SonarCloud 🌐
-Set GitHub Secrets:
-SONAR_HOST_URL = https://sonarcloud.io
-SONAR_TOKEN = SONAR_CLOUD_TOKEN
-(2) For Local SonarQube 🖥️
-Set GitHub Secrets:
-SONAR_HOST_URL = http://localhost:9000
-SONAR_TOKEN = sonarqube
+#### For SonarCloud 🌐
+- Set GitHub Secrets:
+- SONAR_HOST_URL = https://sonarcloud.io
+- SONAR_TOKEN = SONAR_CLOUD_TOKEN
+#### For Local SonarQube 🖥️
+- Set GitHub Secrets:
+- SONAR_HOST_URL = http://localhost:9000
+- SONAR_TOKEN = sonarqube
 
-## WebHook
+## WebHook To trigger jenkins on commit/push 
 
 https://dashboard.ngrok.com/get-started/setup/windows
-![alt text](image-23.png)
-Download for windows (64-bit)
-Run the following command to add your authtoken to the default ngrok.yml configuration file.
+
+- Download for windows (64-bit)
+- Run the following command to add your authtoken to the default ngrok.yml configuration file.
+```
 ngrok config add-authtoken 2jyDn7lU5bu54xz39SgQISg1vk1_5vTCnvPJvY5g7cx8PDhHX
-Deploy your app online
-Ephemeral Domain
-Put your app online at an ephemeral domain forwarding to your upstream service. For example, if it is listening on port http://localhost:8080, run:
+```
+- Deploy your app online
+Ephemeral Domain(Put your app online at an ephemeral domain forwarding to your upstream service. For example, if it is listening on port http://localhost:8080, run:)
+```
 ngrok http http://localhost:8081   or ngrok http 8080
+```
+![alt text](image-23.png)
+
 Copy the public URL (e.g., https://random-id.ngrok.io).
+
 ![alt text](image-5.png) 
-Update Jenkins URL
+
+####  Update Jenkins URL
+
 ![alt text](image-16.png)
-Go to Jenkins → Manage Jenkins → Configure System.
-Change Jenkins URL to https://random-id.ngrok.io.
-Step 2: Configure GitHub Webhook
-Go to Your GitHub Repository
 
-Open your repo in GitHub.
-Click Settings → Webhooks.
-Add a New Webhook
+- Go to Jenkins → Manage Jenkins → Configure System.
+- Change Jenkins URL to https://random-id.ngrok.io.
 
-Click "Add webhook".
+### Step 2: Configure GitHub Webhook
+- Go to Your GitHub Repository
+- Open your repo in GitHub.
+- Click Settings → Webhooks.
+- Add a New Webhook
+- Click "Add webhook".
 Payload URL:
 ![alt text](image-25.png)
+
 https://your-public-jenkins-url/github-webhook/
 Example: https://random-id.ngrok.io/github-webhook/
-Content type: application/json
-Secret: (Optional, leave empty or set a secret)
-Trigger: Select Just the push event
-SSL Verification: Leave enabled (unless using Ngrok for local testing).
-Click "Add Webhook".
-✅ Step 3: Configure Jenkins to Receive Webhooks
-Install GitHub Plugin
-Go to Manage Jenkins → Manage Plugins → Available Plugins.
-Search for and install GitHub Integration Plugin.
-Restart Jenkins.
-Set Up Jenkins Job to Trigger on Webhook
-Open Your Jenkins Job
+
+- Content type: application/json
+- Secret: (Optional, leave empty or set a secret)
+- Trigger: Select Just the push event
+- SSL Verification: Leave enabled (unless using Ngrok for local testing).
+- Click "Add Webhook".
+
+### Step 3: Configure Jenkins to Receive Webhooks
+- Install GitHub Plugin
+- Go to Manage Jenkins → Manage Plugins → Available Plugins.
+- Search for and install GitHub Integration Plugin.
+- Restart Jenkins.
+- Set Up Jenkins Job to Trigger on Webhook
+- Open Your Jenkins Job
+
 ![alt text](image-17.png)
-![alt text](image-18.png)
+![alt text](image-39.png)
 ![alt text](image-19.png)
 ![alt text](image-20.png)
-![alt text](image-21.png)
 ![alt text](image-22.png)
-Click on your Jenkins pipeline/job.
-Go to Configure.
-Enable Webhook Triggering
-![alt text](image-8.png)
-Scroll to Build Triggers.
-Select GitHub hook trigger for GITScm polling.
-Save.
-✅ Step 4: Test the Webhook
-Go to GitHub Webhook Settings → Click Edit.
-Click "Redeliver" to test.
-Check Jenkins → Build should trigger automatically.
-Correct Jenkins GitHub Server Configuration
-Go to Jenkins → Manage Jenkins → Configure System.
 
-Find the "GitHub" section and update the following settings:
+- Click on your Jenkins pipeline/job.
+- Go to Configure.
+- Enable Webhook Triggering
+
+![alt text](image-8.png)
+
+- Scroll to Build Triggers.
+- Select GitHub hook trigger for GITScm polling.
+- Save.
+
+### Step 4: Test the Webhook
+- Go to GitHub Webhook Settings → Click Edit.
+- Click "Redeliver" to test.
+- Check Jenkins → Build should trigger automatically.
+- Correct Jenkins GitHub Server Configuration
+- Go to Jenkins → Manage Jenkins → Configure System.
+- Find the "GitHub" section and update the following settings:
 
 Name:
 GitHub
-API URL:
-
-https://api.github.com
-Published Jenkins URL:
-
-https://your-ngrok-url.ngrok-free.app/
+API URL: https://api.github.com
+Published Jenkins URL: https://your-ngrok-url.ngrok-free.app/
 (Use your actual Ngrok public URL, not localhost!)
-Click Save.
+- Click Save.
 
 ## 🧑‍💻 Author
 **Rekapost**  
