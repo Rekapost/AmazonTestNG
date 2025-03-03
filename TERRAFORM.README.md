@@ -5,10 +5,10 @@
 •  Execute the Java application after it's built.
 
 *** Main.tf ***
-- 1.	Define the EC2 instance
-- 2.	Upload the Maven Project
-- 3.	Install Dependencies and Build the Maven Project
-- 4.   Running the Maven Build and Java Application
+- 	Define the EC2 instance
+- 	Upload the Maven Project
+- 	Install Dependencies and Build the Maven Project
+-   Running the Maven Build and Java Application
    
     - The command mvn clean install will clean the project (if needed) and then compile/build the project using Maven.
     - After that, you can use the java -jar command to run the resulting JAR file, assuming your Maven project produces a JAR.
@@ -17,8 +17,8 @@
 ![alt text](terraformImages/image-8.png)
 
 ## Steps to generate Public key 
-- *** To use in Main.tf.resource "aws_key_pair" ***
-- *** 1. Command to generate a new SSH key pair: ***
+*** To use in Main.tf.resource "aws_key_pair" ***
+1. Command to generate a new SSH key pair: ***
 
 ```
 ssh-keygen -t rsa -b 4096 -C "terraform-key" -f amazon_key
@@ -28,11 +28,11 @@ ssh-keygen -t rsa -b 4096 -C "terraform-key" -f amazon_key
 - -C "terraform-key": Adds a comment for identification
 - -f amazon_key: Saves the private key as amazon_key and the public key as amazon_key.pub
 
-*** 2. Verify the Keys ***
+2. Verify the Keys ***
 ```
 ls -l amazon_key*
 ```
-*** 3. Secure the Private Key ***
+3. Secure the Private Key ***
 ```
 chmod 400 amazon_key
 ls -l amazon_key
@@ -70,8 +70,8 @@ zip -r surefire-reports.zip surefire-reports
 - terraform plan
 - terraform apply -auto-approve
 ```
-![alt text](image-12.png)
-![alt text](image-13.png)
+![alt text](terraformImages/image-12.png)
+![alt text](terraformImages/image-13.png)
 
 ### EC2 Instance
 ![alt text](terraformImages/image-1.png)
@@ -108,7 +108,7 @@ Google Chrome 133.0.6943.141
 ```
 
 ### Install ChromeDriver
-``
+```
 ubuntu@ip-10-0-0-218:~/AmazonTestNG$ wget https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.141/linux64/chromedriver-linux64.zip
 
 sudo apt install chromium-chromedriver
@@ -131,7 +131,7 @@ chromedriver --version
 Google Chrome 133.0.6943.141
 ChromeDriver 133.0.6943.141 (2a5d6da0d6165d7b107502095a937fe7704fcef6-refs/branch-heads/6943@{#1912})
 ```
-![alt text](image.png)
+![alt text](terraformImages/chromedriver.png)
 
 *** Update chromedriver location in code :***
 ```
@@ -278,9 +278,9 @@ https://amazon-maven-test-results.s3.us-east-1.amazonaws.com/surefire-reports.zi
 ```
 
 surefire-reports.zip  gets downloaded to computer
-![alt text](image-9.png)
-![alt text](image-10.png)
-![alt text](image-11.png)
+![alt text](terraformImages/image-9.png)
+![alt text](terraformImages/image-10.png)
+![alt text](terraformImages/image-11.png)
 
 ### Verify IAM Role is Attached to EC2 Instance
 ``` 
