@@ -8,7 +8,8 @@ variable "cidr" {
 
 resource "aws_key_pair" "example" {
   key_name   = "terraform-amazon-maven" # Replace with your desired key name
-  public_key = file("~/.ssh/id_rsa.pub") # Replace with the path to your public key file
+  #public_key = file("${path.module}/amazon_key.pub") # Replace with the path to your public key file
+  public_key = file("/home/reka/amazon_key.pub")  # Use the absolute path
 }
 
 resource "aws_vpc" "myvpc" {
@@ -58,6 +59,13 @@ resource "aws_security_group" "webSg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  ingress {
+  description = "App Port"
+  from_port   = 4000
+  to_port     = 4000
+  protocol    = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+    }
 
   egress {
     from_port   = 0
@@ -77,11 +85,12 @@ resource "aws_instance" "server" {
   key_name               = aws_key_pair.example.key_name
   vpc_security_group_ids = [aws_security_group.webSg.id]
   subnet_id              = aws_subnet.sub1.id
-
+  iam_instance_profile   = aws_iam_instance_profile.iam_instance_profile.name  # Attach IAM role
   connection {
     type        = "ssh"
     user        = "ubuntu"              # Replace with the appropriate username for your EC2 instance
-    private_key = file("~/.ssh/id_rsa") # Replace with the path to your private key
+    #private_key = file("${path.module}/amazon_key") # Replace with the path to your private key
+    private_key = file("/home/reka/amazon_key") # Use the absolute path
     host        = self.public_ip
   }
 
@@ -97,29 +106,42 @@ resource "aws_instance" "server" {
 
 
   provisioner "file" {
-    source      = "/mnt/c/Users/nreka/vscodedevops/amazon" # This path needs to be correct
-    destination = "/home/ubuntu/terraform-amazon-maven"
+    source      = "/mnt/c/Users/nreka/vscodedevops/amazon/terraform" # This path needs to be correct
+    destination = "/home/ubuntu/amazon"
   }
 
 
   provisioner "remote-exec" {
     inline = [
-      "echo 'Installing Java and Maven...'",
+      "echo 'Updating System and Installing Java and Maven...'",
       "sudo apt update -y",
-      "sudo apt install -y openjdk-11-jdk maven", # Install Java and Maven
+      "sudo apt install -y openjdk-17-jdk maven", # Install Java and Maven
+     
       #"sudo mkdir -p /home/ubuntu/TestNG Azure",  # Create the project directory if it doesn't exist
-      "cd /home/ubuntu/amazon", # Navigate to the project folder
-      "git clone https://github.com/Rekapost/AmazonTestNG",  # Optionally clone your Maven project (replace with actual repository URL)
-      #"cd /home/ubuntu/terraform-maven_project/terraform-maven_project-",  # Navigate to the cloned project folder
-      "mvn clean install",                                     # Build the Maven project
-      "java -jar target/AmazonTestNG-0.0.1-SNAPSHOT.jar &" # Run the JAR (replace with your actual JAR name)
+      "echo 'Cloning AmazonTestNG repository...'",
+      "cd /home/ubuntu", # Navigate to the project folder
+       "if [ ! -d AmazonTestNG ]; then git clone https://github.com/Rekapost/AmazonTestNG.git; fi",  # Ensure repo is cloned
+      #"git clone https://github.com/Rekapost/AmazonTestNG || echo 'Repo already exists'",  # Optionally clone your Maven project (replace with actual repository URL)
+      "cd AmazonTestNG",
+      
+      "echo 'Running Maven build and tests...'",
+      "mvn clean install",
+      "mvn test",    # Build the Maven project, Runs TestNG tests instead of expecting a JAR file
+      "if [ -d target/surefire-reports ]; then zip -r target/surefire-reports.zip target/surefire-reports; fi",
+
+      "echo 'Maven build and tests completed!'"
     ]
   }
 }
+resource "random_id" "bucket_id" {
+  byte_length = 4
+}
+
 
 # Create an S3 bucket to store Maven test results
 resource "aws_s3_bucket" "maven_results" {
-  bucket = "my-maven-test-results" # Specify your S3 bucket name
+  #bucket = "amazon-maven-test-results-${random_id.bucket_id.hex}" # Specify your S3 bucket name
+    bucket = "amazon-maven-test-results"
 }
 
 # Upload the results to the S3 bucket using aws_s3_object
@@ -144,35 +166,26 @@ resource "null_resource" "maven_build" {
 ### Create IAM policy
 resource "aws_iam_policy" "ec2_s3_access_policy" {
   name        = "ec2_s3_access_policy"
-  description = "Permissions / Access for EC2 and S3"
+  description = "Permissions for EC2 to access S3 bucket"
   policy = jsonencode({
     Version : "2012-10-17",
     Statement : [
       {
-        Action : "ec2:*",
         Effect : "Allow",
-        Resource : "*"
-      },
-      {
-        Action : "s3:*",
-        Effect : "Allow",
-        Resource : "*"
-      },
-      {
-        "Effect" : "Allow",
-        "Action" : [
+        Action : [
           "s3:PutObject",
           "s3:GetObject",
           "s3:ListBucket"
         ],
-        "Resource" : [
-          "arn:aws:s3:::my-maven-test-results",
-          "arn:aws:s3:::my-maven-test-results/*"
+        Resource : [
+          "arn:aws:s3:::amazon-maven-test-results",
+          "arn:aws:s3:::amazon-maven-test-results/*"
         ]
       }
     ]
   })
 }
+
 
 ### Create IAM role
 resource "aws_iam_role" "ec2_to_s3_role" {
@@ -209,9 +222,13 @@ resource "aws_iam_instance_profile" "iam_instance_profile" {
 resource "aws_s3_object" "results" {
   #depends_on = [null_resource.maven_build]  # Ensure build finishes before upload
   bucket = aws_s3_bucket.maven_results.bucket
-  key    = "test_results/surefire-reports.zip"
-  source     = "/home/ubuntu/TestNG-Azure/target/surefire-reports.zip"
-  acl = "private"
+  key    = "surefire-reports.zip"
+  #source = "/home/ubuntu/AmazonTestNG/target/surefire-reports.zip"
+  #source = "${path.module}//target//surefire-reports.zip"
+  #source = "C:/Users/nreka/vscodedevops/amazon/target/surefire-reports.zip"
+  source = "/mnt/c/Users/nreka/vscodedevops/amazon/target/surefire-reports.zip"
+  #acl = "private"
+  #acl    = "public-read"   # Change to 'public-read'
 }
 
 

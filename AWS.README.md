@@ -92,7 +92,7 @@ ssh -i ~/amazon.pem ubuntu@3.239.20.149
 ```
 allow host ip address inside secret file .ssh in system , so we can access anytime we want : YES
 ```
-ls   // we don’t have anything now 
+ubuntu@ip-172-31-0-139:~$ ls   // we don’t have anything now 
 sudo apt update
 sudo apt upgrade -y
 ```

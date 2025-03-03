@@ -1,0 +1,18 @@
+# Ignore Terraform state files and lock files
+terraform/.terraform/              
+terraform/.terraform.lock.hcl      
+
+# Ignore sensitive files (private keys)
+terraform/amazon_key    
+terraform/amazon_key.pub            
+
+# Ignore test and report output directories
+test-output/
+allure-results/
+
+# Ignore logs
+amazonlogs/
+log/
+
+# Ignore tfstate logs
+terraform/terraform.tfstate
