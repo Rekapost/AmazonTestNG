@@ -68,7 +68,7 @@ public class DriverManager {
         */
 
             if (System.getProperty("os.name").toLowerCase().contains("linux")) {
-                System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
             } else {
                 System.setProperty("webdriver.chrome.driver", "./src/test/resources/ChromeDriver/chromedriver.exe");
             }

@@ -104,44 +104,70 @@ resource "aws_instance" "server" {
     Name = "AmazonEC2Instance"
   }
 
-
   provisioner "file" {
     source      = "/mnt/c/Users/nreka/vscodedevops/amazon/terraform" # This path needs to be correct
     destination = "/home/ubuntu/amazon"
   }
 
-
   provisioner "remote-exec" {
     inline = [
       "echo 'Updating System and Installing Java and Maven...'",
       "sudo apt update -y",
+      "sudo apt install -y wget unzip",
       "sudo apt install -y openjdk-17-jdk maven", # Install Java and Maven
-     
+      "sudo apt --fix-broken install -y",
+      "echo 'Installing Google Chrome...' ",
+      "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
+      "sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt --fix-broken install -y",
+      "google-chrome --version",  # Verify Chrome installation
+
       #"sudo mkdir -p /home/ubuntu/TestNG Azure",  # Create the project directory if it doesn't exist
       "echo 'Cloning AmazonTestNG repository...'",
       "cd /home/ubuntu", # Navigate to the project folder
        "if [ ! -d AmazonTestNG ]; then git clone https://github.com/Rekapost/AmazonTestNG.git; fi",  # Ensure repo is cloned
       #"git clone https://github.com/Rekapost/AmazonTestNG || echo 'Repo already exists'",  # Optionally clone your Maven project (replace with actual repository URL)
+      
       "cd AmazonTestNG",
+
+      "echo 'Downloading ChromeDriver...' ",
+      "wget https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.141/linux64/chromedriver-linux64.zip",
+      "unzip chromedriver-linux64.zip",
+      "sudo mv chromedriver-linux64/chromedriver /usr/local/bin/",
+      "chmod +x /usr/local/bin/chromedriver",
+      "echo 'export PATH=$PATH:/usr/local/bin' >> ~/.bashrc",
+      "source ~/.bashrc",
+      "chromedriver --version",  # Verify ChromeDriver installation
       
       "echo 'Running Maven build and tests...'",
       "mvn clean install",
       "mvn test",    # Build the Maven project, Runs TestNG tests instead of expecting a JAR file
+      
+      "echo 'Checking if surefire-reports directory exists...' ",
       "if [ -d target/surefire-reports ]; then zip -r target/surefire-reports.zip target/surefire-reports; fi",
 
       "echo 'Maven build and tests completed!'"
     ]
   }
 }
+
 resource "random_id" "bucket_id" {
   byte_length = 4
 }
-
 
 # Create an S3 bucket to store Maven test results
 resource "aws_s3_bucket" "maven_results" {
   #bucket = "amazon-maven-test-results-${random_id.bucket_id.hex}" # Specify your S3 bucket name
     bucket = "amazon-maven-test-results"
+}
+
+resource "aws_s3_bucket_public_access_block" "allow_public" {
+  bucket = aws_s3_bucket.maven_results.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+  depends_on = [aws_s3_bucket.maven_results]  # Ensures bucket exists first
 }
 
 # Upload the results to the S3 bucket using aws_s3_object
@@ -186,6 +212,32 @@ resource "aws_iam_policy" "ec2_s3_access_policy" {
   })
 }
 
+resource "aws_s3_bucket_policy" "maven_results_policy" {
+  bucket = aws_s3_bucket.maven_results.id
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect = "Allow",
+        Principal = "*",
+        #Principal = {
+        #  AWS = "arn:aws:iam::876716894925:user/terraform"
+        #},
+        Action = [
+          #"s3:PutObject",
+          "s3:GetObject"
+          #"s3:ListBucket",
+          #"s3:PutBucketPolicy"
+        ],
+        Resource = [
+          #"arn:aws:s3:::amazon-maven-test-results",
+          "arn:aws:s3:::amazon-maven-test-results/*"
+        ]
+      }
+    ]
+  })
+}
 
 ### Create IAM role
 resource "aws_iam_role" "ec2_to_s3_role" {
@@ -221,14 +273,12 @@ resource "aws_iam_instance_profile" "iam_instance_profile" {
 
 resource "aws_s3_object" "results" {
   #depends_on = [null_resource.maven_build]  # Ensure build finishes before upload
-  bucket = aws_s3_bucket.maven_results.bucket
+  bucket = aws_s3_bucket.maven_results.id
   key    = "surefire-reports.zip"
   #source = "/home/ubuntu/AmazonTestNG/target/surefire-reports.zip"
   #source = "${path.module}//target//surefire-reports.zip"
   #source = "C:/Users/nreka/vscodedevops/amazon/target/surefire-reports.zip"
   source = "/mnt/c/Users/nreka/vscodedevops/amazon/target/surefire-reports.zip"
   #acl = "private"
-  #acl    = "public-read"   # Change to 'public-read'
+  acl    = "public-read"   # Change to 'public-read'
 }
-
-
