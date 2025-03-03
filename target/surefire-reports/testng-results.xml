@@ -2,57 +2,57 @@
 <testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-28T21:38:21 CST" name="TestSuite" finished-at="2025-02-28T21:39:38 CST" duration-ms="76949">
+  <suite started-at="2025-03-03T11:15:41 CST" name="TestSuite" finished-at="2025-03-03T11:16:43 CST" duration-ms="61631">
     <groups>
     </groups>
-    <test started-at="2025-02-28T21:38:21 CST" name="ChromeTest" finished-at="2025-02-28T21:39:38 CST" duration-ms="76949">
+    <test started-at="2025-03-03T11:15:41 CST" name="ChromeTest" finished-at="2025-03-03T11:16:43 CST" duration-ms="61631">
       <class name="test.ProductTest">
-        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:38:47 CST" name="setup" finished-at="2025-02-28T21:38:47 CST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.ProductTest@743e66f7]" started-at="2025-03-03T11:15:56 CST" name="setup" finished-at="2025-03-03T11:15:56 CST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=ProductTest.testAddToCart()[pri:3, instance:test.ProductTest@317e9c3c] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=ProductTest.testAddToCart()[pri:3, instance:test.ProductTest@743e66f7] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testAddToCart()[pri:3, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:38:47 CST" name="testAddToCart" finished-at="2025-02-28T21:38:48 CST" depends-on-methods="test.SearchTest.verifyProductInSearchResult" duration-ms="756" status="PASS">
+        <test-method signature="testAddToCart()[pri:3, instance:test.ProductTest@743e66f7]" started-at="2025-03-03T11:15:56 CST" name="testAddToCart" finished-at="2025-03-03T11:15:57 CST" depends-on-methods="test.SearchTest.verifyProductInSearchResult" duration-ms="425" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddToCart -->
-        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:38:48 CST" name="attachScreenshot" finished-at="2025-02-28T21:38:50 CST" duration-ms="1887" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.ProductTest@743e66f7]" started-at="2025-03-03T11:15:57 CST" name="attachScreenshot" finished-at="2025-03-03T11:15:57 CST" duration-ms="453" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testAddToCart status=SUCCESS method=ProductTest.testAddToCart()[pri:3, instance:test.ProductTest@317e9c3c] output={null}]]]>
+                <![CDATA[[TestResult name=testAddToCart status=SUCCESS method=ProductTest.testAddToCart()[pri:3, instance:test.ProductTest@743e66f7] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- attachScreenshot -->
-        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:38:50 CST" name="setup" finished-at="2025-02-28T21:38:50 CST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.ProductTest@743e66f7]" started-at="2025-03-03T11:15:57 CST" name="setup" finished-at="2025-03-03T11:15:57 CST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=ProductTest.testCartSuccessMessage()[pri:4, instance:test.ProductTest@317e9c3c] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=ProductTest.testCartSuccessMessage()[pri:4, instance:test.ProductTest@743e66f7] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testCartSuccessMessage()[pri:4, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:38:50 CST" name="testCartSuccessMessage" finished-at="2025-02-28T21:39:34 CST" duration-ms="44332" status="PASS">
+        <test-method signature="testCartSuccessMessage()[pri:4, instance:test.ProductTest@743e66f7]" started-at="2025-03-03T11:15:57 CST" name="testCartSuccessMessage" finished-at="2025-03-03T11:16:42 CST" duration-ms="44482" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCartSuccessMessage -->
-        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.ProductTest@317e9c3c]" started-at="2025-02-28T21:39:34 CST" name="attachScreenshot" finished-at="2025-02-28T21:39:36 CST" duration-ms="1602" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.ProductTest@743e66f7]" started-at="2025-03-03T11:16:42 CST" name="attachScreenshot" finished-at="2025-03-03T11:16:42 CST" duration-ms="264" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testCartSuccessMessage status=SUCCESS method=ProductTest.testCartSuccessMessage()[pri:4, instance:test.ProductTest@317e9c3c] output={null}]]]>
+                <![CDATA[[TestResult name=testCartSuccessMessage status=SUCCESS method=ProductTest.testCartSuccessMessage()[pri:4, instance:test.ProductTest@743e66f7] output={null}]]]>
               </value>
             </param>
           </params>
@@ -61,26 +61,26 @@
         </test-method> <!-- attachScreenshot -->
       </class> <!-- test.ProductTest -->
       <class name="test.CartTest">
-        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.CartTest@18da4dd]" started-at="2025-02-28T21:39:36 CST" name="setup" finished-at="2025-02-28T21:39:36 CST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.CartTest@109a2025]" started-at="2025-03-03T11:16:42 CST" name="setup" finished-at="2025-03-03T11:16:42 CST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=CartTest.testCartItems()[pri:5, instance:test.CartTest@18da4dd] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=CartTest.testCartItems()[pri:5, instance:test.CartTest@109a2025] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testCartItems()[pri:5, instance:test.CartTest@18da4dd]" started-at="2025-02-28T21:39:36 CST" name="testCartItems" finished-at="2025-02-28T21:39:36 CST" depends-on-methods="test.ProductTest.testCartSuccessMessage" duration-ms="268" status="PASS">
+        <test-method signature="testCartItems()[pri:5, instance:test.CartTest@109a2025]" started-at="2025-03-03T11:16:42 CST" name="testCartItems" finished-at="2025-03-03T11:16:42 CST" depends-on-methods="test.ProductTest.testCartSuccessMessage" duration-ms="64" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCartItems -->
-        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.CartTest@18da4dd]" started-at="2025-02-28T21:39:36 CST" name="attachScreenshot" finished-at="2025-02-28T21:39:37 CST" duration-ms="1374" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.CartTest@109a2025]" started-at="2025-03-03T11:16:42 CST" name="attachScreenshot" finished-at="2025-03-03T11:16:42 CST" duration-ms="229" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testCartItems status=SUCCESS method=CartTest.testCartItems()[pri:5, instance:test.CartTest@18da4dd] output={null}]]]>
+                <![CDATA[[TestResult name=testCartItems status=SUCCESS method=CartTest.testCartItems()[pri:5, instance:test.CartTest@109a2025] output={null}]]]>
               </value>
             </param>
           </params>
@@ -89,85 +89,85 @@
         </test-method> <!-- attachScreenshot -->
       </class> <!-- test.CartTest -->
       <class name="test.SearchTest">
-        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:21 CST" name="setup" finished-at="2025-02-28T21:38:30 CST" duration-ms="8533" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.SearchTest@7342e05d]" started-at="2025-03-03T11:15:41 CST" name="setup" finished-at="2025-03-03T11:15:43 CST" duration-ms="2008" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=SearchTest.openHomePage()[pri:0, instance:test.SearchTest@476ee5b3] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=SearchTest.openHomePage()[pri:0, instance:test.SearchTest@7342e05d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="openHomePage()[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:30 CST" name="openHomePage" finished-at="2025-02-28T21:38:31 CST" duration-ms="1350" status="PASS">
+        <test-method signature="openHomePage()[pri:0, instance:test.SearchTest@7342e05d]" started-at="2025-03-03T11:15:43 CST" name="openHomePage" finished-at="2025-03-03T11:15:45 CST" duration-ms="1993" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openHomePage -->
-        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:31 CST" name="attachScreenshot" finished-at="2025-02-28T21:38:35 CST" duration-ms="4067" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.SearchTest@7342e05d]" started-at="2025-03-03T11:15:45 CST" name="attachScreenshot" finished-at="2025-03-03T11:15:46 CST" duration-ms="623" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=openHomePage status=SUCCESS method=SearchTest.openHomePage()[pri:0, instance:test.SearchTest@476ee5b3] output={null}]]]>
+                <![CDATA[[TestResult name=openHomePage status=SUCCESS method=SearchTest.openHomePage()[pri:0, instance:test.SearchTest@7342e05d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- attachScreenshot -->
-        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:35 CST" name="setup" finished-at="2025-02-28T21:38:35 CST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.SearchTest@7342e05d]" started-at="2025-03-03T11:15:46 CST" name="setup" finished-at="2025-03-03T11:15:46 CST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=SearchTest.testAmazonSearch()[pri:1, instance:test.SearchTest@476ee5b3] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=SearchTest.testAmazonSearch()[pri:1, instance:test.SearchTest@7342e05d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testAmazonSearch()[pri:1, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:35 CST" name="testAmazonSearch" finished-at="2025-02-28T21:38:41 CST" depends-on-methods="test.SearchTest.openHomePage" duration-ms="5141" status="PASS">
+        <test-method signature="testAmazonSearch()[pri:1, instance:test.SearchTest@7342e05d]" started-at="2025-03-03T11:15:46 CST" name="testAmazonSearch" finished-at="2025-03-03T11:15:50 CST" depends-on-methods="test.SearchTest.openHomePage" duration-ms="4235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAmazonSearch -->
-        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:41 CST" name="attachScreenshot" finished-at="2025-02-28T21:38:42 CST" duration-ms="1936" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.SearchTest@7342e05d]" started-at="2025-03-03T11:15:50 CST" name="attachScreenshot" finished-at="2025-03-03T11:15:51 CST" duration-ms="629" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testAmazonSearch status=SUCCESS method=SearchTest.testAmazonSearch()[pri:1, instance:test.SearchTest@476ee5b3] output={null}]]]>
+                <![CDATA[[TestResult name=testAmazonSearch status=SUCCESS method=SearchTest.testAmazonSearch()[pri:1, instance:test.SearchTest@7342e05d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- attachScreenshot -->
-        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:42 CST" name="setup" finished-at="2025-02-28T21:38:42 CST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestResult)[pri:0, instance:test.SearchTest@7342e05d]" started-at="2025-03-03T11:15:51 CST" name="setup" finished-at="2025-03-03T11:15:51 CST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=SearchTest.verifyProductInSearchResult()[pri:2, instance:test.SearchTest@476ee5b3] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=SearchTest.verifyProductInSearchResult()[pri:2, instance:test.SearchTest@7342e05d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyProductInSearchResult()[pri:2, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:42 CST" name="verifyProductInSearchResult" finished-at="2025-02-28T21:38:45 CST" depends-on-methods="test.SearchTest.testAmazonSearch" duration-ms="2959" status="PASS">
+        <test-method signature="verifyProductInSearchResult()[pri:2, instance:test.SearchTest@7342e05d]" started-at="2025-03-03T11:15:51 CST" name="verifyProductInSearchResult" finished-at="2025-03-03T11:15:56 CST" depends-on-methods="test.SearchTest.testAmazonSearch" duration-ms="4857" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyProductInSearchResult -->
-        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:38:45 CST" name="attachScreenshot" finished-at="2025-02-28T21:38:47 CST" duration-ms="1608" status="PASS">
+        <test-method is-config="true" signature="attachScreenshot(org.testng.ITestResult)[pri:0, instance:test.SearchTest@7342e05d]" started-at="2025-03-03T11:15:56 CST" name="attachScreenshot" finished-at="2025-03-03T11:15:56 CST" duration-ms="637" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyProductInSearchResult status=SUCCESS method=SearchTest.verifyProductInSearchResult()[pri:2, instance:test.SearchTest@476ee5b3] output={null}]]]>
+                <![CDATA[[TestResult name=verifyProductInSearchResult status=SUCCESS method=SearchTest.verifyProductInSearchResult()[pri:2, instance:test.SearchTest@7342e05d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- attachScreenshot -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.SearchTest@476ee5b3]" started-at="2025-02-28T21:39:37 CST" name="tearDown" finished-at="2025-02-28T21:39:38 CST" duration-ms="774" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.SearchTest@7342e05d]" started-at="2025-03-03T11:16:42 CST" name="tearDown" finished-at="2025-03-03T11:16:43 CST" duration-ms="218" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -1,4 +1,5 @@
 package pageObjects;
+import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
@@ -6,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchPage {
     private WebDriver driver;
@@ -38,8 +41,11 @@ public class SearchPage {
         return driver.getTitle().contains("Amazon");
     }
     public void submitSearch(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebElement search = wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+        search.click();
         System.out.println("Submit Search");
-        searchButton.submit();
+        
     }
     public boolean isSearchFieldDisplayed(){
         System.out.println("Search Field Displayed");

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="81.491" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="74.718" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="webdriver.chrome.driver" value="./src/test/resources/ChromeDriver/chromedriver.exe"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\nreka\AppData\Local\Temp\surefire14819454106110248832\surefirebooter-20250228213818168_3.jar C:\Users\nreka\AppData\Local\Temp\surefire14819454106110248832 2025-02-28T21-38-17_985-jvmRun1 surefire-20250228213818168_1tmp surefire_0-20250228213818168_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\nreka\AppData\Local\Temp\surefire7232360184531915785\surefirebooter-20250303111527757_3.jar C:\Users\nreka\AppData\Local\Temp\surefire7232360184531915785 2025-03-03T11-15-27_313-jvmRun1 surefire-20250303111527757_1tmp surefire_0-20250303111527757_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\nreka\vscodedevops\amazon\target\test-classes;C:\Users\nreka\vscodedevops\amazon\target\classes;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-java\4.27.0\selenium-java-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-api\4.27.0\selenium-api-4.27.0.jar;C:\Users\nreka\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.27.0\selenium-chrome-driver-4.27.0.jar;C:\Users\nreka\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.27.0\selenium-chromium-driver-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-json\4.27.0\selenium-json-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.27.0\selenium-manager-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.27.0\selenium-devtools-v129-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v130\4.27.0\selenium-devtools-v130-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v131\4.27.0\selenium-devtools-v131-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.27.0\selenium-devtools-v85-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.27.0\selenium-edge-driver-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.27.0\selenium-firefox-driver-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-http\4.27.0\selenium-http-4.27.0.jar;C:\Users\nreka\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.27.0\selenium-ie-driver-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.27.0\selenium-remote-driver-4.27.0.jar;C:\Users\nreka\.m2\repository\com\google\guava\guava\33.3.1-jre\guava-33.3.1-jre.jar;C:\Users\nreka\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\nreka\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\nreka\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\nreka\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\nreka\.m2\repository\com\google\errorprone\error_prone_annotations\2.28.0\error_prone_annotations-2.28.0.jar;C:\Users\nreka\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\opentelemetry-api\1.44.1\opentelemetry-api-1.44.1.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\opentelemetry-context\1.44.1\opentelemetry-context-1.44.1.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.44.1\opentelemetry-exporter-logging-1.44.1.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.44.1\opentelemetry-sdk-common-1.44.1.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.44.1\opentelemetry-sdk-extension-autoconfigure-spi-1.44.1.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.44.1\opentelemetry-sdk-extension-autoconfigure-1.44.1.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.44.1-alpha\opentelemetry-api-incubator-1.44.1-alpha.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.44.1\opentelemetry-sdk-trace-1.44.1.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.44.1\opentelemetry-sdk-1.44.1.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.44.1\opentelemetry-sdk-metrics-1.44.1.jar;C:\Users\nreka\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.44.1\opentelemetry-sdk-logs-1.44.1.jar;C:\Users\nreka\.m2\repository\net\bytebuddy\byte-buddy\1.15.10\byte-buddy-1.15.10.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-os\4.27.0\selenium-os-4.27.0.jar;C:\Users\nreka\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.27.0\selenium-safari-driver-4.27.0.jar;C:\Users\nreka\.m2\repository\org\seleniumhq\selenium\selenium-support\4.27.0\selenium-support-4.27.0.jar;C:\Users\nreka\.m2\repository\org\testng\testng\7.11.0\testng-7.11.0.jar;C:\Users\nreka\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\nreka\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\nreka\.m2\repository\commons-io\commons-io\2.18.0\commons-io-2.18.0.jar;C:\Users\nreka\.m2\repository\io\github\bonigarcia\webdrivermanager\5.8.0\webdrivermanager-5.8.0.jar;C:\Users\nreka\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\nreka\.m2\repository\com\github\docker-java\docker-java\3.3.6\docker-java-3.3.6.jar;C:\Users\nreka\.m2\repository\com\github\docker-java\docker-java-core\3.3.6\docker-java-core-3.3.6.jar;C:\Users\nreka\.m2\repository\com\github\docker-java\docker-java-api\3.3.6\docker-java-api-3.3.6.jar;C:\Users\nreka\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\Users\nreka\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\Users\nreka\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\Users\nreka\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\nreka\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.6\docker-java-transport-httpclient5-3.3.6.jar;C:\Users\nreka\.m2\repository\com\github\docker-java\docker-java-transport\3.3.6\docker-java-transport-3.3.6.jar;C:\Users\nreka\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\nreka\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\nreka\.m2\repository\org\apache\commons\commons-compress\1.26.1\commons-compress-1.26.1.jar;C:\Users\nreka\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\nreka\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\nreka\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\nreka\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\nreka\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\nreka\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\nreka\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\nreka\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\nreka\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\nreka\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\nreka\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\nreka\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\nreka\.m2\repository\com\aventstack\extentreports\5.0.9\extentreports-5.0.9.jar;C:\Users\nreka\.m2\repository\io\reactivex\rxjava3\rxjava\3.0.4\rxjava-3.0.4.jar;C:\Users\nreka\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\nreka\.m2\repository\com\itextpdf\barcodes\9.1.0\barcodes-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\font-asian\9.1.0\font-asian-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\forms\9.1.0\forms-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\hyph\9.1.0\hyph-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\io\9.1.0\io-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\commons\9.1.0\commons-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\kernel\9.1.0\kernel-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\layout\9.1.0\layout-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\pdfa\9.1.0\pdfa-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\sign\9.1.0\sign-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\styled-xml-parser\9.1.0\styled-xml-parser-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\svg\9.1.0\svg-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\bouncy-castle-connector\9.1.0\bouncy-castle-connector-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\pdfua\9.1.0\pdfua-9.1.0.jar;C:\Users\nreka\.m2\repository\com\itextpdf\html2pdf\4.0.2\html2pdf-4.0.2.jar;C:\Users\nreka\.m2\repository\org\freemarker\freemarker\2.3.33\freemarker-2.3.33.jar;C:\Users\nreka\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\nreka\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\nreka\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\nreka\.m2\repository\org\apache\logging\log4j\log4j-core\2.20.0\log4j-core-2.20.0.jar;C:\Users\nreka\.m2\repository\org\projectlombok\lombok\1.18.22\lombok-1.18.22.jar;C:\Users\nreka\.m2\repository\com\aventstack\klov-reporter\5.0.8\klov-reporter-5.0.8.jar;C:\Users\nreka\.m2\repository\org\mongodb\mongodb-driver\3.6.4\mongodb-driver-3.6.4.jar;C:\Users\nreka\.m2\repository\org\mongodb\mongodb-driver-core\3.6.4\mongodb-driver-core-3.6.4.jar;C:\Users\nreka\.m2\repository\org\mongodb\bson\3.6.4\bson-3.6.4.jar;C:\Users\nreka\.m2\repository\org\apache\httpcomponents\httpclient\4.5.2\httpclient-4.5.2.jar;C:\Users\nreka\.m2\repository\org\apache\httpcomponents\httpcore\4.4.4\httpcore-4.4.4.jar;C:\Users\nreka\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\nreka\.m2\repository\org\apache\httpcomponents\httpmime\4.5.2\httpmime-4.5.2.jar;C:\Users\nreka\.m2\repository\tech\grasshopper\extent-pdf-report\1.7.3\extent-pdf-report-1.7.3.jar;C:\Users\nreka\.m2\repository\tech\grasshopper\cucumber-pdf-report\2.2.4\cucumber-pdf-report-2.2.4.jar;C:\Users\nreka\.m2\repository\org\apache\pdfbox\pdfbox\2.0.22\pdfbox-2.0.22.jar;C:\Users\nreka\.m2\repository\org\apache\pdfbox\fontbox\2.0.22\fontbox-2.0.22.jar;C:\Users\nreka\.m2\repository\org\knowm\xchart\xchart\3.8.0\xchart-3.8.0.jar;C:\Users\nreka\.m2\repository\de\erichseifert\vectorgraphics2d\VectorGraphics2D\0.13\VectorGraphics2D-0.13.jar;C:\Users\nreka\.m2\repository\de\rototor\pdfbox\graphics2d\0.30\graphics2d-0.30.jar;C:\Users\nreka\.m2\repository\com\madgag\animated-gif-lib\1.4\animated-gif-lib-1.4.jar;C:\Users\nreka\.m2\repository\org\yaml\snakeyaml\1.28\snakeyaml-1.28.jar;C:\Users\nreka\.m2\repository\tech\grasshopper\table-layout\1.2.0\table-layout-1.2.0.jar;C:\Users\nreka\.m2\repository\org\jsoup\jsoup\1.13.1\jsoup-1.13.1.jar;C:\Users\nreka\.m2\repository\tech\grasshopper\extentreports-cucumber6-adapter\2.13.0\extentreports-cucumber6-adapter-2.13.0.jar;C:\Users\nreka\.m2\repository\tech\grasshopper\htmlextentreporter\1.0.1\htmlextentreporter-1.0.1.jar;C:\Users\nreka\.m2\repository\com\aventstack\chaintest-testng\1.0.6\chaintest-testng-1.0.6.jar;C:\Users\nreka\.m2\repository\com\aventstack\chaintest-core\1.0.6\chaintest-core-1.0.6.jar;C:\Users\nreka\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.18.0\jackson-databind-2.18.0.jar;C:\Users\nreka\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.18.0\jackson-annotations-2.18.0.jar;C:\Users\nreka\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.18.0\jackson-core-2.18.0.jar;C:\Users\nreka\.m2\repository\com\azure\azure-storage-blob\12.28.0\azure-storage-blob-12.28.0.jar;C:\Users\nreka\.m2\repository\com\azure\azure-core\1.52.0\azure-core-1.52.0.jar;C:\Users\nreka\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.17.2\jackson-datatype-jsr310-2.17.2.jar;C:\Users\nreka\.m2\repository\io\projectreactor\reactor-core\3.4.38\reactor-core-3.4.38.jar;C:\Users\nreka\.m2\repository\com\azure\azure-core-http-netty\1.15.4\azure-core-http-netty-1.15.4.jar;C:\Users\nreka\.m2\repository\io\netty\netty-handler\4.1.110.Final\netty-handler-4.1.110.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-handler-proxy\4.1.110.Final\netty-handler-proxy-4.1.110.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-codec-socks\4.1.110.Final\netty-codec-socks-4.1.110.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-buffer\4.1.110.Final\netty-buffer-4.1.110.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-codec\4.1.110.Final\netty-codec-4.1.110.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-codec-http\4.1.110.Final\netty-codec-http-4.1.110.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-codec-http2\4.1.110.Final\netty-codec-http2-4.1.110.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.110.Final\netty-transport-native-unix-common-4.1.110.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-transport-native-epoll\4.1.110.Final\netty-transport-native-epoll-4.1.110.Final-linux-x86_64.jar;C:\Users\nreka\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.110.Final\netty-transport-native-kqueue-4.1.110.Final-osx-x86_64.jar;C:\Users\nreka\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.110.Final\netty-transport-classes-kqueue-4.1.110.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.65.Final\netty-tcnative-boringssl-static-2.0.65.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-tcnative-classes\2.0.65.Final\netty-tcnative-classes-2.0.65.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.65.Final\netty-tcnative-boringssl-static-2.0.65.Final-linux-x86_64.jar;C:\Users\nreka\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.65.Final\netty-tcnative-boringssl-static-2.0.65.Final-linux-aarch_64.jar;C:\Users\nreka\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.65.Final\netty-tcnative-boringssl-static-2.0.65.Final-osx-x86_64.jar;C:\Users\nreka\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.65.Final\netty-tcnative-boringssl-static-2.0.65.Final-osx-aarch_64.jar;C:\Users\nreka\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.65.Final\netty-tcnative-boringssl-static-2.0.65.Final-windows-x86_64.jar;C:\Users\nreka\.m2\repository\io\projectreactor\netty\reactor-netty-http\1.0.45\reactor-netty-http-1.0.45.jar;C:\Users\nreka\.m2\repository\io\netty\netty-resolver-dns\4.1.109.Final\netty-resolver-dns-4.1.109.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-codec-dns\4.1.109.Final\netty-codec-dns-4.1.109.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.109.Final\netty-resolver-dns-native-macos-4.1.109.Final-osx-x86_64.jar;C:\Users\nreka\.m2\repository\io\netty\netty-resolver-dns-classes-macos\4.1.109.Final\netty-resolver-dns-classes-macos-4.1.109.Final.jar;C:\Users\nreka\.m2\repository\io\projectreactor\netty\reactor-netty-core\1.0.45\reactor-netty-core-1.0.45.jar;C:\Users\nreka\.m2\repository\io\netty\netty-common\4.1.110.Final\netty-common-4.1.110.Final.jar;C:\Users\nreka\.m2\repository\com\azure\azure-storage-internal-avro\12.13.0\azure-storage-internal-avro-12.13.0.jar;C:\Users\nreka\.m2\repository\com\azure\azure-xml\1.1.0\azure-xml-1.1.0.jar;C:\Users\nreka\.m2\repository\com\azure\azure-storage-common\12.28.0\azure-storage-common-12.28.0.jar;C:\Users\nreka\.m2\repository\com\azure\azure-identity\1.13.3\azure-identity-1.13.3.jar;C:\Users\nreka\.m2\repository\com\azure\azure-json\1.3.0\azure-json-1.3.0.jar;C:\Users\nreka\.m2\repository\com\microsoft\azure\msal4j\1.17.1\msal4j-1.17.1.jar;C:\Users\nreka\.m2\repository\com\nimbusds\oauth2-oidc-sdk\11.18\oauth2-oidc-sdk-11.18.jar;C:\Users\nreka\.m2\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;C:\Users\nreka\.m2\repository\com\nimbusds\content-type\2.3\content-type-2.3.jar;C:\Users\nreka\.m2\repository\com\nimbusds\lang-tag\1.7\lang-tag-1.7.jar;C:\Users\nreka\.m2\repository\com\nimbusds\nimbus-jose-jwt\9.40\nimbus-jose-jwt-9.40.jar;C:\Users\nreka\.m2\repository\net\minidev\json-smart\2.5.0\json-smart-2.5.0.jar;C:\Users\nreka\.m2\repository\net\minidev\accessors-smart\2.5.0\accessors-smart-2.5.0.jar;C:\Users\nreka\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\nreka\.m2\repository\com\microsoft\azure\msal4j-persistence-extension\1.3.0\msal4j-persistence-extension-1.3.0.jar;C:\Users\nreka\.m2\repository\net\java\dev\jna\jna-platform\5.6.0\jna-platform-5.6.0.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\s3\2.29.39\s3-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\aws-xml-protocol\2.29.39\aws-xml-protocol-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\aws-query-protocol\2.29.39\aws-query-protocol-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\protocol-core\2.29.39\protocol-core-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\arns\2.29.39\arns-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\profiles\2.29.39\profiles-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\crt-core\2.29.39\crt-core-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\http-auth\2.29.39\http-auth-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\identity-spi\2.29.39\identity-spi-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\http-auth-spi\2.29.39\http-auth-spi-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\http-auth-aws\2.29.39\http-auth-aws-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\checksums\2.29.39\checksums-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\checksums-spi\2.29.39\checksums-spi-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\retries-spi\2.29.39\retries-spi-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\sdk-core\2.29.39\sdk-core-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\retries\2.29.39\retries-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\auth\2.29.39\auth-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\http-auth-aws-eventstream\2.29.39\http-auth-aws-eventstream-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\eventstream\eventstream\1.0.1\eventstream-1.0.1.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\http-client-spi\2.29.39\http-client-spi-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\regions\2.29.39\regions-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\annotations\2.29.39\annotations-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\utils\2.29.39\utils-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\aws-core\2.29.39\aws-core-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\metrics-spi\2.29.39\metrics-spi-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\json-utils\2.29.39\json-utils-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\third-party-jackson-core\2.29.39\third-party-jackson-core-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\endpoints-spi\2.29.39\endpoints-spi-2.29.39.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\netty-nio-client\2.29.39\netty-nio-client-2.29.39.jar;C:\Users\nreka\.m2\repository\io\netty\netty-transport\4.1.115.Final\netty-transport-4.1.115.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.115.Final\netty-transport-classes-epoll-4.1.115.Final.jar;C:\Users\nreka\.m2\repository\io\netty\netty-resolver\4.1.115.Final\netty-resolver-4.1.115.Final.jar;C:\Users\nreka\.m2\repository\software\amazon\awssdk\apache-client\2.29.39\apache-client-2.29.39.jar;C:\Users\nreka\.m2\repository\io\qameta\allure\allure-testng\2.29.1\allure-testng-2.29.1.jar;C:\Users\nreka\.m2\repository\io\qameta\allure\allure-java-commons\2.29.1\allure-java-commons-2.29.1.jar;C:\Users\nreka\.m2\repository\io\qameta\allure\allure-model\2.29.1\allure-model-2.29.1.jar;C:\Users\nreka\.m2\repository\io\qameta\allure\allure-test-filter\2.29.1\allure-test-filter-2.29.1.jar;C:\Users\nreka\.m2\repository\ch\qos\logback\logback-classic\1.2.6\logback-classic-1.2.6.jar;C:\Users\nreka\.m2\repository\ch\qos\logback\logback-core\1.2.6\logback-core-1.2.6.jar;C:\Users\nreka\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.14.1\log4j-slf4j-impl-2.14.1.jar;C:\Users\nreka\.m2\repository\org\slf4j\slf4j-api\1.7.32\slf4j-api-1.7.32.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,21 +31,18 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\nreka\AppData\Local\Temp\surefire14819454106110248832\surefirebooter-20250228213818168_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\nreka\AppData\Local\Temp\surefire7232360184531915785\surefirebooter-20250303111527757_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.11+7-LTS-207"/>
     <property name="user.name" value="Reka"/>
     <property name="path.separator" value=";"/>
-    <property name="otel.metrics.exporter" value="none"/>
     <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="otel.traces.exporter" value="none"/>
     <property name="file.encoding" value="Cp1252"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="localRepository" value="C:\Users\nreka\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
-    <property name="otel.logs.exporter" value="none"/>
     <property name="java.io.tmpdir" value="C:\Users\nreka\AppData\Local\Temp\"/>
     <property name="java.version" value="17.0.11"/>
     <property name="user.dir" value="C:\Users\nreka\vscodedevops\amazon"/>
@@ -53,39 +50,230 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\nreka\AppData\Local\Programs\Python\Python313\;C:\Users\nreka\AppData\Local\Programs\Python\Python313\Scripts\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\apache-maven-3.9.9\bin;C:\Program Files\Java\jdk-17\bin;C:\Users\nreka\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-17\lib\security;C:\Users\nreka\Tools\allure-2.30.0\bin;C:\Users\nreka\Tools\allure2-2.30.0\allure-commandline;C:\Program Files\Git\cmd;C:\Program Files\trivy;C:\minikube;C:\Program Files\Amazon\AWSCLIV2\;C:\Python313\;C:\Python313\Scripts\;C:\terraform_1.10.0_windows_amd64\;C:\Program Files\Kubernetes\Minikube;C:\Program Files\eks;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Helm;C:\Users\nreka\AppData\Local\Microsoft\WinGet\Packages\argoproj.argocd_Microsoft.Winget.Source_8wekyb3d8bbwe\;C:\Program Files\argoproj.argocd_Microsoft.Winget.Source_8wekyb3d8bbwe\;C:\Program Files\Go\bin\;C:\Tools;C:\Users\nreka\Tools\chromedriver-win64\;C:\Users\nreka\AppData\Roaming\npm\;C:\php-8.4.3-src\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Mozilla Firefox\;C:\Program Files\k6\;C:\Users\nreka\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\nreka\AppData\Local\Programs\Python\Python313\;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\apache-maven-3.9.9\bin;C:\Users\nreka\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-17\lib\security;C:\Users\nreka\AppData\Roaming\Python\Python312\Scripts;C:\Users\nreka\Tools\allure-2.30.0\bin;C:\Users\nreka\Tools\allure2-2.30.0\allure-commandline;C:\Program Files\Git\cmd;C:\Users\nreka\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm;C:\Users\nreka\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2024.2.1\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.1\bin;;C:\Users\nreka\AppData\Local\Microsoft\WinGet\Packages\argoproj.argocd_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\nreka\go\bin;C:\Users\nreka\AppData\Local\Microsoft\WindowsApps;C:\Users\nreka\AppData\Local\Microsoft\WinGet\Packages\jqlang.jq_Microsoft.Winget.Source_8wekyb3d8bbwe;;c:\Users\nreka\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\nreka\AppData\Local\Programs\Python\Python313\;C:\Users\nreka\AppData\Local\Programs\Python\Python313\Scripts\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\apache-maven-3.9.9\bin;C:\Program Files\Java\jdk-17\bin;C:\Users\nreka\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-17\lib\security;C:\Users\nreka\Tools\allure-2.30.0\bin;C:\Users\nreka\Tools\allure2-2.30.0\allure-commandline;C:\Program Files\Git\cmd;C:\Program Files\trivy;C:\minikube;C:\Program Files\Amazon\AWSCLIV2\;C:\Python313\;C:\Python313\Scripts\;C:\terraform_1.10.0_windows_amd64\;C:\Program Files\Kubernetes\Minikube;C:\Program Files\eks;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Helm;C:\Users\nreka\AppData\Local\Microsoft\WinGet\Packages\argoproj.argocd_Microsoft.Winget.Source_8wekyb3d8bbwe\;C:\Program Files\argoproj.argocd_Microsoft.Winget.Source_8wekyb3d8bbwe\;C:\Program Files\Go\bin\;C:\Tools;C:\Users\nreka\Tools\chromedriver-win64\;C:\Users\nreka\AppData\Roaming\npm\;C:\php-8.4.3-src\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Mozilla Firefox\;C:\Program Files\k6\;C:\ngrok;C:\Users\nreka\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\nreka\AppData\Local\Programs\Python\Python313\;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-17\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\apache-maven-3.9.9\bin;C:\Users\nreka\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-17\lib\security;C:\Users\nreka\AppData\Roaming\Python\Python312\Scripts;C:\Users\nreka\Tools\allure-2.30.0\bin;C:\Users\nreka\Tools\allure2-2.30.0\allure-commandline;C:\Program Files\Git\cmd;C:\Users\nreka\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm;C:\Users\nreka\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2024.2.1\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.1\bin;;C:\Users\nreka\AppData\Local\Microsoft\WinGet\Packages\argoproj.argocd_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\nreka\go\bin;C:\Users\nreka\AppData\Local\Microsoft\WindowsApps;C:\Users\nreka\AppData\Local\Microsoft\WinGet\Packages\jqlang.jq_Microsoft.Winget.Source_8wekyb3d8bbwe;;c:\Users\nreka\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="java.vm.version" value="17.0.11+7-LTS-207"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="openHomePage" classname="test.SearchTest" time="1.389">
-    <system-out><![CDATA[21:38:19.157 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\nreka\vscodedevops\amazon\testng.xml"
-21:38:19.294 [main] INFO org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
-21:38:19.757 [main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
-21:38:19.757 [main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
-21:38:19.757 [main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
-21:38:19.797 [main] DEBUG com.aventstack.chaintest.service.ChainPluginService - Found configuration entry chaintest.generator.email.enabled, will use chaintest.generator.email.class-name to resolve class
-21:38:19.799 [main] DEBUG com.aventstack.chaintest.service.ChainPluginService - Found configuration entry chaintest.generator.chainlp.enabled, will use chaintest.generator.chainlp.class-name to resolve class
-21:38:19.800 [main] DEBUG com.aventstack.chaintest.service.ChainPluginService - Found configuration entry chaintest.generator.simple.enabled, will use chaintest.generator.simple.class-name to resolve class
-21:38:19.802 [main] DEBUG com.aventstack.chaintest.generator.FileGenerator - Loading template index.ftl for class class com.aventstack.chaintest.generator.ChainTestEmailGenerator with basePackagePath email/
-21:38:20.408 [main] DEBUG com.aventstack.chaintest.http.HttpRetryHandler - Creating HttpRetryHandler instance for 3 retry attempts
-21:38:20.490 [main] DEBUG com.aventstack.chaintest.http.ChainTestApiClient - Created request for entity Build with body: {"id":0,"projectId":0,"projectName":"amazon-automation-testng","startedAt":1740800300408,"endedAt":0,"durationMs":0,"executionStage":"IN_PROGRESS","testRunner":"testng","name":null,"result":"PASSED","tagStatsMonitor":{},"tags":[],"gitRepository":null,"gitBranch":null,"gitCommitHash":null,"gitTags":null,"gitCommitMessage":null,"systemInfo":[{"id":0,"name":"java.version","val":"17.0.11"},{"id":0,"name":"java.vm.name","val":"Java HotSpot(TM) 64-Bit Server VM"},{"id":0,"name":"java.vm.vendor","val":"Oracle Corporation"},{"id":0,"name":"java.class.version","val":"61.0"},{"id":0,"name":"java.runtime.name","val":"Java(TM) SE Runtime Environment"},{"id":0,"name":"os.name","val":"Windows 11"},{"id":0,"name":"os.arch","val":"amd64"},{"id":0,"name":"os.version","val":"10.0"}],"bdd":false,"durationPretty":"0ms"}
-21:38:20.579 [HttpClient-1-Worker-0] DEBUG com.aventstack.chaintest.http.JsonMappedBodyHandler - Received response from service: {
-"servlet":"Stapler",
-"message":"No valid crumb was included in the request",
-"url":"/api/v1/builds",
-"status":"403"
-}
-21:38:20.628 [main] DEBUG com.aventstack.chaintest.http.HttpRetryHandler - Create API returned responseCode: 403
-21:38:20.628 [main] ERROR com.aventstack.chaintest.http.HttpRetryHandler - Failed to save entity Build due to a client-side error, received response code : 403
-21:38:20.631 [main] DEBUG com.aventstack.chaintest.generator.FileGenerator - Loading template index.ftl for class class com.aventstack.chaintest.generator.ChainTestSimpleGenerator with basePackagePath simple
-[INFO ] 2025-02-28 21:38:21.824 [main] DriverManager - Log4j 1.x Logger initialized.
-[INFO ] 2025-02-28 21:38:21.834 [main] DriverManager - Logger initialized and logging preferences set.
+  <testcase name="openHomePage" classname="test.SearchTest" time="2.047">
+    <system-out><![CDATA[11:15:29.551 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\nreka\vscodedevops\amazon\testng.xml"
+11:15:29.871 [main] INFO org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
+11:15:30.546 [main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+11:15:30.546 [main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+11:15:30.546 [main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+11:15:30.613 [main] DEBUG com.aventstack.chaintest.service.ChainPluginService - Found configuration entry chaintest.generator.email.enabled, will use chaintest.generator.email.class-name to resolve class
+11:15:30.629 [main] DEBUG com.aventstack.chaintest.service.ChainPluginService - Found configuration entry chaintest.generator.chainlp.enabled, will use chaintest.generator.chainlp.class-name to resolve class
+11:15:30.643 [main] DEBUG com.aventstack.chaintest.service.ChainPluginService - Found configuration entry chaintest.generator.simple.enabled, will use chaintest.generator.simple.class-name to resolve class
+11:15:30.651 [main] DEBUG com.aventstack.chaintest.generator.FileGenerator - Loading template index.ftl for class class com.aventstack.chaintest.generator.ChainTestEmailGenerator with basePackagePath email/
+11:15:32.091 [main] DEBUG com.aventstack.chaintest.http.HttpRetryHandler - Creating HttpRetryHandler instance for 3 retry attempts
+11:15:32.258 [main] DEBUG com.aventstack.chaintest.http.ChainTestApiClient - Created request for entity Build with body: {"id":0,"projectId":0,"projectName":"amazon-automation-testng","startedAt":1741022132092,"endedAt":0,"durationMs":0,"executionStage":"IN_PROGRESS","testRunner":"testng","name":null,"result":"PASSED","tagStatsMonitor":{},"tags":[],"gitRepository":null,"gitBranch":null,"gitCommitHash":null,"gitTags":null,"gitCommitMessage":null,"systemInfo":[{"id":0,"name":"java.version","val":"17.0.11"},{"id":0,"name":"java.vm.name","val":"Java HotSpot(TM) 64-Bit Server VM"},{"id":0,"name":"java.vm.vendor","val":"Oracle Corporation"},{"id":0,"name":"java.class.version","val":"61.0"},{"id":0,"name":"java.runtime.name","val":"Java(TM) SE Runtime Environment"},{"id":0,"name":"os.name","val":"Windows 11"},{"id":0,"name":"os.arch","val":"amd64"},{"id":0,"name":"os.version","val":"10.0"}],"bdd":false,"durationPretty":"0ms"}
+11:15:32.395 [main] DEBUG com.aventstack.chaintest.http.HttpRetryHandler - Failed to connect to the ChainTest service
+java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:573)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123)
+	at com.aventstack.chaintest.http.ChainTestApiClient.send(ChainTestApiClient.java:150)
+	at com.aventstack.chaintest.http.HttpRetryHandler.trySend(HttpRetryHandler.java:57)
+	at com.aventstack.chaintest.http.HttpRetryHandler.trySend(HttpRetryHandler.java:90)
+	at com.aventstack.chaintest.generator.ChainLPGenerator.start(ChainLPGenerator.java:96)
+	at com.aventstack.chaintest.service.ChainPluginService.lambda$start$1(ChainPluginService.java:99)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at com.aventstack.chaintest.service.ChainPluginService.start(ChainPluginService.java:99)
+	at utilities.chainTestListener.onExecutionStart(chainTestListener.java:65)
+	at org.testng.TestNG.runExecutionListeners(TestNG.java:1129)
+	at org.testng.TestNG.run(TestNG.java:1074)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.nio.channels.ClosedChannelException: null
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 common frames omitted
+11:15:34.406 [main] DEBUG com.aventstack.chaintest.http.ChainTestApiClient - Created request for entity Build with body: {"id":0,"projectId":0,"projectName":"amazon-automation-testng","startedAt":1741022132092,"endedAt":0,"durationMs":0,"executionStage":"IN_PROGRESS","testRunner":"testng","name":null,"result":"PASSED","tagStatsMonitor":{},"tags":[],"gitRepository":null,"gitBranch":null,"gitCommitHash":null,"gitTags":null,"gitCommitMessage":null,"systemInfo":[{"id":0,"name":"java.version","val":"17.0.11"},{"id":0,"name":"java.vm.name","val":"Java HotSpot(TM) 64-Bit Server VM"},{"id":0,"name":"java.vm.vendor","val":"Oracle Corporation"},{"id":0,"name":"java.class.version","val":"61.0"},{"id":0,"name":"java.runtime.name","val":"Java(TM) SE Runtime Environment"},{"id":0,"name":"os.name","val":"Windows 11"},{"id":0,"name":"os.arch","val":"amd64"},{"id":0,"name":"os.version","val":"10.0"}],"bdd":false,"durationPretty":"0ms"}
+11:15:34.413 [main] DEBUG com.aventstack.chaintest.http.HttpRetryHandler - Failed to connect to the ChainTest service
+java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:573)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123)
+	at com.aventstack.chaintest.http.ChainTestApiClient.send(ChainTestApiClient.java:150)
+	at com.aventstack.chaintest.http.HttpRetryHandler.trySend(HttpRetryHandler.java:57)
+	at com.aventstack.chaintest.http.HttpRetryHandler.trySend(HttpRetryHandler.java:90)
+	at com.aventstack.chaintest.generator.ChainLPGenerator.start(ChainLPGenerator.java:96)
+	at com.aventstack.chaintest.service.ChainPluginService.lambda$start$1(ChainPluginService.java:99)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at com.aventstack.chaintest.service.ChainPluginService.start(ChainPluginService.java:99)
+	at utilities.chainTestListener.onExecutionStart(chainTestListener.java:65)
+	at org.testng.TestNG.runExecutionListeners(TestNG.java:1129)
+	at org.testng.TestNG.run(TestNG.java:1074)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.nio.channels.ClosedChannelException: null
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 common frames omitted
+11:15:36.430 [main] DEBUG com.aventstack.chaintest.http.ChainTestApiClient - Created request for entity Build with body: {"id":0,"projectId":0,"projectName":"amazon-automation-testng","startedAt":1741022132092,"endedAt":0,"durationMs":0,"executionStage":"IN_PROGRESS","testRunner":"testng","name":null,"result":"PASSED","tagStatsMonitor":{},"tags":[],"gitRepository":null,"gitBranch":null,"gitCommitHash":null,"gitTags":null,"gitCommitMessage":null,"systemInfo":[{"id":0,"name":"java.version","val":"17.0.11"},{"id":0,"name":"java.vm.name","val":"Java HotSpot(TM) 64-Bit Server VM"},{"id":0,"name":"java.vm.vendor","val":"Oracle Corporation"},{"id":0,"name":"java.class.version","val":"61.0"},{"id":0,"name":"java.runtime.name","val":"Java(TM) SE Runtime Environment"},{"id":0,"name":"os.name","val":"Windows 11"},{"id":0,"name":"os.arch","val":"amd64"},{"id":0,"name":"os.version","val":"10.0"}],"bdd":false,"durationPretty":"0ms"}
+11:15:36.440 [main] DEBUG com.aventstack.chaintest.http.HttpRetryHandler - Failed to connect to the ChainTest service
+java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:573)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123)
+	at com.aventstack.chaintest.http.ChainTestApiClient.send(ChainTestApiClient.java:150)
+	at com.aventstack.chaintest.http.HttpRetryHandler.trySend(HttpRetryHandler.java:57)
+	at com.aventstack.chaintest.http.HttpRetryHandler.trySend(HttpRetryHandler.java:90)
+	at com.aventstack.chaintest.generator.ChainLPGenerator.start(ChainLPGenerator.java:96)
+	at com.aventstack.chaintest.service.ChainPluginService.lambda$start$1(ChainPluginService.java:99)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at com.aventstack.chaintest.service.ChainPluginService.start(ChainPluginService.java:99)
+	at utilities.chainTestListener.onExecutionStart(chainTestListener.java:65)
+	at org.testng.TestNG.runExecutionListeners(TestNG.java:1129)
+	at org.testng.TestNG.run(TestNG.java:1074)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.nio.channels.ClosedChannelException: null
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 common frames omitted
+11:15:38.456 [main] DEBUG com.aventstack.chaintest.http.ChainTestApiClient - Created request for entity Build with body: {"id":0,"projectId":0,"projectName":"amazon-automation-testng","startedAt":1741022132092,"endedAt":0,"durationMs":0,"executionStage":"IN_PROGRESS","testRunner":"testng","name":null,"result":"PASSED","tagStatsMonitor":{},"tags":[],"gitRepository":null,"gitBranch":null,"gitCommitHash":null,"gitTags":null,"gitCommitMessage":null,"systemInfo":[{"id":0,"name":"java.version","val":"17.0.11"},{"id":0,"name":"java.vm.name","val":"Java HotSpot(TM) 64-Bit Server VM"},{"id":0,"name":"java.vm.vendor","val":"Oracle Corporation"},{"id":0,"name":"java.class.version","val":"61.0"},{"id":0,"name":"java.runtime.name","val":"Java(TM) SE Runtime Environment"},{"id":0,"name":"os.name","val":"Windows 11"},{"id":0,"name":"os.arch","val":"amd64"},{"id":0,"name":"os.version","val":"10.0"}],"bdd":false,"durationPretty":"0ms"}
+11:15:38.464 [main] DEBUG com.aventstack.chaintest.http.HttpRetryHandler - Failed to connect to the ChainTest service
+java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:573)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123)
+	at com.aventstack.chaintest.http.ChainTestApiClient.send(ChainTestApiClient.java:150)
+	at com.aventstack.chaintest.http.HttpRetryHandler.trySend(HttpRetryHandler.java:57)
+	at com.aventstack.chaintest.http.HttpRetryHandler.trySend(HttpRetryHandler.java:90)
+	at com.aventstack.chaintest.generator.ChainLPGenerator.start(ChainLPGenerator.java:96)
+	at com.aventstack.chaintest.service.ChainPluginService.lambda$start$1(ChainPluginService.java:99)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at com.aventstack.chaintest.service.ChainPluginService.start(ChainPluginService.java:99)
+	at utilities.chainTestListener.onExecutionStart(chainTestListener.java:65)
+	at org.testng.TestNG.runExecutionListeners(TestNG.java:1129)
+	at org.testng.TestNG.run(TestNG.java:1074)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1055)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.nio.channels.ClosedChannelException: null
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 common frames omitted
+11:15:40.476 [main] DEBUG com.aventstack.chaintest.generator.FileGenerator - Loading template index.ftl for class class com.aventstack.chaintest.generator.ChainTestSimpleGenerator with basePackagePath simple
+[INFO ] 2025-03-03 11:15:41.783 [main] DriverManager - Log4j 1.x Logger initialized.
+[INFO ] 2025-03-03 11:15:41.796 [main] DriverManager - Logger initialized and logging preferences set.
 Search Test: Open Home Page
-[INFO ] 2025-02-28 21:38:30.465 [main] Loggerload - Search Test: Open Home Page: 
-2025-02-28 21:38:30 INFO  SearchTest:20 - Search Test: Open Home Page:
+[INFO ] 2025-03-03 11:15:43.948 [main] Loggerload - Search Test: Open Home Page: 
+2025-03-03 11:15:43 INFO  SearchTest:20 - Search Test: Open Home Page:
 Checking the amazon website title
 Title: 
 ]]></system-out>
@@ -94,86 +282,85 @@ SLF4J: Found binding in [jar:file:/C:/Users/nreka/.m2/repository/ch/qos/logback/
 SLF4J: Found binding in [jar:file:/C:/Users/nreka/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.14.1/log4j-slf4j-impl-2.14.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
 SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
 SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
-Feb 28, 2025 9:38:21 PM org.openqa.selenium.remote.tracing.opentelemetry.OpenTelemetryTracer createTracer
-INFO: Using OpenTelemetry for tracing
+Mar 03, 2025 11:15:43 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 133, returning the closest version; found: 131; Please update to a Selenium version that supports CDP version 133
 ]]></system-err>
   </testcase>
-  <testcase name="testAmazonSearch" classname="test.SearchTest" time="5.144">
-    <system-out><![CDATA[[INFO ] 2025-02-28 21:38:35.880 [main] BaseClass - Screenshot captured for test: openHomePage
+  <testcase name="testAmazonSearch" classname="test.SearchTest" time="4.242">
+    <system-out><![CDATA[[INFO ] 2025-03-03 11:15:46.517 [main] BaseClass - Screenshot captured for test: openHomePage
 Test Passed
 Search Test: Test Amazon Search
-[INFO ] 2025-02-28 21:38:35.890 [main] Loggerload - Search Test: Test Amazon Search
+[INFO ] 2025-03-03 11:15:46.545 [main] Loggerload - Search Test: Test Amazon Search
 Sending input: 
 Submit Search
 Number of products found: 22
-First Product Name: iQOO Z9 Lite 5G (Mocha Brown, 6GB RAM, 128GB Storage) | Dimensity 6300 5G | 50MP Sony AI Camera | Charger in The Box
-Product Price: Limited time deal
-₹69,998 M.R.P:
-₹72,999 (4% off)
-No Cost EMI available on select cards.
+First Product Name: Samsung Galaxy A05 (Light Green, 6GB, 128GB Storage) | 50 MP Main Camera | Upto 12GB RAM with RAM Plus | MediaTek Helio G85 | 5000 mAh Battery
+Product Price: ₹1,22,900 M.R.P:
+₹1,29,900 (5% off)
+Save extra with No Cost EMI
 Product Name: Sponsored
-OnePlus 13 | Smarter with OnePlus AI (12GB RAM, 256GB Storage Black Eclipse)
+iPhone 16 Pro 256 GB: 5G Mobile Phone with Camera Control, 4K 120 fps Dolby Vision and a Huge Leap in Battery Life. Works with AirPods; Black Titanium
 Clicked the product
 ]]></system-out>
   </testcase>
-  <testcase name="verifyProductInSearchResult" classname="test.SearchTest" time="2.958">
-    <system-out><![CDATA[[INFO ] 2025-02-28 21:38:42.966 [main] BaseClass - Screenshot captured for test: testAmazonSearch
+  <testcase name="verifyProductInSearchResult" classname="test.SearchTest" time="4.857">
+    <system-out><![CDATA[[INFO ] 2025-03-03 11:15:51.408 [main] BaseClass - Screenshot captured for test: testAmazonSearch
 Test Passed
 Search Test: Verify Product In Search Result
  Search Test: Moving to product window 
-[INFO ] 2025-02-28 21:38:43.002 [main] Loggerload - Product Test: Moving to cart page 
+[INFO ] 2025-03-03 11:15:51.417 [main] Loggerload - Product Test: Moving to cart page 
 Window Title: Amazon.in : Mobiles
-https://www.amazon.in/s?k=Mobiles&crid=2OYN9XCZUDDSW&sprefix=mobile%2Caps%2C276&ref=nb_sb_noss_2
-2943C32B351105F93C98E6CB53CF7E1E
-Window Title: iQOO Z9 Lite 5G (Mocha Brown, 6GB RAM, 128GB Storage) | Dimensity 6300 5G | 50MP Sony AI Camera | Charger in The Box : Amazon.in: Electronics
-https://www.amazon.in/iQOO-Storage-Dimensity-Camera-Charger/dp/B07WHQS4LB/ref=sr_1_3?crid=2OYN9XCZUDDSW&dib=eyJ2IjoiMSJ9.EJKaDYzgkttbtQXK4pHCF2ZQIrmQi1xixZ1DgArPmfPmt3Iz3xVVU1v5WycfknkOEeVG2lFWuCWL7TSKiaiq_ZzbyOgBjkM6dCpP4BPVnm8AAno6NsfdqHSi8NWyzr72PcSVrhw2iOgrPtWnlDUK4uEox1n07fkKsvcJaoTnQrKsWnL7KKXg14V1pvjDuiudvendseorH6t0Pn1ZNXVIJt3vepFEQtcVnj79PJANJxU.sWXTq6KIwyMsj3wkfwDHnpS4Tg7otxFew-uTKKDtiSY&dib_tag=se&keywords=Mobiles&qid=1740800315&sprefix=mobile%2Caps%2C276&sr=8-3&th=1
-68A072A22C5E4F5570F1A16C123CE9B8
+https://www.amazon.in/s?k=Mobiles&crid=38SZ9ZBF2FGIC&sprefix=%2Caps%2C178&ref=nb_sb_noss
+BE09F63E94D74156BEE1E4D641450FD4
+Window Title: Samsung Galaxy A05 (Light Green, 6GB, 128GB Storage) | 50 MP Main Camera | Upto 12GB RAM with RAM Plus | MediaTek Helio G85 | 5000 mAh Battery : Amazon.in: Electronics
+https://www.amazon.in/Samsung-Galaxy-Storage-MediaTek-Battery/dp/B0CJ2DVN1Q/ref=sr_1_3?crid=38SZ9ZBF2FGIC&dib=eyJ2IjoiMSJ9.c-7npoe5HemzXsHALNzzGe867pSeBzUVlGkgZ8QkqyCtMBui6PeByG6-Nlyo3iAz-9nEAM4ilduN6Dwy0UZLUO21BwI6VFn2GC2e_jaRJu6jUizvIm3uEfCmiKOuPV5uack6MtGraFYsONNrZMO_IFBfmHT2Qw_j9UkEgGHnStPUSAAVTy7SjPH0mEl08yjATLpqWROmhvHa93mnfaXSVyGAM2xgAoJuPrNB607z4JE.Td-2yF79Z6db_E933jv5cBtTott55tdiy4TeVWya21Y&dib_tag=se&keywords=Mobiles&qid=1741022147&sprefix=%2Caps%2C178&sr=8-3&th=1
+A6DA361582FF74A38A4C14E0276330E1
 ]]></system-out>
   </testcase>
-  <testcase name="testAddToCart" classname="test.ProductTest" time="0.756">
-    <system-out><![CDATA[[INFO ] 2025-02-28 21:38:47.543 [main] BaseClass - Screenshot captured for test: verifyProductInSearchResult
+  <testcase name="testAddToCart" classname="test.ProductTest" time="0.425">
+    <system-out><![CDATA[[INFO ] 2025-03-03 11:15:56.911 [main] BaseClass - Screenshot captured for test: verifyProductInSearchResult
 Test Passed
-[INFO ] 2025-02-28 21:38:47.557 [main] Loggerload - Product Test: Test Add To Cart 
+[INFO ] 2025-03-03 11:15:56.929 [main] Loggerload - Product Test: Test Add To Cart 
 Product Test: Test Add To Cart
-https://www.amazon.in/iQOO-Storage-Dimensity-Camera-Charger/dp/B07WHQS4LB/ref=sr_1_3?crid=2OYN9XCZUDDSW&dib=eyJ2IjoiMSJ9.EJKaDYzgkttbtQXK4pHCF2ZQIrmQi1xixZ1DgArPmfPmt3Iz3xVVU1v5WycfknkOEeVG2lFWuCWL7TSKiaiq_ZzbyOgBjkM6dCpP4BPVnm8AAno6NsfdqHSi8NWyzr72PcSVrhw2iOgrPtWnlDUK4uEox1n07fkKsvcJaoTnQrKsWnL7KKXg14V1pvjDuiudvendseorH6t0Pn1ZNXVIJt3vepFEQtcVnj79PJANJxU.sWXTq6KIwyMsj3wkfwDHnpS4Tg7otxFew-uTKKDtiSY&dib_tag=se&keywords=Mobiles&qid=1740800315&sprefix=mobile%2Caps%2C276&sr=8-3&th=1
-68A072A22C5E4F5570F1A16C123CE9B8
-iQOO Z9 Lite 5G (Mocha Brown, 6GB RAM, 128GB Storage) | Dimensity 6300 5G | 50MP Sony AI Camera | Charger in The Box : Amazon.in: Electronics
+https://www.amazon.in/Samsung-Galaxy-Storage-MediaTek-Battery/dp/B0CJ2DVN1Q/ref=sr_1_3?crid=38SZ9ZBF2FGIC&dib=eyJ2IjoiMSJ9.c-7npoe5HemzXsHALNzzGe867pSeBzUVlGkgZ8QkqyCtMBui6PeByG6-Nlyo3iAz-9nEAM4ilduN6Dwy0UZLUO21BwI6VFn2GC2e_jaRJu6jUizvIm3uEfCmiKOuPV5uack6MtGraFYsONNrZMO_IFBfmHT2Qw_j9UkEgGHnStPUSAAVTy7SjPH0mEl08yjATLpqWROmhvHa93mnfaXSVyGAM2xgAoJuPrNB607z4JE.Td-2yF79Z6db_E933jv5cBtTott55tdiy4TeVWya21Y&dib_tag=se&keywords=Mobiles&qid=1741022147&sprefix=%2Caps%2C178&sr=8-3&th=1
+A6DA361582FF74A38A4C14E0276330E1
+Samsung Galaxy A05 (Light Green, 6GB, 128GB Storage) | 50 MP Main Camera | Upto 12GB RAM with RAM Plus | MediaTek Helio G85 | 5000 mAh Battery : Amazon.in: Electronics
 ]]></system-out>
   </testcase>
-  <testcase name="testCartSuccessMessage" classname="test.ProductTest" time="44.335">
-    <system-out><![CDATA[[INFO ] 2025-02-28 21:38:50.194 [main] BaseClass - Screenshot captured for test: testAddToCart
+  <testcase name="testCartSuccessMessage" classname="test.ProductTest" time="44.485">
+    <system-out><![CDATA[[INFO ] 2025-03-03 11:15:57.801 [main] BaseClass - Screenshot captured for test: testAddToCart
 Test Passed
 Wait for the go to cart button to be clickable before clicking it
 Overlay detected.
 Side display overlay detected.
 Clicked cartButton
 Navigated to cart page: https://www.amazon.in/gp/cart/view.html/ref=dp_atch_dss_cart?
-[INFO ] 2025-02-28 21:39:33.427 [main] Loggerload - Product Test: Moving to cart page 
+[INFO ] 2025-03-03 11:16:42.158 [main] Loggerload - Product Test: Moving to cart page 
 Product Test: Moving to cart page
 Cart Window Title: Amazon.in : Mobiles
-https://www.amazon.in/s?k=Mobiles&crid=2OYN9XCZUDDSW&sprefix=mobile%2Caps%2C276&ref=nb_sb_noss_2
-2943C32B351105F93C98E6CB53CF7E1E
+https://www.amazon.in/s?k=Mobiles&crid=38SZ9ZBF2FGIC&sprefix=%2Caps%2C178&ref=nb_sb_noss
+BE09F63E94D74156BEE1E4D641450FD4
 Cart Window Title: Amazon.in Shopping Cart
 https://www.amazon.in/gp/cart/view.html/ref=dp_atch_dss_cart?
-68A072A22C5E4F5570F1A16C123CE9B8
+A6DA361582FF74A38A4C14E0276330E1
 ]]></system-out>
   </testcase>
-  <testcase name="testCartItems" classname="test.CartTest" time="0.272">
-    <system-out><![CDATA[[INFO ] 2025-02-28 21:39:36.139 [main] BaseClass - Screenshot captured for test: testCartSuccessMessage
+  <testcase name="testCartItems" classname="test.CartTest" time="0.067">
+    <system-out><![CDATA[[INFO ] 2025-03-03 11:16:42.563 [main] BaseClass - Screenshot captured for test: testCartSuccessMessage
 Test Passed
-[INFO ] 2025-02-28 21:39:36.162 [main] Loggerload - Cart Test:Test Cart Items 
+[INFO ] 2025-03-03 11:16:42.573 [main] Loggerload - Cart Test:Test Cart Items 
 Cart Test:Test Cart Items
-Cart Item: iQOO Z9 Lite 5G (Mocha Brown, 6GB RAM, 128GB Storage) | Dimensity 6300 5G | 50MP Sony AI Camera | Charger in The Box
-₹11,499.00
+Cart Item: Samsung Galaxy A05 (Light Green, 6GB, 128GB Storage) | 50 MP Main Camera | Upto 12GB RAM with RAM Plus | MediaTek Helio G85 | 5000 mAh Battery
+₹8,088.00
 In stock
 Eligible for FREE Shipping
 This will be a gift
  Learn more
-Colour: Mocha Brown
-Size: 6GB RAM, 128GB Storage
+Colour: Light Green
+Size: 6GB + 128GB
 1
 Share
-Item found in cart: iQOO Z9 Lite 5G (Mocha Brown, 6GB RAM, 128GB Storage) | Dimensity 6300 5G | 50MP Sony AI Camera | Charger in The Box
+Item found in cart: Samsung Galaxy A05 (Light Green, 6GB, 128GB Storage) | 50 MP Main Camera | Upto 12GB RAM with RAM Plus | MediaTek Helio G85 | 5000 mAh Battery
 ]]></system-out>
   </testcase>
 </testsuite>

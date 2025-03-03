@@ -17,16 +17,16 @@
 ![alt text](terraformImages/image-8.png)
 
 ## Steps to generate Public key 
-*** To use in Main.tf.resource "aws_key_pair" ***
-*** 1. Command to generate a new SSH key pair: ***
+- *** To use in Main.tf.resource "aws_key_pair" ***
+- *** 1. Command to generate a new SSH key pair: ***
 
 ```
 ssh-keygen -t rsa -b 4096 -C "terraform-key" -f amazon_key
 ```
--t rsa: Specifies the RSA algorithm
--b 4096: Creates a 4096-bit key (more secure)
--C "terraform-key": Adds a comment for identification
--f amazon_key: Saves the private key as amazon_key and the public key as amazon_key.pub
+- -t rsa: Specifies the RSA algorithm
+- -b 4096: Creates a 4096-bit key (more secure)
+- -C "terraform-key": Adds a comment for identification
+- -f amazon_key: Saves the private key as amazon_key and the public key as amazon_key.pub
 
 *** 2. Verify the Keys ***
 ```
@@ -53,9 +53,9 @@ ls -l ~/amazon_key.pub
 ### Zip the Folder Before Running Terraform Run this command on your EC2 instance before applying Terraform:
 *** target/surefire-reports folder in project is converted to zip folder before running in terraform mode ***
 ```
-key    = "target/surefire-reports.zip"
-source = "/home/ubuntu/AmazonTestNG/target/surefire-reports.zip"
-cd /home/ubuntu/AmazonTestNG/target/
+- ey    = "target/surefire-reports.zip"
+- source = "/home/ubuntu/AmazonTestNG/target/surefire-reports.zip"
+- cd /home/ubuntu/AmazonTestNG/target/
 ```
 ```
 sudo apt install zip
@@ -70,9 +70,9 @@ zip -r surefire-reports.zip surefire-reports
 - terraform plan
 - terraform apply -auto-approve
 ```
+![alt text](image-12.png)
+![alt text](image-13.png)
 
-Plan: 15 to add, 0 to change, 0 to destroy.
-Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ### EC2 Instance
 ![alt text](terraformImages/image-1.png)
 ![alt text](terraformImages/image-2.png) 
@@ -84,67 +84,81 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ## Install Chrome and Chromedriver on Your AWS Instance
 *** Since provisioner "remote-exec"  is not able to install chrome and chromedriver , installing it manually in ec2 instance ***
 
-SSH into your instance:
-ssh -i your-key.pem ubuntu@<your-aws-public-ip>
-ssh -i ~/amazon_key ubuntu@3.238.9.134
-Then, run:
-
+- SSH into your instance:
+- ssh -i your-key.pem ubuntu@<your-aws-public-ip>
+- ssh -i ~/amazon_key ubuntu@3.238.9.134
+- Then, run:
+ ```
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y wget unzip
+```
 
 ### Install Google Chrome
+```
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt --fix-broken install -y
-
+```
 ### Verify Chrome Installation
+```
 ubuntu@ip-10-0-0-218:~/AmazonTestNG$ sudo apt --fix-broken install -y
 ubuntu@ip-10-0-0-218:~/AmazonTestNG$ google-chrome --version                                                
 Google Chrome 133.0.6943.141 
+```
 
 ### Install ChromeDriver
+``
 ubuntu@ip-10-0-0-218:~/AmazonTestNG$ wget https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.141/linux64/chromedriver-linux64.zip
 
 sudo apt install chromium-chromedriver
 mkdir -p /home/ubuntu/snap/chromium/common/.cache
 chromedriver --version
+```
 
 *** Set path :***
+```
 export PATH=$PATH:/usr/local/bin
 echo 'export PATH=$PATH:/usr/local/bin' >> ~/.bashrc
 source ~/.bashrc
-
+```
 ### Verify Chrome and ChromeDriver Installation
+```
 ubuntu@ip-10-0-0-78:~/AmazonTestNG$ which chromedriver
 /usr/bin/chromedriver
 ubuntu@ip-10-0-0-78:~/AmazonTestNG$ google-chrome --version
 chromedriver --version
 Google Chrome 133.0.6943.141
 ChromeDriver 133.0.6943.141 (2a5d6da0d6165d7b107502095a937fe7704fcef6-refs/branch-heads/6943@{#1912})
-
+```
 ![alt text](image.png)
 
 *** Update chromedriver location in code :***
+```
 System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 WebDriver driver = new ChromeDriver(); 
+```
 *** OR Manullay set chromedriver location ***
+```
 sudo ln -sf /usr/bin/chromedriver /usr/local/bin/chromedriver
 ls -lah /usr/local/bin/chromedriver
+```
 
 ![alt text](terraformImages/image-7.png)
-
+```
 ubuntu@ip-10-0-0-218:~/AmazonTestNG$ mvn clean
 ubuntu@ip-10-0-0-218:~/AmazonTestNG$ mvn test
-
+```
 *** Access Your App: ***
 ### Running in localhost on Windows:
+```
 PS C:\Users\nreka\vscodedevops\amazon\terraform> cd ..
 PS C:\Users\nreka\vscodedevops\amazon> ls -l package.json
 PS C:\Users\nreka\vscodedevops\amazon> npm start
 > amazon@1.0.0 start
 > node index.js
 Amazon TestNG Framework Started on http://localhost:4000
+```
 ![alt text](terraformImages/image-6.png)
 
 ### To Rebooting the Instance
@@ -195,7 +209,6 @@ Amazon TestNG Framework Started on http://0.0.0.0:4000
 ```
 ```
 PS C:\Users\nreka\vscodedevops\amazon> curl http://44.203.19.95:4000
-
 
 StatusCode        : 200
 StatusDescription : OK
@@ -251,7 +264,12 @@ aws s3 cp /home/ubuntu/AmazonTestNG/target/surefire-reports.zip s3://your-bucket
 
 ### To confirm if surefire-reports.zip is actually uploaded, run:
 ```
-aws s3 ls s3://amazon-maven-test-results/
+ubuntu@ip-10-0-0-78:~/AmazonTestNG$ sudo snap install aws-cli --classic
+aws-cli (v2/stable) 2.24.15 from Amazon Web Services (aws✓) installed
+ubuntu@ip-10-0-0-78:~/AmazonTestNG$ aws s3 ls s3://amazon-maven-test-results/
+2025-03-03 13:53:11      60459 surefire-reports.zip
+ubuntu@ip-10-0-0-78:~/AmazonTestNG$ 
+
 ```
 
 ### Verify the file is publicly accessible using:

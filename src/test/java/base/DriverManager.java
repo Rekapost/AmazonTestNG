@@ -1,5 +1,6 @@
 package base;
 import java.net.MalformedURLException;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -120,6 +121,7 @@ public class DriverManager {
             // Wait for the browser to load
             getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); // Increase timeout
             getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS); // Longer page load timeout
+            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
             }

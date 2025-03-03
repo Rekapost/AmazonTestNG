@@ -69,7 +69,7 @@ public class ProductPage {
    
     public void goToCart(){
         System.out.println("Wait for the go to cart button to be clickable before clicking it");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         
         // Wait for the overlay to appear
         WebElement overlay = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("attachDisplayAddBaseAlert")));
