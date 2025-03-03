@@ -181,15 +181,18 @@ sudo ufw status
 ps aux | grep java
 ```
 ### Run index.js
-
+```
 ubuntu@ip-10-0-0-218:~/AmazonTestNG$ sudo apt install npm
 ubuntu@ip-10-0-0-218:~/AmazonTestNG$ npm start
+
 > amazon@1.0.0 start
 > node index.js
 Amazon TestNG Framework Started on http://0.0.0.0:4000
-
+```
+```
 - curl http://<your-ec2-public-ip>:4000
 - C:\Users\nreka\vscodedevops\amazon>curl http://3.238.9.134:4000
+```
 ```
 PS C:\Users\nreka\vscodedevops\amazon> curl http://44.203.19.95:4000
 
@@ -215,7 +218,7 @@ Links             : {}
 ParsedHtml        : mshtml.HTMLDocumentClass
 RawContentLength  : 35
 ```
-![alt text](curl.png)
+
 Amazon TestNG Framework is Running!
 
 http://3.238.9.134:4000/
@@ -254,12 +257,13 @@ aws s3 ls s3://amazon-maven-test-results/
 ### Verify the file is publicly accessible using:
 ```
 https://amazon-maven-test-results.s3.us-east-1.amazonaws.com/surefire-reports.zip
+```
 
 surefire-reports.zip  gets downloaded to computer
-![alt text](download.png)
-![alt text](folderReports.png)
-![alt text](emailableReport.png)
-```
+![alt text](image-9.png)
+![alt text](image-10.png)
+![alt text](image-11.png)
+
 ### Verify IAM Role is Attached to EC2 Instance
 ``` 
 aws ec2 describe-instances --instance-ids <your-instance-id> --query "Reservations[*].Instances[*].IamInstanceProfile"
