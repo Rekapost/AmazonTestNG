@@ -8,26 +8,7 @@ pipeline {
   }
   stages {
 
-stage('clean') {
-      steps {
-        sh 'ls -ltr'
-        sh 'cd AmazonTestNG && mvn clean'
-      }
-    }
-
-stage('Fix Permissions') {
-  steps {
-    echo 'Fixing permissions for Jenkins workspace files'
-    sh 'chmod -R 755 *' // Ensure all files and directories are accessible
-  }
-}
-   stage('Clean Workspace') {
-     steps {
-        echo "Cleaning workspace"
-      }
-   }
-
-    stage('Checkout') {
+  stage('Checkout') {
       steps {
         sh 'echo passed'
         git branch: 'master', url: 'https://github.com/Rekapost/AmazonTestNG.git'
@@ -35,7 +16,28 @@ stage('Fix Permissions') {
       }
     }
 
-    stage('Build and Test') {
+  stage('clean') {
+      steps {
+        sh 'ls -ltr'
+        sh 'cd AmazonTestNG && mvn clean'
+      }
+    }
+
+  stage('Clean Workspace') {
+     steps {
+        echo "Cleaning workspace"
+      }
+   }
+
+  stage('Fix Permissions') {
+    steps {
+      echo 'Fixing permissions for Jenkins workspace files'
+      sh 'chmod -R 755 *' // Ensure all files and directories are accessible
+    }
+  }
+
+
+  stage('Build and Test') {
       steps {
         sh 'ls -ltr'
         sh 'cd AmazonTestNG && mvn clean package'
