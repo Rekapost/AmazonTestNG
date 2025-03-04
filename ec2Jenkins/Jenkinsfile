@@ -20,9 +20,9 @@ pipeline {
                 script {
                     // Install dependencies and Google Chrome
                     sh '''
-                        sudo apt-get update
-                        sudo apt-get install -f -y
-                        sudo dpkg -i google-chrome-stable_current_amd64.deb
+                         apt-get update
+                         apt-get install -f -y
+                         dpkg -i google-chrome-stable_current_amd64.deb
                     '''
                 }
             }

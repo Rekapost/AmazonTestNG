@@ -363,11 +363,6 @@ root@ip-172-31-0-227:/var/lib/jenkins/workspace/amazon-testng#
 
 
 
-
-
-
-
-
 Since Jenkins is running in EC2 and Docker is running inside Jenkins, you need to install Google Chrome and ChromeDriver either:
 
 On the EC2 instance (Jenkins host machine) itself so that Jenkins can use them directly, or
@@ -378,8 +373,6 @@ This is the recommended option if your Jenkins builds do not run inside isolated
 Follow these steps on your EC2 instance:
 
 Step 1: Install Google Chrome
-bash
-Copy
 # Update the package list
 sudo apt-get update
 
@@ -395,8 +388,7 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 # If you face dependency issues, run the following command to fix them
 sudo apt-get install -f
 Step 2: Install ChromeDriver
-bash
-Copy
+
 # Get the current version of Google Chrome installed
 CHROME_VERSION=$(google-chrome --version | sed 's/Google Chrome //')
 
@@ -414,8 +406,7 @@ sudo chmod +x /usr/bin/chromedriver
 Step 3: Verify Installation
 Check if both Google Chrome and ChromeDriver are installed and accessible:
 
-bash
-Copy
+
 google-chrome --version
 chromedriver --version
 Now Jenkins should be able to find chromedriver when running your Selenium tests.
@@ -427,7 +418,7 @@ Dockerfile Changes to Install Chrome and ChromeDriver
 You need to modify the Dockerfile used to build your Jenkins Docker container so that it includes Google Chrome and ChromeDriver.
 
 dockerfile
-Copy
+
 # Use an official base image
 FROM maven:3.8.1-jdk-11
 
@@ -454,14 +445,10 @@ Once you've added the necessary Chrome and ChromeDriver installation steps to yo
 Step 1: Build the Docker Image
 Rebuild the Docker image with the updated Dockerfile:
 
-bash
-Copy
 docker build -t my-jenkins-image .
 Step 2: Push the Image (if needed)
 If you are using a Docker registry (like Docker Hub), you may need to push the image:
 
-bash
-Copy
 docker push my-jenkins-image
 Step 3: Use the New Docker Image in Jenkins
 Make sure Jenkins uses the new Docker image by updating your Jenkins pipeline to reference it:
