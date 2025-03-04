@@ -19,7 +19,7 @@ pipeline {
   stage('clean') {
       steps {
         sh 'ls -ltr'
-        sh 'cd AmazonTestNG && mvn clean'
+        sh 'cd mvn clean'
       }
     }
 
@@ -40,7 +40,7 @@ pipeline {
   stage('Build and Test') {
       steps {
         sh 'ls -ltr'
-        sh 'cd AmazonTestNG && mvn clean package'
+        sh 'cd mvn clean package'
       }
     }
     
@@ -105,20 +105,19 @@ stage('Static Code Analysis') {
                 BUILD_NUMBER=${BUILD_NUMBER}
                
                 # Use sed to update the deployment file with the build number
-                sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" AmazonTestNG/java-app-manifests/deployment.yml
+                sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-app-manifests/deployment.yml
                 
                 # Ensure that target/ is not included in the commit
                 git status  
                 
                 # Stage the changes for commit
-                git add AmazonTestNG/java-app-manifests/deployment.yml
+                git add java-app-manifests/deployment.yml
 
                 # Commit the changes
                 git commit -m "Update deployment image to version ${BUILD_NUMBER}"
 
                 # Push the changes back to the remote repository
                 git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:master
-
               '''
         }
       }

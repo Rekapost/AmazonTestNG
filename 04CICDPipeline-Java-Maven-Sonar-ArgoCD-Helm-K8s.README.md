@@ -177,7 +177,6 @@ Install docker
 root@ip-172-31-0-237:~# sudo apt update
 root@ip-172-31-0-237:~# sudo apt install docker.io -y
 Grant Jenkins user and Ubuntu user permission to docker deamon.
-root@ip-172-31-0-237:~# sudo su -
 root@ip-172-31-0-237:~# usermod -aG docker jenkins
 root@ip-172-31-0-237:~# usermod -aG docker ubuntu
 root@ip-172-31-0-237:~# systemctl restart docker
