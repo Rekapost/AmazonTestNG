@@ -30,6 +30,50 @@ pipeline {
             }
         }
 
+
+stage('Install Chrome and Dependencies') {
+            steps {
+                script {
+                    // Install dependencies and Google Chrome
+                    sh '''
+                    # Step 1: Update package list and ensure dependencies are met
+                    sudo apt-get update
+
+                    # Step 2: Install any missing dependencies or fix broken packages
+                    sudo apt-get install -f -y
+
+                    # Step 3: Download the Google Chrome .deb package
+                    cd ~
+                    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+                    # Step 4: Install Google Chrome
+                    sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+                    # Step 5: Fix any missing dependencies that might have been missed by dpkg
+                    sudo apt-get install -f
+
+                    # Step 6: Download ChromeDriver (Make sure this is the correct version compatible with your Google Chrome version)
+                    wget https://chromedriver.storage.googleapis.com/133.0.6943.93/chromedriver_linux64.zip
+
+                    # Step 7: Unzip the downloaded chromedriver
+                    unzip chromedriver_linux64.zip
+
+                    # Step 8: Move chromedriver to /usr/local/bin so that it's available system-wide
+                    sudo mv chromedriver /usr/local/bin/
+
+                    # Step 9: Optionally, verify the Chrome and ChromeDriver versions
+                    google-chrome --version
+                    chromedriver --version
+
+                    # Step 10: If you wish to remove Google Chrome later (for cleanup or downgrading purposes), you can use:
+                    # sudo apt-get remove --purge google-chrome-stable -y
+
+                    '''
+                }
+            }
+        }
+
+
         stage('Build and Test') {
             steps {
                 sh 'ls -ltr'
