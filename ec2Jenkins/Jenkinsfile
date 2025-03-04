@@ -41,7 +41,7 @@ pipeline {
       steps {
         sh 'ls -ltr'
         //sh 'mvn clean package'
-        bat 'mvn clean test -Dsurefire.suiteXmlFiles=testng.xml'
+        sh 'mvn clean test -Dsurefire.suiteXmlFiles=testng.xml'
       }
     }
     
