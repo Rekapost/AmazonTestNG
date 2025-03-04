@@ -1,14 +1,13 @@
 pipeline {
-
   agent {
     docker {
-      image 'abhishekf5/maven-abhishek-docker-agent:v1'
-      args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+      image 'reka83/amazon-testng:latest'  // Use your custom Docker image here
+      args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // Mount Docker socket to access the host's Docker daemon
     }
   }
   stages {
 
-  stage('Checkout') {
+    stage('Checkout') {
       steps {
         sh 'echo passed'
         git branch: 'master', url: 'https://github.com/Rekapost/AmazonTestNG.git'
@@ -16,62 +15,47 @@ pipeline {
       }
     }
 
-  stage('clean') {
+    stage('clean') {
       steps {
         sh 'ls -ltr'
         sh 'mvn clean'
       }
     }
 
-  stage('Clean Workspace') {
-     steps {
+    stage('Clean Workspace') {
+      steps {
         echo "Cleaning workspace"
       }
-   }
-
-  stage('Fix Permissions') {
-    steps {
-      echo 'Fixing permissions for Jenkins workspace files'
-      sh 'chmod -R 755 *' // Ensure all files and directories are accessible
     }
-  }
 
+    stage('Fix Permissions') {
+      steps {
+        echo 'Fixing permissions for Jenkins workspace files'
+        sh 'chmod -R 755 *' // Ensure all files and directories are accessible
+      }
+    }
 
-  stage('Build and Test') {
+    stage('Build and Test') {
       steps {
         sh 'ls -ltr'
-        //sh 'mvn clean package'
         sh 'mvn clean test -Dsurefire.suiteXmlFiles=testng.xml'
       }
     }
-    
-    stage('Static Code Analysis') {
-            environment {
-                SONAR_URL = "https://sonarcloud.io"
-                SONAR_PROJECT_KEY = "AmazonTestNG"  // Replace with your actual SonarCloud project key
-                SONAR_ORG = "rekasonar"  // Replace with your SonarCloud organization key
-            }
-            steps {
-                withCredentials([string(credentialsId: 'SONAR_CLOUD_TOKEN', variable: 'SONAR_AUTH_TOKEN')]) {
-                    echo "Running SonarCloud Analysis for project: ${SONAR_PROJECT_KEY}"
-                    bat "mvn clean verify sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=${SONAR_URL} -Dsonar.login=$SONAR_AUTH_TOKEN"
-                }
-            }
-        }
 
-/*
-stage('Static Code Analysis') {
+    stage('Static Code Analysis') {
       environment {
-       SONAR_URL = "http:44.202.207.224:9000/"
+        SONAR_URL = "https://sonarcloud.io"
+        SONAR_PROJECT_KEY = "AmazonTestNG"  // Replace with your actual SonarCloud project key
+        SONAR_ORG = "rekasonar"  // Replace with your SonarCloud organization key
       }
       steps {
-        withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
-        // sh 'cd ${WORKSPACE}/jenkins/spring-boot-app && mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
-        sh 'cd jenkins/spring-boot-app && mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+        withCredentials([string(credentialsId: 'SONAR_CLOUD_TOKEN', variable: 'SONAR_AUTH_TOKEN')]) {
+          echo "Running SonarCloud Analysis for project: ${SONAR_PROJECT_KEY}"
+          bat "mvn clean verify sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=${SONAR_URL} -Dsonar.login=$SONAR_AUTH_TOKEN"
         }
       }
     }
-*/
+
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "reka83/amazon-testng:${BUILD_NUMBER}"
@@ -79,47 +63,48 @@ stage('Static Code Analysis') {
       }
       steps {
         script {
-            sh 'docker build -t ${DOCKER_IMAGE} .'
-            // Pushing the Docker image to Docker Hub
-            def dockerImage = docker.image("${DOCKER_IMAGE}")
-            docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
-                dockerImage.push()
-            }
+          sh 'docker build -t ${DOCKER_IMAGE} .'
+          // Pushing the Docker image to Docker Hub
+          def dockerImage = docker.image("${DOCKER_IMAGE}")
+          docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
+            dockerImage.push()
+          }
         }
       }
     }
-   stage('Update Deployment File') {
-    environment {
+
+    stage('Update Deployment File') {
+      environment {
         GIT_REPO_NAME = "AmazonTestNG"
         GIT_USER_NAME = "Rekapost"
-    }
-    steps {
+      }
+      steps {
         withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
-            sh '''
-                git config user.email "rekaharisri@gmail.com"
-                git config user.name "Reka"
-                
-                # Ensure you are in the correct repository directory
-                # cd ${WORKSPACE}/${GIT_REPO_NAME}
-                
-                # Get the current build number for replacement
-                BUILD_NUMBER=${BUILD_NUMBER}
-               
-                # Use sed to update the deployment file with the build number
-                sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-app-manifests/deployment.yml
-                
-                # Ensure that target/ is not included in the commit
-                git status  
-                
-                # Stage the changes for commit
-                git add java-app-manifests/deployment.yml
+          sh '''
+            git config user.email "rekaharisri@gmail.com"
+            git config user.name "Reka"
 
-                # Commit the changes
-                git commit -m "Update deployment image to version ${BUILD_NUMBER}"
+            # Ensure you are in the correct repository directory
+            # cd ${WORKSPACE}/${GIT_REPO_NAME}
 
-                # Push the changes back to the remote repository
-                git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:master
-              '''
+            # Get the current build number for replacement
+            BUILD_NUMBER=${BUILD_NUMBER}
+           
+            # Use sed to update the deployment file with the build number
+            sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-app-manifests/deployment.yml
+
+            # Ensure that target/ is not included in the commit
+            git status  
+
+            # Stage the changes for commit
+            git add java-app-manifests/deployment.yml
+
+            # Commit the changes
+            git commit -m "Update deployment image to version ${BUILD_NUMBER}"
+
+            # Push the changes back to the remote repository
+            git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:master
+          '''
         }
       }
     }

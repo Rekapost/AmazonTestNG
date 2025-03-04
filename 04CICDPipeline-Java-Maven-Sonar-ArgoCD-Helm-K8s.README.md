@@ -360,3 +360,120 @@ root@ip-172-31-0-227:~# cd /var/lib/jenkins/workspace/amazon-testng
 root@ip-172-31-0-227:/var/lib/jenkins/workspace/amazon-testng# sudo rm -rf target/*
 root@ip-172-31-0-227:/var/lib/jenkins/workspace/amazon-testng# sudo rm -rf /var/lib/jenkins/workspace/amazon-testng   
 root@ip-172-31-0-227:/var/lib/jenkins/workspace/amazon-testng#
+
+
+
+
+
+
+
+
+Since Jenkins is running in EC2 and Docker is running inside Jenkins, you need to install Google Chrome and ChromeDriver either:
+
+On the EC2 instance (Jenkins host machine) itself so that Jenkins can use them directly, or
+Inside the Docker container that Jenkins uses to run the builds.
+1. Install Google Chrome and ChromeDriver on EC2 Instance (Jenkins Host)
+This is the recommended option if your Jenkins builds do not run inside isolated containers and instead use the host's environment directly for running tests.
+
+Follow these steps on your EC2 instance:
+
+Step 1: Install Google Chrome
+bash
+Copy
+# Update the package list
+sudo apt-get update
+
+# Install dependencies for Chrome
+sudo apt-get install -y wget libappindicator3-1 libasound2 libxcomposite1 libxrandr2 libxss1 libgdk-pixbuf2.0-0 libgtk-3-0
+
+# Download the latest stable version of Google Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+# Install Google Chrome
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+# If you face dependency issues, run the following command to fix them
+sudo apt-get install -f
+Step 2: Install ChromeDriver
+bash
+Copy
+# Get the current version of Google Chrome installed
+CHROME_VERSION=$(google-chrome --version | sed 's/Google Chrome //')
+
+# Download the ChromeDriver version matching your Chrome version
+wget https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%.*})/chromedriver_linux64.zip
+
+# Unzip the downloaded ChromeDriver
+unzip chromedriver_linux64.zip
+
+# Move the ChromeDriver binary to /usr/bin/
+sudo mv chromedriver /usr/bin/chromedriver
+
+# Give it executable permissions
+sudo chmod +x /usr/bin/chromedriver
+Step 3: Verify Installation
+Check if both Google Chrome and ChromeDriver are installed and accessible:
+
+bash
+Copy
+google-chrome --version
+chromedriver --version
+Now Jenkins should be able to find chromedriver when running your Selenium tests.
+
+2. Install Google Chrome and ChromeDriver Inside Docker Container
+If you are running Jenkins jobs inside Docker containers (which is common for CI/CD), you will need to include the installation of Chrome and ChromeDriver in your Docker image. Here’s how you can do that:
+
+Dockerfile Changes to Install Chrome and ChromeDriver
+You need to modify the Dockerfile used to build your Jenkins Docker container so that it includes Google Chrome and ChromeDriver.
+
+dockerfile
+Copy
+# Use an official base image
+FROM maven:3.8.1-jdk-11
+
+# Install dependencies and Google Chrome
+RUN apt-get update && apt-get install -y wget unzip \
+    libappindicator3-1 libasound2 libxcomposite1 libxrandr2 libxss1 libgdk-pixbuf2.0-0 libgtk-3-0
+
+# Install Google Chrome
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN dpkg -i google-chrome-stable_current_amd64.deb || apt-get install -f
+
+# Install ChromeDriver
+RUN wget https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$(google-chrome --version | sed 's/Google Chrome //g' | cut -d'.' -f1))/chromedriver_linux64.zip
+RUN unzip chromedriver_linux64.zip
+RUN mv chromedriver /usr/bin/chromedriver
+RUN chmod +x /usr/bin/chromedriver
+
+# Set ChromeDriver path in environment
+ENV PATH $PATH:/usr/bin
+
+# You can add any other dependencies you need for your tests
+Once you've added the necessary Chrome and ChromeDriver installation steps to your Dockerfile, rebuild your Docker container, and then Jenkins should be able to run tests with ChromeDriver inside the Docker container.
+
+Step 1: Build the Docker Image
+Rebuild the Docker image with the updated Dockerfile:
+
+bash
+Copy
+docker build -t my-jenkins-image .
+Step 2: Push the Image (if needed)
+If you are using a Docker registry (like Docker Hub), you may need to push the image:
+
+bash
+Copy
+docker push my-jenkins-image
+Step 3: Use the New Docker Image in Jenkins
+Make sure Jenkins uses the new Docker image by updating your Jenkins pipeline to reference it:
+
+yaml
+Copy
+agent {
+    docker {
+        image 'my-jenkins-image'
+        args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+    }
+}
+sudo apt install chromium-chromedriver
+google-chrome --version
+chromedriver --version
