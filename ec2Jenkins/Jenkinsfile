@@ -16,6 +16,29 @@ pipeline {
             }
         }
 
+        stage('Switch Docker Context to Default') {
+            steps {
+                // Ensure Docker is using the 'default' context
+                sh 'docker context use default'
+            }
+        }
+
+        stage('Docker Version Check') {
+            steps {
+                sh 'docker --version'  // Check if Docker is accessible
+            }
+        }
+stage('Docker Login') {
+            steps {
+                withCredentials([string(credentialsId: 'docker-cred', variable: 'DOCKER_PASSWORD')]) {
+                    sh '''
+                        echo $DOCKER_PASSWORD | docker login -u reka83 --password-stdin https://index.docker.io/v1/
+                    '''
+                }
+            }
+        }
+
+
         stage('Clean') {
             steps {
                 echo 'Running Maven Clean'
