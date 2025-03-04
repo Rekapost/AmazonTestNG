@@ -25,8 +25,18 @@ pipeline {
 
         stage('Fix Permissions') {
             steps {
-                echo 'Fixing permissions for Jenkins workspace files'
-                sh 'chmod -R 755 *' // Ensure all files and directories are accessible
+                //echo 'Fixing permissions for Jenkins workspace files'
+               // sh 'chmod -R 755 *' // Ensure all files and directories are accessible
+               echo 'Fixing permissions for Jenkins workspace files'
+        
+        // Set executable permissions for script files (e.g., *.sh)
+        sh 'find . -type f -name "*.sh" -exec chmod 755 {} \\;'
+        
+        // Set read/write permissions for markdown, XML, JSON files, etc.
+        sh 'find . -type f \( -name "*.md" -or -name "*.xml" -or -name "*.json" \) -exec chmod 644 {} \\;'
+
+        // Ensure all directories are accessible with execute permissions
+        sh 'find . -type d -exec chmod 755 {} \\;'
             }
         }
 
@@ -37,20 +47,20 @@ stage('Install Chrome and Dependencies') {
                     // Install dependencies and Google Chrome
                     sh '''
                     # Step 1: Update package list and ensure dependencies are met
-                    sudo apt-get update
+                     apt-get update
 
                     # Step 2: Install any missing dependencies or fix broken packages
-                    sudo apt-get install -f -y
+                     apt-get install -f -y
 
                     # Step 3: Download the Google Chrome .deb package
                     cd ~
                     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
                     # Step 4: Install Google Chrome
-                    sudo dpkg -i google-chrome-stable_current_amd64.deb
+                     dpkg -i google-chrome-stable_current_amd64.deb
 
                     # Step 5: Fix any missing dependencies that might have been missed by dpkg
-                    sudo apt-get install -f
+                     apt-get install -f
 
                     # Step 6: Download ChromeDriver (Make sure this is the correct version compatible with your Google Chrome version)
                     wget https://chromedriver.storage.googleapis.com/133.0.6943.93/chromedriver_linux64.zip
@@ -59,14 +69,14 @@ stage('Install Chrome and Dependencies') {
                     unzip chromedriver_linux64.zip
 
                     # Step 8: Move chromedriver to /usr/local/bin so that it's available system-wide
-                    sudo mv chromedriver /usr/local/bin/
+                     mv chromedriver /usr/local/bin/
 
                     # Step 9: Optionally, verify the Chrome and ChromeDriver versions
                     google-chrome --version
                     chromedriver --version
 
                     # Step 10: If you wish to remove Google Chrome later (for cleanup or downgrading purposes), you can use:
-                    # sudo apt-get remove --purge google-chrome-stable -y
+                    # apt-get remove --purge google-chrome-stable -y
 
                     '''
                 }
