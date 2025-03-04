@@ -11,7 +11,7 @@ pipeline {
 stage('clean') {
       steps {
         sh 'ls -ltr'
-        sh 'cd amazon && mvn clean'
+        sh 'cd AmazonTestNG && mvn clean'
       }
     }
 
@@ -36,7 +36,7 @@ stage('Fix Permissions') {
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
-        sh 'cd amazon && mvn clean package'
+        sh 'cd AmazonTestNG && mvn clean package'
       }
     }
     
@@ -75,7 +75,7 @@ stage('Static Code Analysis') {
       }
       steps {
         script {
-            sh 'cd amzon && docker build -t ${DOCKER_IMAGE} .'
+            sh 'cd AmazonTestNG && docker build -t ${DOCKER_IMAGE} .'
             // Building the Docker image with the specified Dockerfile
             //sh "cd ${WORKSPACE}/jenkins/spring-boot-app && docker build -t ${DOCKER_IMAGE} -f ${DOCKERFILE_LOCATION} ."
             // Pushing the Docker image to Docker Hub
@@ -101,13 +101,13 @@ stage('Static Code Analysis') {
                 # Get the current build number for replacement
                 BUILD_NUMBER=${BUILD_NUMBER}
                 # Use sed to update the deployment file with the build number
-                sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" amazon/java-app-manifests/deployment.yml
+                sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" AmazonTestNG/java-app-manifests/deployment.yml
                # Ensure that target/ is not included in the commit
             git status  
            # Check if there are any changes to commit (excluding target/)
            # if [[ $(git status --porcelain) && ! $(git status --porcelain | grep 'target/') ]]; then
                 # Stage the changes for commit
-                git add amazon/java-app-manifests/deployment.yml
+                git add AmazonTestNG/java-app-manifests/deployment.yml
                 # Commit the changes
                 git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                 # Push the changes back to the remote repository
