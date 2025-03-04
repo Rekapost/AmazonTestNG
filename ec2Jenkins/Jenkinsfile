@@ -19,7 +19,7 @@ pipeline {
   stage('clean') {
       steps {
         sh 'ls -ltr'
-        sh 'cd mvn clean'
+        sh 'mvn clean'
       }
     }
 
@@ -40,7 +40,7 @@ pipeline {
   stage('Build and Test') {
       steps {
         sh 'ls -ltr'
-        sh 'cd mvn clean package'
+        sh 'mvn clean package'
       }
     }
     
