@@ -28,15 +28,6 @@ pipeline {
                 //echo 'Fixing permissions for Jenkins workspace files'
                // sh 'chmod -R 755 *' // Ensure all files and directories are accessible
                echo 'Fixing permissions for Jenkins workspace files'
-        
-        // Set executable permissions for script files (e.g., *.sh)
-        sh 'find . -type f -name "*.sh" -exec chmod 755 {} \\;'
-        
-        // Set read/write permissions for markdown, XML, JSON files, etc.
-        sh 'find . -type f \( -name "*.md" -or -name "*.xml" -or -name "*.json" \) -exec chmod 644 {} \\;'
-
-        // Ensure all directories are accessible with execute permissions
-        sh 'find . -type d -exec chmod 755 {} \\;'
             }
         }
 
