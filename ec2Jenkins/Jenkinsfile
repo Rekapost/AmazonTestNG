@@ -15,19 +15,7 @@ pipeline {
             }
         }
 
-        stage('Install Chrome and Dependencies') {
-            steps {
-                script {
-                    // Install dependencies and Google Chrome
-                    sh '''
-                         apt-get update
-                         apt-get install -f -y
-                         dpkg -i google-chrome-stable_current_amd64.deb
-                    '''
-                }
-            }
-        }
-
+        
         stage('clean') {
             steps {
                 sh 'ls -ltr'
