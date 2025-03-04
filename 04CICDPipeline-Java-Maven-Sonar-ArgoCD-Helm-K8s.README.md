@@ -174,6 +174,7 @@ Server on http://<ec2ip-address>:9000
 Docker Slave Configuration
 Install docker 
 •	Run the command below to Install Docker
+ubuntu@ip-172-31-0-237:~$ sudo su -
 root@ip-172-31-0-237:~# sudo apt update
 root@ip-172-31-0-237:~# sudo apt install docker.io -y
 Grant Jenkins user and Ubuntu user permission to docker deamon.
@@ -183,6 +184,10 @@ root@ip-172-31-0-237:~# systemctl restart docker
  Once you are done with the above steps, it is better to restart Jenkins.
 •	http://<ec2-instance-public-ip>:8080/restart
 •	The docker agent configuration is now successful.
+
+
+![alt text](image.png)
+![alt text](image-1.png)
 
 ArgoCD and K8s 
 minikube start --driver=docker
@@ -346,3 +351,12 @@ minikube start --driver=docker
 minikube stop
 minikube delete
 minikube start --driver=docker
+
+ubuntu@ip-172-31-0-227:~$ sudo su -
+root@ip-172-31-0-227:~# systemctl restart docker
+root@ip-172-31-0-227:~# sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/
+sudo chmod -R 755 /var/lib/jenkins/workspace/
+root@ip-172-31-0-227:~# cd /var/lib/jenkins/workspace/amazon-testng
+root@ip-172-31-0-227:/var/lib/jenkins/workspace/amazon-testng# sudo rm -rf target/*
+root@ip-172-31-0-227:/var/lib/jenkins/workspace/amazon-testng# sudo rm -rf /var/lib/jenkins/workspace/amazon-testng   
+root@ip-172-31-0-227:/var/lib/jenkins/workspace/amazon-testng#
