@@ -18,6 +18,7 @@ stage('clean') {
 stage('Fix Permissions') {
   steps {
     echo 'Fixing permissions for Jenkins workspace files'
+    sh 'chmod -R 755 *' // Ensure all files and directories are accessible
   }
 }
    stage('Clean Workspace') {
@@ -30,6 +31,7 @@ stage('Fix Permissions') {
       steps {
         sh 'echo passed'
         git branch: 'master', url: 'https://github.com/Rekapost/AmazonTestNG.git'
+        sh 'ls -ltr' // To verify if the directory exists
       }
     }
 
