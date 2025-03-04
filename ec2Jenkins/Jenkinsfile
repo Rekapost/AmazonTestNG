@@ -7,7 +7,6 @@ pipeline {
             steps {
                 echo 'Checkout Code from GitHub'
                 git branch: 'master', url: 'https://github.com/Rekapost/AmazonTestNG.git'
-                bat 'ls -ltr'  // Verify files
             }
         }
 
