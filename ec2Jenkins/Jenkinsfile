@@ -5,82 +5,35 @@ pipeline {
             args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
         }
     }
+
     stages {
-        
         stage('Checkout') {
             steps {
-                sh 'echo passed'
+                echo 'Checkout Code from GitHub'
+                // Checkout the code from your Git repository
                 git branch: 'master', url: 'https://github.com/Rekapost/AmazonTestNG.git'
-                sh 'ls -ltr' // To verify if the directory exists
+                sh 'ls -ltr'  // Verify the files and ensure the repository is correctly checked out
             }
         }
 
-        
-        stage('clean') {
+        stage('Clean') {
             steps {
-                sh 'ls -ltr'
-                sh 'mvn clean'
+                echo 'Running Maven Clean'
+                sh 'mvn clean'  // Running Maven clean to clear old build files
             }
         }
 
         stage('Fix Permissions') {
             steps {
-                //echo 'Fixing permissions for Jenkins workspace files'
-               // sh 'chmod -R 755 *' // Ensure all files and directories are accessible
-               echo 'Fixing permissions for Jenkins workspace files'
+                echo 'Fixing permissions for Jenkins workspace files'
+                sh 'chmod -R 755 *' // Ensure all files and directories are accessible
             }
         }
 
-
-stage('Install Chrome and Dependencies') {
-    steps {
-        script {
-            // Install dependencies and Google Chrome
-            sh '''
-                # Step 1: Install wget if it's not installed
-                if ! command -v wget &> /dev/null; then
-                    echo "wget not found, installing..."
-                    apt-get update -y
-                    apt-get install -y wget
-                else
-                    echo "wget is already installed"
-                fi
-
-                # Step 2: Download the Google Chrome .deb package
-                cd ~ && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
-                # Step 3: Install Google Chrome
-                dpkg -i google-chrome-stable_current_amd64.deb
-
-                # Step 4: Fix any missing dependencies that might have been missed by dpkg
-                apt-get install -f -y
-
-                # Step 6: Download ChromeDriver (Make sure this is the correct version compatible with your Google Chrome version)
-                wget https://chromedriver.storage.googleapis.com/133.0.6943.93/chromedriver_linux64.zip
-
-                # Step 7: Unzip the downloaded chromedriver
-                unzip chromedriver_linux64.zip
-
-                # Step 8: Move chromedriver to /usr/local/bin so that it's available system-wide
-                mv chromedriver /usr/local/bin/
-
-                # Step 9: Optionally, verify the Chrome and ChromeDriver versions
-                google-chrome --version
-                chromedriver --version
-
-                # Step 10: If you wish to remove Google Chrome later (for cleanup or downgrading purposes), you can use:
-                # apt-get remove --purge google-chrome-stable -y
-            '''
-        }
-    }
-}
-
-
-
         stage('Build and Test') {
             steps {
-                sh 'ls -ltr'
-                //sh 'mvn clean package'
+                echo 'Running Maven tests'
+                // Running the tests with the specified testng.xml
                 sh 'mvn clean test -Dsurefire.suiteXmlFiles=testng.xml'
             }
         }
@@ -94,7 +47,8 @@ stage('Install Chrome and Dependencies') {
             steps {
                 withCredentials([string(credentialsId: 'SONAR_CLOUD_TOKEN', variable: 'SONAR_AUTH_TOKEN')]) {
                     echo "Running SonarCloud Analysis for project: ${SONAR_PROJECT_KEY}"
-                    bat "mvn clean verify sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=${SONAR_URL} -Dsonar.login=$SONAR_AUTH_TOKEN"
+                    // Running SonarCloud analysis
+                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=${SONAR_URL} -Dsonar.login=${SONAR_AUTH_TOKEN}"
                 }
             }
         }
@@ -106,10 +60,13 @@ stage('Install Chrome and Dependencies') {
             }
             steps {
                 script {
-                    sh 'docker build -t ${DOCKER_IMAGE} .'
-                    // Pushing the Docker image to Docker Hub
+                    echo 'Building Docker Image'
+                    sh "docker build -t ${DOCKER_IMAGE} ."
+                    
+                    echo 'Pushing Docker Image to Docker Hub'
+                    // Push the Docker image to Docker Hub
                     def dockerImage = docker.image("${DOCKER_IMAGE}")
-                    docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
+                    docker.withRegistry('https://index.docker.io/v1/', 'docker-cred') {
                         dockerImage.push()
                     }
                 }
@@ -123,29 +80,18 @@ stage('Install Chrome and Dependencies') {
             }
             steps {
                 withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+                    echo 'Updating Deployment File'
                     sh '''
                         git config user.email "rekaharisri@gmail.com"
                         git config user.name "Reka"
                         
-                        # Ensure you are in the correct repository directory
-                        # cd ${WORKSPACE}/${GIT_REPO_NAME}
-                        
-                        # Get the current build number for replacement
                         BUILD_NUMBER=${BUILD_NUMBER}
                        
-                        # Use sed to update the deployment file with the build number
+                        # Update the deployment file with the new build number
                         sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-app-manifests/deployment.yml
                         
-                        # Ensure that target/ is not included in the commit
-                        git status  
-                        
-                        # Stage the changes for commit
                         git add java-app-manifests/deployment.yml
-
-                        # Commit the changes
                         git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-
-                        # Push the changes back to the remote repository
                         git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:master
                     '''
                 }
