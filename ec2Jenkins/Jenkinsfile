@@ -6,6 +6,7 @@ pipeline {
         }
     }
     stages {
+        
         stage('Checkout') {
             steps {
                 sh 'echo passed'
@@ -14,31 +15,30 @@ pipeline {
             }
         }
 
-        stage('Install Chrome and ChromeDriver') {
+        stage('Install Chrome and Dependencies') {
             steps {
                 script {
-                    // Update and install dependencies
-                    sh 'apt-get update'
-                    sh 'apt-get install -y wget curl unzip gnupg2'
-                    
-                    // Install Google Chrome
+                    // Install dependencies and Google Chrome
                     sh '''
-                        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-                        dpkg -i google-chrome-stable_current_amd64.deb
-                        apt-get -f install -y
+                        sudo apt-get update
+                        sudo apt-get install -f -y
+                        sudo dpkg -i google-chrome-stable_current_amd64.deb
                     '''
-                    
-                    // Install ChromeDriver (match the Chrome version)
-            sh '''
-    CHROME_VERSION=$(google-chrome --version | sed "s/Google Chrome //")
-    DRIVER_VERSION=$(echo $CHROME_VERSION | sed "s/\\([0-9]*\\)\\.[0-9]*\\.[0-9]*\\.[0-9]*$/\\1/")
-    wget https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip
-    unzip chromedriver_linux64.zip
-    mv chromedriver /usr/local/bin/
-    chmod +x /usr/local/bin/chromedriver
-'''
-
                 }
+            }
+        }
+
+        stage('clean') {
+            steps {
+                sh 'ls -ltr'
+                sh 'mvn clean'
+            }
+        }
+
+        stage('Fix Permissions') {
+            steps {
+                echo 'Fixing permissions for Jenkins workspace files'
+                sh 'chmod -R 755 *' // Ensure all files and directories are accessible
             }
         }
 
