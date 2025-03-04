@@ -36,22 +36,26 @@ stage('Install Chrome and Dependencies') {
             steps {
                 script {
                     // Install dependencies and Google Chrome
-                    sh '''
-                    # Step 1: Update package list and ensure dependencies are met
-                     apt-get update
+                           // Step 1: Install wget if it's not installed
+            sh '''
+                if ! command -v wget &> /dev/null; then
+                    echo "wget not found, installing..."
+                    apt-get update -y
+                    apt-get install -y wget
+                else
+                    echo "wget is already installed"
+                fi
+            '''
 
-                    # Step 2: Install any missing dependencies or fix broken packages
-                     apt-get install -f -y
+            # Step 2: Download the Google Chrome .deb package
+            sh 'cd ~ && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
 
-                    # Step 3: Download the Google Chrome .deb package
-                    cd ~
-                    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            # Step 3: Install Google Chrome
+            sh 'dpkg -i google-chrome-stable_current_amd64.deb'
 
-                    # Step 4: Install Google Chrome
-                     dpkg -i google-chrome-stable_current_amd64.deb
-
-                    # Step 5: Fix any missing dependencies that might have been missed by dpkg
-                     apt-get install -f
+           # Step 4: Fix any missing dependencies that might have been missed by dpkg
+            sh 'apt-get install -f -y'
+           
 
                     # Step 6: Download ChromeDriver (Make sure this is the correct version compatible with your Google Chrome version)
                     wget https://chromedriver.storage.googleapis.com/133.0.6943.93/chromedriver_linux64.zip
