@@ -1,6 +1,7 @@
 package testRunner;
-import org.testng.TestNG;
 import java.util.Collections;
+
+import org.testng.TestNG;
     
     public class TestRunner {
         public static void main(String[] args) {

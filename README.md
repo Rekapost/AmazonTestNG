@@ -19,6 +19,10 @@ This is a robust **TestNG Framework** designed for end-to-end automation testing
 - **ChainTest Report** - ChainTest Execution Report
 - **WebHook** -Webhook trigger Jenkins
 
+## Advanced Features 
+- Deploy the application in AWS EC2 Instance   **AWS.README.md**
+- Deploy the application in AWS EC2 Instance using Terraform  **TERRAFORM.README.md**
+
 ## 📂 Folder Structure
 ```
 TestNG_Framework/

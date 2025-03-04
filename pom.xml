@@ -29,7 +29,7 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.11.0</version>
-			<scope>test</scope>
+			 <scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
@@ -190,6 +190,21 @@
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>3.9.1.2184</version>
 			</plugin>
+		<plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.1.0</version>
+			  <executions>
+				<execution>
+					<goals>
+						<goal>java</goal>
+					</goals>
+				</execution>
+			  </executions>
+            <configuration>
+                <mainClass>testRunner.TestRunner</mainClass>
+            </configuration>
+        </plugin>
 		</plugins>
 	</build>
 </project>

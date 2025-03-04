@@ -289,5 +289,14 @@ aws ec2 describe-instances --instance-ids <your-instance-id> --query "Reservatio
 
 ### To destroy all cretaed resources: 
 ```
-Terraform destroy -auto-approve
+terraform destroy -auto-approve
+```
+```
+aws_key_pair.example: Destruction complete after 1s
+aws_iam_role.ec2_to_s3_role: Destruction complete after 0s
+aws_subnet.sub1: Destruction complete after 1s     
+aws_security_group.webSg: Destruction complete after 1s
+aws_vpc.myvpc: Destroying... [id=vpc-0fea89d79c90a5ece]
+aws_vpc.myvpc: Destruction complete after 1s       
+Destroy complete! Resources: 17 destroyed.
 ```
