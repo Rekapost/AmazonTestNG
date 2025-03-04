@@ -70,11 +70,12 @@ public class DriverManager {
 
             if (System.getProperty("os.name").toLowerCase().contains("linux")) {
                 System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+                //System.setProperty("webdriver.chrome.driver", "C:/Program Files (x86)/Google/Chrome/Application/chromedriver.exe");
             } else {
                 System.setProperty("webdriver.chrome.driver", "./src/test/resources/ChromeDriver/chromedriver.exe");
             }
             driver = new ChromeDriver(options);
-
+        
 /*       
             // Connect to Selenium Grid
             // Set browser options (Example: Chrome)

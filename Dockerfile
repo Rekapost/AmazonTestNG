@@ -36,8 +36,8 @@ RUN echo "JAVA_HOME is set to: $JAVA_HOME"
 #USER selenium
 
 # Provide ChromeDriver executable permission
-COPY ./src/test/resources/ChromeDriver/chromedriver /usr/local/bin/chromedriver
-RUN chmod +x /usr/local/bin/chromedriver
+COPY ./src/test/resources/ChromeDriver/chromedriver /usr/bin/chromedriver
+RUN chmod +x /usr/bin/chromedriver
 
 # Copy project files
 COPY . /home/Amazon
@@ -47,7 +47,7 @@ WORKDIR /home/Amazon
 RUN mvn -f /home/Amazon/pom.xml clean test -DskipTests=true
 
 # Expose port 8080 for future needs
-EXPOSE 8080
+#EXPOSE 8080
 
 # Run tests and keep the container running
 #CMD ["mvn", "clean", "test"]

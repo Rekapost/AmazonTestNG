@@ -39,6 +39,21 @@ stage('Fix Permissions') {
         sh 'cd amazon && mvn clean package'
       }
     }
+    
+    stage('Static Code Analysis') {
+            environment {
+                SONAR_URL = "https://sonarcloud.io"
+                SONAR_PROJECT_KEY = "AmazonTestNG"  // Replace with your actual SonarCloud project key
+                SONAR_ORG = "rekasonar"  // Replace with your SonarCloud organization key
+            }
+            steps {
+                withCredentials([string(credentialsId: 'SONAR_CLOUD_TOKEN', variable: 'SONAR_AUTH_TOKEN')]) {
+                    echo "Running SonarCloud Analysis for project: ${SONAR_PROJECT_KEY}"
+                    bat "mvn clean verify sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=${SONAR_URL} -Dsonar.login=$SONAR_AUTH_TOKEN"
+                }
+            }
+        }
+
 /*
 stage('Static Code Analysis') {
       environment {

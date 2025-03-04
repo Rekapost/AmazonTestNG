@@ -1,19 +1,9 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+apiVersion: argoproj.io/v1beta1
+kind: ArgoCD
 metadata:
-  name: amazon-testng
-  namespace: argocd
+ name: reka-amazon-argocd
 spec:
-  project: default
-  source:
-    repoURL: https://github.com/Rekapost/AmazonTestNG.git  # Change to your GitHub repo
-    targetRevision: HEAD
-    path: java-app-manifests  # Change to the folder containing your Kubernetes manifests
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: amazon
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+ server:
+  service:
+   type: NodePort
 

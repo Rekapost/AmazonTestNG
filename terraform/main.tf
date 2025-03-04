@@ -132,9 +132,10 @@ resource "aws_instance" "server" {
       "echo 'Downloading ChromeDriver...' ",
       "wget https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.141/linux64/chromedriver-linux64.zip",
       "unzip chromedriver-linux64.zip",
-      "sudo mv chromedriver-linux64/chromedriver /usr/local/bin/",
-      "chmod +x /usr/local/bin/chromedriver",
-      "echo 'export PATH=$PATH:/usr/local/bin' >> ~/.bashrc",
+      #"sudo mv chromedriver-linux64/chromedriver /usr/local/bin/",
+      "sudo mv chromedriver-linux64/chromedriver /usr/bin/chromedriver",
+      "sudo chmod +x /usr/bin/chromedriver",
+      "echo 'export PATH=$PATH:/usr/bin' >> ~/.bashrc",
       "source ~/.bashrc",
       "chromedriver --version",  # Verify ChromeDriver installation
       
