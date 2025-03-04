@@ -186,6 +186,7 @@ root@ip-172-31-0-237:~# systemctl restart docker
 •	The docker agent configuration is now successful.
 
 ArgoCD and K8s 
+minikube start --driver=docker
 
 curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.31.0/install.sh | bash -s v0.31.0
 
@@ -336,3 +337,13 @@ reka-amazon-argocd-server        1/1     1            1           35m
 
 ![alt text](image-4.png)
 ![alt text](image-5.png)
+
+
+sudo systemctl restart docker
+sudo systemctl status docker
+docker --version
+sudo dockerd
+minikube start --driver=docker
+minikube stop
+minikube delete
+minikube start --driver=docker
