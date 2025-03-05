@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: java-amazon-app
-        image: reka83/amazon-testng:18
+        image: reka83/amazon-testng:replaceImageTag
         ports:
         - containerPort: 8080
