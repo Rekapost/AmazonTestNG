@@ -45,10 +45,11 @@ pipeline {
             }
             steps {
                 withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+                    echo "Configuring git settings"
                     bat """
                         git config user.email "rekaharisri@gmail.com"
                         git config user.name "Reka"
-
+                        
                         # Set the build number
                         set BUILD_NUMBER=%BUILD_NUMBER%
 
@@ -62,14 +63,12 @@ pipeline {
                         git commit -m "Update deployment image to version %BUILD_NUMBER%"
 
                         # Push the changes to the repository
-                        git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:master
+                        git push https://%GITHUB_TOKEN%@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:master
                     """
                 }
             }
         }
     }
-
-post {
         success {
             echo 'Pipeline completed successfully!'
         }
