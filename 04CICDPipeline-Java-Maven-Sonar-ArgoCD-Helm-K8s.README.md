@@ -1,4 +1,4 @@
-CI-CD
+# CI-CD
 •	Build java app using maven
 •	Sonarqube image scanning
 •	Setup sonar server locally 
@@ -9,13 +9,13 @@ CI-CD
 •	Using Argo CD, we will deploy this manifest automatically to k8s cluster 
 •	Create EC2 instance with instance type large as no. of tools are heavy like sonar server, Jenkins server , docker  consume resource more than free tier instance
 
-Prerequisites:
+## Prerequisites:
 •	Java application code hosted on a Git repository
 •	Jenkins server
 •	Kubernetes cluster
 •	Helm package manager
 •	Argo CD
-Steps:
+### Steps:
 1. Install the necessary Jenkins plugins:
    1.1 Git plugin
    1.2 Maven Integration plugin
@@ -60,10 +60,11 @@ Steps:
    7.1 Trigger the Jenkins pipeline to start the CI/CD process for the Java application.
    7.2 Monitor the pipeline stages and fix any issues that arise.
 
-Run the Test Locally :
+*** Run the Test Locally : ***
 PS C:\Users\nreka\vscodedevops\amazon>  mvn clean install -U
 [INFO] Installing C:\Users\nreka\vscodedevops\amazon\target\amazon-1.0-SNAPSHOT.jar to C:\Users\nreka\.m2\repository\amazon\amazon\1.0-SNAPSHOT\amazon-1.0-SNAPSHOT.jar
 
+*** Chrome and chromeDriver versions ***
 reka@Reka:/mnt/c/Users/nreka$ google-chrome --version
 Google Chrome 133.0.6943.141
 reka@Reka:/mnt/c/Users/nreka$ which chromedriver
@@ -73,6 +74,8 @@ ChromeDriver 133.0.6943.141 (2a5d6da0d6165d7b107502095a937fe7704fcef6-refs/branc
 C:\Users\nreka\vscodedevops\amazon>cd ./src/test/resources/ChromeDriver/
 C:\Users\nreka\vscodedevops\amazon\src\test\resources\ChromeDriver>chromedriver --version
 ChromeDriver 133.0.6943.126 (cffa127ce7b6be72885391527c15b452056a2e81-refs/branch-heads/6943@{#1570})
+
+*** Docker build ***
 ```
 docker build -t reka83/amazon-testng:latest .
 ```
@@ -91,6 +94,7 @@ Status: Image is up to date for reka83/amazon-testng:latest
 docker.io/reka83/amazon-testng:latest
 ![alt text](imagesK8s/dockerpull.png)
 
+*** pem file: ***
 reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ ls -l ~/amazon.pem
 -r-------- 1 reka reka 1674 Mar  1 18:50 /home/reka/amazon.pem
 
@@ -100,7 +104,7 @@ ubuntu@ip-172-31-0-44:~$ sudo apt update -y
                          sudo apt install openjdk-17-jre -y
                          java -version
 
-### Install jenkins :
+## Install jenkins :
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \  
  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 
@@ -126,29 +130,31 @@ sudo systemctl start jenkins
 sudo systemctl enable jenkins
 sudo systemctl status jenkins
  
- ![alt text](image-6.png)
-http://44.198.161.171:8080/
+ ![alt text](imagesK8s/jenkins.png)
+ ![alt text](imagesK8s/jenkinsUnlock.png)
+ ![alt text](imagesK8s/security.png)
+ http://44.198.161.171:8080/
  Jenkins is up and running :
- ![alt text](imagesK8s/image-2.png)
- ![alt text](imagesK8s/image.png)
 
-Jenkins is running in EC2 INstance:
- ![alt text](imagesK8s/image.png)
+ Jenkins is running in EC2 INstance:
+ ![alt text](imagesK8s/jenkinsFrontPage.png)
  
  - Create Pipeline Project
  - Install docker pipeline plugin and SonarQube Scanner 
- ![alt text](imagesK8s/image.png)
+ ![alt text](imagesK8s/jenkinsProject.png)
+ ![alt text](imagesK8s/ec2Jenkins.png)
+ ![alt text](imagesK8s/jenkinsBuild.png)
 
- Go to ec2 instance and install sonar server
+## Go to ec2 instance and install sonar server
  Configure a Sonar Server locally
  Add user called sonarqube 
- Go to root user
+ *** Go to root user ***
 
 ubuntu@ip-172-31-0-44:~$ sudo su -
 root@ip-172-31-0-44:~# apt install unzip
 adduser sonarqube
 
-switch to user : 
+*** switch to user : ***
 root@ip-172-31-0-44:~# sudo su - sonarqube 
 sonarqube@ip-172-31-0-44:~$ wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
  unzip *
@@ -171,7 +177,7 @@ Server on http://<ec2ip-address>:9000
    Password: admin
 
 
-Docker Slave Configuration
+## Docker Slave Configuration 
 Install docker 
 •	Run the command below to Install Docker
 ubuntu@ip-172-31-0-237:~$ sudo su -
@@ -185,22 +191,22 @@ root@ip-172-31-0-237:~# systemctl restart docker
 •	http://<ec2-instance-public-ip>:8080/restart
 •	The docker agent configuration is now successful.
 
+![alt text](imagesK8s/dockerpull.png)
+![alt text](imagesK8s/dockerBuild.png)
+![alt text](imagesK8s/deploymentTag.png)
+![alt text](imagesK8s/dockerTag.png)
 
-![alt text](image.png)
-![alt text](image-1.png)
-
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-
-ArgoCD and K8s 
+## ArgoCD and K8s 
 minikube start --driver=docker
+![alt text](imagesK8s/minikubeStart.png)
+![alt text](imagesK8s/minikube.png)
 
 curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.31.0/install.sh | bash -s v0.31.0
 
 kubectl create -f https://operatorhub.io/install/argocd-operator.yaml
 subscription.operators.coreos.com/my-argocd-operator created
 
+![alt text](imagesK8s/installArgocd.png)
 kubectl get pods -n operators
 
 reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ kubectl get pods -n operators
@@ -209,6 +215,8 @@ argocd-operator-controller-manager-85ccd95f55-8vdzr   0/1     ContainerCreating 
 reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ kubectl get pods -n operators
 NAME                                                  READY   STATUS    RESTARTS   AGE
 argocd-operator-controller-manager-85ccd95f55-8vdzr   1/1     Running   0          4m6s
+
+![alt text](imagesK8s/kubectlget.png)
 
 reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ kubectl get csv -n operators
 NAME                      DISPLAY   VERSION   REPLACES                  PHASE
@@ -240,7 +248,8 @@ spec:
 
 kubectl apply -f argocd-basic.yml 
 argocd.argoproj.io/reka-amazon-argocd created
-
+![alt text](imagesK8s/argocd.png)
+![alt text](imagesK8s/installArgocd.png)
 
 reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ kubectl get pods
 NAME                                              READY   STATUS    RESTARTS   AGE
@@ -258,7 +267,7 @@ reka-amazon-argocd-repo-server      ClusterIP   10.96.5.222      <none>        8
 reka-amazon-argocd-server           NodePort    10.109.145.105   <none>        80:31493/TCP,443:32013/TCP   103s
 reka-amazon-argocd-server-metrics   ClusterIP   10.101.75.51     <none>        8083/TCP                     103s
 
-![alt text](image.png)
+![alt text](imagesK8s/serverurl.png)
 reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ minikube service reka-amazon-argocd-server
 |-----------|---------------------------|-------------|---------------------------|
 | NAMESPACE |           NAME            | TARGET PORT |            URL            |
@@ -279,7 +288,7 @@ http://127.0.0.1:42069]
 
 
 
-![alt text](image.png)
+![alt text](imagesK8s/image.png)
 reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ minikube service reka-amazon-argocd-server
 |-----------|---------------------------|-------------|---------------------------|
 | NAMESPACE |           NAME            | TARGET PORT |            URL            |
@@ -298,7 +307,7 @@ reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ minikube service reka-amazon-a
 http://127.0.0.1:37299]
 ❗  Because you are using a Docker driver on linux, the terminal needs to be open to run it.
 
-![alt text](image-1.png)
+![alt text](imagesK8s/image-1.png)
 reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ kubectl get pods
 NAME                                              READY   STATUS    RESTARTS   AGE
 reka-amazon-argocd-application-controller-0       1/1     Running   0          7m18s
@@ -322,19 +331,11 @@ reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ kubectl edit secret reka-amazo
 reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ echo WFVqNkh5ek9UZjJQd2k5RHBCZGhSSUM1bkZacjNKWWU= | base64 -d       
 XUj6HyzOTf2Pwi9DpBdhRIC5nFZr3JYe
 
-![alt text](image-2.png)
-![alt text](image-3.png)
+![alt text](imagesK8s/image-2.png)
+![alt text](imagesK8s/image-3.png)
 
 reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ minikube ip
 192.168.58.2
-
-reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ kubectl get pods
-NAME                                              READY   STATUS    RESTARTS   AGE
-amazon-amazon-helm-testng-6c77774f5c-cjlnr        1/1     Running   0          2m35s
-reka-amazon-argocd-application-controller-0       1/1     Running   0          35m
-reka-amazon-argocd-redis-95c484967-b44ll          1/1     Running   0          35m
-reka-amazon-argocd-repo-server-75f9d66877-7vkcl   1/1     Running   0          35m
-reka-amazon-argocd-server-57d6447754-m528z        1/1     Running   0          35m
 
 reka@Reka:/mnt/c/Users/nreka/vscodedevops/amazon$ kubectl get deploy
 NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
@@ -343,9 +344,12 @@ reka-amazon-argocd-redis         1/1     1            1           35m
 reka-amazon-argocd-repo-server   1/1     1            1           35m
 reka-amazon-argocd-server        1/1     1            1           35m
 
-![alt text](image-4.png)
-![alt text](image-5.png)
-
+![alt text](imagesK8s/image.png)
+![alt text](imagesK8s/image-1.png)
+![alt text](imagesK8s/image-2.png)
+![alt text](imagesK8s/image-3.png)
+![alt text](imagesK8s/image-4.png)
+![alt text](imagesK8s/image-5.png)
 
 sudo systemctl restart docker
 sudo systemctl status docker
