@@ -15,25 +15,12 @@ pipeline {
                 bat 'docker --version'  // Check if Docker is accessible
             }
         }
-stage('Docker Login') {
-            steps {
-                withCredentials([string(credentialsId: 'docker-cred', variable: 'DOCKER_PASSWORD')]) {
-                    script {
-                        echo 'Logging into Docker'
-                        // Adding debug information for Docker login
-                        bat 'echo $DOCKER_PASSWORD'  // This is to print the password and check if it is passed correctly (you can comment this line after verification)
-                        bat '''
-                            echo $DOCKER_PASSWORD | docker login -u reka83 --password-stdin https://index.docker.io/v1/
-                        '''
-                    }
-                }
-            }
-        }
 
         stage('Build and Push Docker Image') {
-            environment {
-                DOCKER_IMAGE = "reka83/amazon-testng:${BUILD_NUMBER}"
-            }
+             environment {
+                    DOCKER_IMAGE = "reka83/amazon-testng:${BUILD_NUMBER}"
+                    REGISTRY_CREDENTIALS = credentials('docker-cred')
+                }
             steps {
                 script {
                     echo 'Building Docker Image'
