@@ -4,7 +4,7 @@
 •	Setup sonar server locally 
 •	Send the report of our static code analysis to sonarqube
 •	Build docker image, for this artifact we will push the docker image to docker hub
-•	Using shell script directly update like in gitops approach we have to keep a manifest repo or create new folder inside source code repo     especially for the manifest to include the capabilities of git .
+•	Using shell script directly update like in gitops approach we have to keep a manifest repo or create new  folder inside source code repo     especially for the manifest to include the capabilities of git .
 •	Instead of Image updater using shellscript automatically update manifest repo or similarly folder in  source  code repo is fine 
 •	Using Argo CD, we will deploy this manifest automatically to k8s cluster 
 •	Create EC2 instance with instance type large as no. of tools are heavy like sonar server, Jenkins server , docker  consume resource more than free tier instance
@@ -15,6 +15,7 @@
 •	Kubernetes cluster
 •	Helm package manager
 •	Argo CD
+
 ### Steps:
 1. Install the necessary Jenkins plugins:
    1.1 Git plugin
@@ -55,6 +56,19 @@
 6. Configure Jenkins pipeline to integrate with Argo CD:
    6.1 Add the Argo CD API token to Jenkins credentials.
    6.2 Update the Jenkins pipeline to include the Argo CD deployment stage.
+
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    // Use Argo CD CLI or API to sync the application
+                    sh """
+                        argocd app sync ${ARGOCD_APP_NAME} --auth-token ${ARGOCD_API_TOKEN}
+                    """
+                }
+            }
+        }
+
 
 7. Run the Jenkins pipeline:
    7.1 Trigger the Jenkins pipeline to start the CI/CD process for the Java application.
@@ -196,6 +210,7 @@ root@ip-172-31-0-237:~# systemctl restart docker
 ![alt text](imagesK8s/deploymentTag.png)
 ![alt text](imagesK8s/dockerTag.png)
 
+![alt text](imagesK8s/cicd-docker-k8s.png)
 ## ArgoCD and K8s 
 minikube start --driver=docker
 ![alt text](imagesK8s/minikubeStart.png)
@@ -351,6 +366,7 @@ reka-amazon-argocd-server        1/1     1            1           35m
 ![alt text](imagesK8s/image-4.png)
 ![alt text](imagesK8s/image-5.png)
 
+- Docker Commands to Troubleshoot:
 sudo systemctl restart docker
 sudo systemctl status docker
 docker --version
@@ -360,6 +376,7 @@ minikube stop
 minikube delete
 minikube start --driver=docker
 
+- Commands to free up sapce in Jenkins
 ubuntu@ip-172-31-0-227:~$ sudo su -
 root@ip-172-31-0-227:~# systemctl restart docker
 root@ip-172-31-0-227:~# sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/
