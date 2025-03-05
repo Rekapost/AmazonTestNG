@@ -16,33 +16,22 @@ pipeline {
             }
         }
 
-        stage('Docker Login') {
-            steps {
-                withCredentials([string(credentialsId: 'docker-cred', variable: 'DOCKER_PASSWORD')]) {
-                    bat '''
-                        echo $DOCKER_PASSWORD | docker login -u reka83 --password-stdin https://index.docker.io/v1/
-                    '''
-                }
+    stage('Build and Push Docker Image') {
+      environment {
+        DOCKER_IMAGE = "reka83/amazon-testng:${BUILD_NUMBER}"
+        REGISTRY_CREDENTIALS = credentials('docker-cred')
+      }
+      steps {
+        script {
+            sh 'docker build -t ${DOCKER_IMAGE} .'
+            // Pushing the Docker image to Docker Hub
+            def dockerImage = docker.image("${DOCKER_IMAGE}")
+            docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
+            dockerImage.push()
             }
         }
-
-        stage('Build and Push Docker Image') {
-            environment {
-                DOCKER_IMAGE = "reka83/amazon-testng:${BUILD_NUMBER}"
-            }
-            steps {
-                script {
-                    echo 'Building Docker Image'
-                    bat "docker build -t ${DOCKER_IMAGE} ."
-                    
-                    echo 'Pushing Docker Image to Docker Hub'
-                    def dockerImage = docker.image("${DOCKER_IMAGE}")
-                    docker.withRegistry('https://index.docker.io/v1/', 'docker-cred') {
-                        dockerImage.push()
-                    }
-                }
-            }
-        }
+      }
+    }
 
         stage('Update Deployment File') {
             environment {
