@@ -1,17 +1,19 @@
 package base;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.chaintest.service.ChainPluginService;
 
@@ -26,19 +28,17 @@ public class DriverManager {
 */
 
     // Log4j2 (Log4j 2 is a logging framework designed to be fast, flexible, and easy to use)
-    public static final Logger logger = LogManager.getLogger(DriverManager.class);
+    private static final Logger logger = LogManager.getLogger(DriverManager.class);
     
     // Singleton design pattern
     private DriverManager()  // Private constructor to prevent direct instantiation
     {
 
     }
-    public static WebDriver getDriver() throws MalformedURLException {
+
+    @Parameters({"browser"})
+    public static WebDriver getDriver(String browser) throws MalformedURLException {
         if (driver == null) { 
-             
-            // Initialize the Log4j logger 
-             PropertyConfigurator.configure("src/test/resources/log4j.properties");
-             logger.info("Log4j 1.x Logger initialized.");
 
             // ChainTest Configuration
             ChainPluginService.getInstance().addSystemInfo("Build#", "1.0");
@@ -55,20 +55,25 @@ public class DriverManager {
             options.addArguments("--disable-extensions"); 
             options.addArguments("--disable-gpu");
             options.addArguments("--headless"); 
+          
+            if(logger==null){
+            // Initialize the Log4j logger 
+            PropertyConfigurator.configure("src/test/resources/log4j.properties");
+            logger.info("Log4j 1.x Logger initialized.");
+            // Log4j2 Configuration
+            logger.info("Logger initialized and logging preferences set.");             
+            }
             // Enabling Browser Logging in Selenium
             LoggingPreferences logs = new LoggingPreferences();
             logs.enable(LogType.BROWSER, Level.ALL);
             options.setCapability("goog:loggingPrefs", logs);
-            
-            // Log4j2 Configuration
-            logger.info("Logger initialized and logging preferences set.");    
             
         /*  // Use WebDriverManager to download ChromeDriver and set it up
             WebDriverManager.chromedriver().setup(); 
             driver = new ChromeDriver(options);
         */
 
-            if (System.getProperty("os.name").toLowerCase().contains("linux")) {
+        /*    if (System.getProperty("os.name").toLowerCase().contains("linux")) {
                 System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
                 //System.setProperty("webdriver.chrome.driver", "C:/Program Files (x86)/Google/Chrome/Application/chromedriver.exe");
             } else {
@@ -111,17 +116,40 @@ public class DriverManager {
             options.setCapability("browserVersion", "latest");
             options.setCapability("platformName", "Windows 10");
             options.setCapability("acceptInsecureCerts", true);
-
-            
+       
             // Initialize RemoteWebDriver with authentication in URL
             //String lambdaUrl = "https://" + ltUsername + ":" + ltAccessKey + "@hub.lambdatest.com/wd/hub";
             //driver = new RemoteWebDriver(new URL(lambdaUrl), options);
             // Initialize RemoteWebDriver with LambdaTest options
             driver= new RemoteWebDriver(new URL("https://hub.lambdatest.com/wd/hub"), options);
 */
+          //URL url = new URL ("http://ec2-18-219-201-171.us-east-2.compute.amazonaws.com:4444/wd/hub");
+		  //URL url = new URL ("http://3.21.37.133:4444/wd/hub");
+          //URL url = new URL ("http://localhost:4444/wd/hub");        
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+           
+            switch (browser.toLowerCase()) {
+                case "chrome":
+                    capabilities.setBrowserName("chrome");
+                    break;
+                case "firefox":
+                    capabilities.setBrowserName("firefox");
+                    break;
+                case "edge":
+                    capabilities.setBrowserName("edge");
+                    break;
+                default:
+                    throw new IllegalArgumentException("Browser not supported: " + browser);
+            }
+            // Read the selenium.grid.url property from the command line (set by Maven)
+            String gridUrl = System.getProperty("selenium.grid.url", "http://localhost:4444/wd/hub");
+            // Initialize RemoteWebDriver with the grid URL and Chrome options
+            driver= new RemoteWebDriver(new URL(gridUrl), capabilities);
+            //driver = new RemoteWebDriver(url, capabilities);
+        
             // Wait for the browser to load
-            getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); // Increase timeout
-            getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS); // Longer page load timeout
+            //getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); // Increase timeout
+            //getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS); // Longer page load timeout
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();

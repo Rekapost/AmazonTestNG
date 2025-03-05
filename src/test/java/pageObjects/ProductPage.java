@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ProductPage {
     
     private WebDriver driver;
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));  // driver is null here
+    JavascriptExecutor js = (JavascriptExecutor) driver; // NullPointerException
 
     @FindBy(xpath="//input[@id='add-to-cart-button' and @type='submit']")
     WebElement addToCartButton;
@@ -46,11 +48,18 @@ public class ProductPage {
             throw new IllegalArgumentException("WebDriver is NULL in ProductPage!");
         }
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.js = (JavascriptExecutor) driver; // Initialize after assigning driver
         PageFactory.initElements(driver,this);
     }
 
     public void addToCart(){
-        addToCartButton.click();
+        WebElement addCartButton = wait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
+        js.executeScript("arguments[0].scrollIntoView(true);", addCartButton);
+        wait.until(ExpectedConditions.visibilityOf(addCartButton));
+        //js.executeScript("return document.readyState").equals("complete");
+        //js.executeScript("arguments[0].click();", addCartButton);
+        addCartButton.click();
     }
 
     public String getCartSuccessMessage(){
@@ -68,8 +77,11 @@ public class ProductPage {
     }
    
     public void goToCart(){
+        if (driver == null) {
+            throw new IllegalStateException("WebDriver instance is null! Cannot proceed.");
+        }
+        
         System.out.println("Wait for the go to cart button to be clickable before clicking it");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         
         // Wait for the overlay to appear
         WebElement overlay = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("attachDisplayAddBaseAlert")));
@@ -80,16 +92,13 @@ public class ProductPage {
         System.out.println("Side display overlay detected.");
         
         try {
-            WebElement goToCartButton = wait.until(ExpectedConditions.elementToBeClickable(goToCart));
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].click();", goToCartButton);
-            //goToCartButton.click();
-        } catch (TimeoutException e) {
-            
-                WebElement cartButton = wait.until(ExpectedConditions.elementToBeClickable(cart));
-                JavascriptExecutor js = (JavascriptExecutor) driver;
-                js.executeScript("arguments[0].click();", cartButton);
-                //cartButton.click();
+            WebElement goToCartButton = wait.until(ExpectedConditions.elementToBeClickable(goToCart));        
+            //js.executeScript("arguments[0].click();", goToCartButton);
+            goToCartButton.click();
+        } catch (TimeoutException e) {        
+                WebElement cartButton = wait.until(ExpectedConditions.elementToBeClickable(cart));              
+                //js.executeScript("arguments[0].click();", cartButton);
+                cartButton.click();
         }
          System.out.println("Clicked cartButton");  
          // Wait for cart page to load

@@ -22,7 +22,7 @@ This is a robust **TestNG Framework** designed for end-to-end automation testing
 ## Advanced Features 
 - Deploy the application in AWS EC2 Instance   **AWS.README.md**
 - Deploy the application in AWS EC2 Instance using Terraform  **TERRAFORM.README.md**
-- Deploy the application in Argocd with Kubernetes K8S *** CICDPipeline-java-maven-sonar-Argocd-Helm-K8s.README.md ***
+- Deploy the application in Argocd with Kubernetes K8S **CICDPipeline-java-maven-sonar-Argocd-Helm-K8s.README.md**
 
 ## 📂 Folder Structure
 ```
