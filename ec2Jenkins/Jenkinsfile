@@ -45,22 +45,36 @@ pipeline {
             }
             steps {
                 withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
-                    echo 'Updating Deployment File'
-                    bat '''
+                    sh """
                         git config user.email "rekaharisri@gmail.com"
                         git config user.name "Reka"
-                        
-                        BUILD_NUMBER=${BUILD_NUMBER}
-                       
-                        # Update the deployment file with the new build number
-                        sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-app-manifests/deployment.yml
-                        
+
+                        # Set the build number
+                        set BUILD_NUMBER=%BUILD_NUMBER%
+
+                        # Replace the placeholder with the build number using PowerShell
+                        powershell -Command "(Get-Content java-app-manifests/deployment.yml) -replace 'replaceImageTag', '%BUILD_NUMBER%' | Set-Content java-app-manifests/deployment.yml"
+
+                        # Stage the changes for commit
                         git add java-app-manifests/deployment.yml
-                        git commit -m "Update deployment image to version ${BUILD_NUMBER}"
+
+                        # Commit the changes
+                        git commit -m "Update deployment image to version %BUILD_NUMBER%"
+
+                        # Push the changes to the repository
                         git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:master
-                    '''
+                    """
                 }
             }
+        }
+    }
+
+post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed, check logs for more details.'
         }
     }
 }
