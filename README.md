@@ -18,6 +18,7 @@ This is a robust **TestNG Framework** designed for end-to-end automation testing
 - **Extent Report** - HTML Test Report
 - **ChainTest Report** - ChainTest Execution Report
 - **WebHook** -Webhook trigger Jenkins
+- **DockerSeleniumGrid** - Parallel and cross-browser Testing
 
 ## Advanced Features 
 - Deploy the application in AWS EC2 Instance   **AWS.README.md**

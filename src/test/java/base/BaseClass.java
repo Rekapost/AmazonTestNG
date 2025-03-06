@@ -10,23 +10,21 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 //import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 protected WebDriver driver; 
 private String browser;
 
-		@BeforeSuite
+/*		@BeforeSuite
 		public void startDockerGrid() throws IOException, InterruptedException
 		{
 			Runtime.getRuntime().exec("cmd /c start startDockerGrid.bat");
 			Thread.sleep(15000);
 		}
-	
+*/	
 /*		@AfterSuite
 		public void stopDockerGrid() throws IOException, InterruptedException
 		{
@@ -40,11 +38,12 @@ private String browser;
         public void setup(ITestResult result,ITestContext context){
             // Get the browser from TestNG parameters
             browser = (String) context.getCurrentXmlTest().getParameter("browser");
+            System.out.println("Browser :" + browser);
             if (driver == null) { 
                 try {
                     driver = DriverManager.getDriver(browser);
                 } catch (MalformedURLException e) {       
-            }
+              }
             }
         }
 

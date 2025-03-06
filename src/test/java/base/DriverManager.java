@@ -1,6 +1,5 @@
 package base;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.time.Duration;
 import java.util.logging.Level;
 
@@ -8,11 +7,10 @@ import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Parameters;
 
 import com.aventstack.chaintest.service.ChainPluginService;
@@ -63,6 +61,7 @@ public class DriverManager {
             // Log4j2 Configuration
             logger.info("Logger initialized and logging preferences set.");             
             }
+            
             // Enabling Browser Logging in Selenium
             LoggingPreferences logs = new LoggingPreferences();
             logs.enable(LogType.BROWSER, Level.ALL);
@@ -73,7 +72,7 @@ public class DriverManager {
             driver = new ChromeDriver(options);
         */
 
-        /*    if (System.getProperty("os.name").toLowerCase().contains("linux")) {
+            if (System.getProperty("os.name").toLowerCase().contains("linux")) {
                 System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
                 //System.setProperty("webdriver.chrome.driver", "C:/Program Files (x86)/Google/Chrome/Application/chromedriver.exe");
             } else {
@@ -123,7 +122,7 @@ public class DriverManager {
             // Initialize RemoteWebDriver with LambdaTest options
             driver= new RemoteWebDriver(new URL("https://hub.lambdatest.com/wd/hub"), options);
 */
-          //URL url = new URL ("http://ec2-18-219-201-171.us-east-2.compute.amazonaws.com:4444/wd/hub");
+/*        //URL url = new URL ("http://ec2-18-219-201-171.us-east-2.compute.amazonaws.com:4444/wd/hub");
 		  //URL url = new URL ("http://3.21.37.133:4444/wd/hub");
           //URL url = new URL ("http://localhost:4444/wd/hub");        
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -146,7 +145,7 @@ public class DriverManager {
             // Initialize RemoteWebDriver with the grid URL and Chrome options
             driver= new RemoteWebDriver(new URL(gridUrl), capabilities);
             //driver = new RemoteWebDriver(url, capabilities);
-        
+*/       
             // Wait for the browser to load
             //getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); // Increase timeout
             //getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS); // Longer page load timeout
