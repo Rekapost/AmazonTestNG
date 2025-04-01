@@ -140,7 +140,9 @@ Before starting your service, ensure the port (e.g., `8081`) is free and not bei
 - `/target/chaintest/Index.html`
 - `/target/chaintest/Email.html`
 ![alt text](imagesTestNG/image-38.png)
-
+```
+mvn clean test && open /target/chaintest/Index.html
+```
 ## 3. Setting Up Selenium Grid with Docker
 Set up a Selenium Grid with a Hub and a Chrome Node using Docker and Selenium. 
 - Start Selenium Grid Hub and Nodes
@@ -243,6 +245,7 @@ mvn allure:serve
 Navigate to the folder containing `allure-results` and run:
 ```sh
 allure serve allure-results
+mvn clean test && open allure serve allure-results
 ```
 ![alt text](imagesTestNG/image-31.png)
 ![alt text](imagesTestNG/image-32.png)
@@ -251,6 +254,7 @@ allure serve allure-results
 - **Extent Report:** Available in the `reports` folder after execution.
 ```sh
 /test-output/Test-Report-********.html
+mvn clean install && open test-output/Test-Report-****.html
 ```
 ![alt text](imagesTestNG/image-33.png)
 
@@ -634,3 +638,6 @@ Published Jenkins URL: https://your-ngrok-url.ngrok-free.app/
 ## 🧑‍💻 Author
 **Rekapost**  
 GitHub: [https://github.com/Rekapost/AmazonTestNG]
+
+## Contact
+You can connect with me on [LinkedIn] https://www.linkedin.com/in/reka-srimurugan-040296252/

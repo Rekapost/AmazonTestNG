@@ -1,2 +1,2 @@
-cd C:\Users\nreka\eclipse-workspace\DockerGridIntegration
+cd C:\Users\nreka\vscodedevops\amazon
 docker-compose up

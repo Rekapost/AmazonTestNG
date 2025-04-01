@@ -1,4 +1,5 @@
 package base;
+import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -10,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 //import io.github.bonigarcia.wdm.WebDriverManager;
@@ -78,4 +80,32 @@ private String browser;
                 } catch (IOException e) {
                 }
             }
+
+        @AfterSuite
+        public void openHtmlReport(){
+            // Generate HTML report here
+            try { 
+                File htmlReportFile = new File("/target/chaintest/Index.html");
+                if(htmlReportFile.exists()){
+                    Desktop.getDesktop().browse(htmlReportFile.toURI());
+                }else{
+                    System.out.println("Report file not found:" + htmlReportFile.getAbsolutePath());
+                    }
+                }catch(IOException e){
+                System.out.println("Report File not found");
+            }
+       
+            //Allure
+            try{
+                ProcessBuilder builder = new ProcessBuilder("/usr/local/bin/allure", "serve", "allure-results");
+                builder.inheritIO();
+                Process process= builder.start();
+                process.waitFor();
+
+                //allure serve cmd automatically opnes report in browser
+                System.out.println("Report File found");
+            }catch(Exception e){
+                System.out.println("Report File not found");
+            }
         }
+    }       
